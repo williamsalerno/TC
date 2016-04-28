@@ -25,4 +25,8 @@ public class UserRepository {
         return createCriteria().list();
     }
 
+    public void addUser(User user) {
+        session.save(user);
+    }
+
 }
