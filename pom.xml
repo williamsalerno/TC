@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.timetrialfactory</groupId>
-	<artifactId>timetrial-site</artifactId>
+	<artifactId>timetrial-admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Site TimeTrial - VRaptor 3</name>
@@ -26,12 +26,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>br.com.caelum</groupId>
-			<artifactId>vraptor</artifactId>
-			<version>4.1.0.Final</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet-core</artifactId>
 			<version>2.1.2.Final</version>
@@ -41,6 +35,12 @@
 			<groupId>org.jboss.weld</groupId>
 			<artifactId>weld-core-impl</artifactId>
 			<version>2.1.2.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.caelum</groupId>
+			<artifactId>vraptor</artifactId>
+			<version>3.5.5</version>
 		</dependency>
 
 		<dependency>
@@ -65,14 +65,28 @@
 		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>vraptor-hibernate</artifactId>
-			<version>4.0.0.Final</version>
+			<version>4.0.4</version>
 		</dependency>
 
 		<dependency>
-			<groupId>postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.1-901-1.jdbc4</version>
+			<version>9.4.1208.jre7</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+
+
 
 	</dependencies>
 

@@ -36,14 +36,17 @@ public class User {
     private String lastName;
 
     @NotNull
-    private String nick;
+    @Column(unique = true)
+    private String login;
 
     @NotNull
     @Email(regexp = "[a-z]+@{1}\\w+\\.com{1}(\\.br)*", message = "O email informado é inválido.")
+    @Column(unique = true)
     private String email;
 
     @NotNull
     @Valid
+    @Column
     private Address address;
 
     @Valid
@@ -85,11 +88,11 @@ public class User {
     }
 
     public String getNick() {
-        return nick;
+        return login;
     }
 
     public void setNick(String nick) {
-        this.nick = nick;
+        this.login = nick;
     }
 
     public String getEmail() {

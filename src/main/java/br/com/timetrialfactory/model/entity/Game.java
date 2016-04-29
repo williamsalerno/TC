@@ -2,6 +2,8 @@ package br.com.timetrialfactory.model.entity;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +24,7 @@ public class Game {
     private String title;
 
     @NotNull
-    private Float price;
+    private BigDecimal price;
 
     public Long getId() {
         return id;
@@ -40,11 +42,11 @@ public class Game {
         this.title = title;
     }
 
-    public Float getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

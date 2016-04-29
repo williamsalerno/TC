@@ -2,6 +2,7 @@ package br.com.timetrialfactory.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -13,6 +14,7 @@ public class License {
     @NotNull
     private User user;
 
+    @Id
     @NotNull
     @Column(unique = true)
     private String key;
@@ -40,7 +42,5 @@ public class License {
     public void setKey(String key) {
         this.key = key;
     }
-    
-    
 
 }
