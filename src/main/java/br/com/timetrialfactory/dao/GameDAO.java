@@ -1,30 +1,41 @@
 package br.com.timetrialfactory.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import br.com.caelum.vraptor.ioc.Component;
 import br.com.timetrialfactory.model.entity.Game;
-import br.com.timetrialfactory.session.SessionCreator;
 
+@Component
 public class GameDAO {
 
     private final Session session;
-    private final Transaction tx;
 
-    public GameDAO() {
-        this.session = SessionCreator.getSession();
-        this.tx = session.beginTransaction();
+    public GameDAO(Session session) {
+        this.session = session;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Game> listAll() {
+        return this.session.createCriteria(Game.class).list();
     }
 
     public void insert(Game game) {
+        Transaction tx = session.beginTransaction();
         this.session.save(game);
-        this.tx.commit();
+        tx.commit();
+    }
+
+    public Game load(Long id) {
+        return (Game) this.session.load(Game.class, id);
     }
 
     public void update(Game game) {
-        game = (Game) this.session.load(Game.class, 1L);
+        Transaction tx = session.beginTransaction();
         this.session.update(game);
-        this.tx.commit();
+        tx.commit();
     }
 
 }

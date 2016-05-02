@@ -1,24 +1,11 @@
 package br.com.timetrialfactory.test;
 
-import java.math.BigDecimal;
+import br.com.caelum.vraptor.Resource;
 
-import br.com.timetrialfactory.dao.GameDAO;
-import br.com.timetrialfactory.model.entity.Game;
-
+@Resource
 public class UpdateGameTest {
 
     public static void main(String[] args) {
-
-        Game game = updateGame("Teste", new BigDecimal("20"));
-        new GameDAO().update(game);
+        // new GameDAO().update(new Game());
     }
-
-    private static Game updateGame(String title, BigDecimal price) {
-        Game game = new Game();
-        game.setTitle(title);
-        game.setPrice(price);
-        return null;
-
-    }
-
 }

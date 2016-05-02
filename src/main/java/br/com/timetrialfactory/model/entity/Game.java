@@ -9,7 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Game {
@@ -21,9 +24,11 @@ public class Game {
 
     @NotNull
     @Column(unique = true)
+    @Length(min = 5, message = "Título do jogo é obrigatório e deve ter, no mínimo, 5 caracteres.")
     private String title;
 
     @NotNull
+    @Min(value = 1, message = "O preço do jogo deve ser maior que ou igual a 1.")
     private BigDecimal price;
 
     public Long getId() {
