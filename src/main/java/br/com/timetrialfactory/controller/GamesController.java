@@ -2,6 +2,9 @@ package br.com.timetrialfactory.controller;
 
 import java.util.List;
 
+import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
@@ -21,10 +24,12 @@ public class GamesController {
         this.validator = validator;
     }
 
+    @Get("/games")
     public List<Game> list() {
         return dao.listAll();
     }
 
+    @Post("/games")
     public void add(final Game game) {
         validator.validate(game);
         validator.onErrorUsePageOf(GamesController.class).form();
@@ -32,10 +37,12 @@ public class GamesController {
         this.result.redirectTo(this).list();
     }
 
+    @Get("/games/{id}")
     public Game edit(Long id) {
         return dao.load(id);
     }
 
+    @Put("/games/{game.id}")
     public void change(Game game) {
         validator.validate(game);
         validator.onErrorUsePageOf(GamesController.class).edit(game.getId());
@@ -43,6 +50,7 @@ public class GamesController {
         this.result.redirectTo(this).list();
     }
 
+    @Get("/games/new")
     public void form() {
 
     }

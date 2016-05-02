@@ -15,16 +15,14 @@
 			</c:forEach>
 		</ul>
 	</div>
-	<form action="change">
+	<form action="<c:url value="/games/${game.id }"/>" method="post">
 		<fieldset>
 			<legend>Editar Produto</legend>
-			<input type="hidden" name="game.id" value="${game.id }" /> <label
-				for="title">Título:</label> <input id="title" type="text"
+			<label for="title">Título:</label> <input id="title" type="text"
 				name="game.title" value="${game.title }" /> <label for="price">Preço:</label>
 			<input id="price" type="text" name="game.price"
 				value="${game.price }" />
-
-			<button type="submit">Enviar</button>
+			<button type="submit" name="_method" value="put">Enviar</button>
 		</fieldset>
 	</form>
 </body>

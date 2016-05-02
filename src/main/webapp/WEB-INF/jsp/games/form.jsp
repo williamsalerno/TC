@@ -11,11 +11,11 @@
 	<div id="errors">
 		<ul>
 			<c:forEach items="${errors}" var="error">
-				<li>${error.category }- ${error.message }</li>
+				<li>${error.category }-${error.message }</li>
 			</c:forEach>
 		</ul>
 	</div>
-	<form action="add">
+	<form action="<c:url value="/games"/>" method="post">
 		<fieldset>
 			<legend>Adicionar Produto</legend>
 

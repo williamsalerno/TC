@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<form action="form">
+<form action="<c:url value="/games/new"/>" method="get">
 	<table>
 		<thead>
 			<tr>
@@ -20,7 +20,7 @@
 				<tr>
 					<td>${game.title }</td>
 					<td>${game.price }</td>
-					<td><a href="edit?id=${game.id }">Editar</a></td>
+					<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
