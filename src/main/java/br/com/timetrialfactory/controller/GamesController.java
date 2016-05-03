@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
+import br.com.caelum.vraptor.view.Results;
 import br.com.timetrialfactory.dao.GameDAO;
 import br.com.timetrialfactory.model.entity.Game;
 
@@ -48,6 +49,17 @@ public class GamesController {
         validator.onErrorUsePageOf(GamesController.class).edit(game.getId());
         dao.update(game);
         this.result.redirectTo(this).list();
+    }
+
+    @Get("/games/search")
+    public List<Game> search(String title) {
+        result.include("title", title);
+        return dao.search(title);
+    }
+
+    @Get("/games/search.json")
+    public void searchJson(String q) {
+        result.use(Results.json()).withoutRoot().from(dao.search(q)).exclude("id").serialize();
     }
 
     @Get("/games/new")

@@ -1,0 +1,27 @@
+<div id="header">
+	<div id="cart">
+		<h3>
+			<a href="<c:url value="/cart"/>">Meu carrinho:</a>
+		</h3>
+		<c:if test="${empty cart or cart.totalItems eq 0 }">
+			<span>Você não possui itens no seu carrinho</span>
+		</c:if>
+		<c:if test="${cart.totalItems > 0 }">
+			<ul>
+				<li><strong>Itens:</strong> ${cart.totalItems }</li>
+				<li><strong>Total:</strong> <fmt:formatNumber type="currency"
+						value="${cart.total }" /></li>
+			</ul>
+		</c:if>
+	</div>
+</div>
+<div id="menu">
+	<ul>
+		<li><a href="<c:url value="/games/new"/>">Novo Jogo</a></li>
+		<li><a href="<c:url value="/games"/>">Lista Jogos</a></li>
+		<li><form action="<c:url value="/games/search"/>">
+				<input name="title" placeholder="Busca jogos por título" />
+				<button type="submit">Pesquisar</button>
+			</form></li>
+	</ul>
+</div>

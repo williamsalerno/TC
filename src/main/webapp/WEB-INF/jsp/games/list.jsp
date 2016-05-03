@@ -7,24 +7,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<form action="<c:url value="/games/new"/>" method="get">
-	<table>
-		<thead>
+<%@ include file="/WEB-INF/jspf/header.jspf"%>
+<table>
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Preço</th>
+			<th>Comprar</th>
+			<th>Editar</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${gameList}" var="game">
 			<tr>
-				<th>Nome</th>
-				<th>Preço</th>
+				<td>${game.title }</td>
+				<td>${game.price }</td>
+				<td>
+					<form action="<c:url value="/cart"/>" method="post">
+						<input type="hidden" name="item.game.id" value="${game.id }" /> <input
+							class="qtde" name="item.quantity" value="1" />
+						<button type="submit">Adicionar</button>
+					</form>
+				</td>
+				<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
 			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${gameList}" var="game">
-				<tr>
-					<td>${game.title }</td>
-					<td>${game.price }</td>
-					<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+		</c:forEach>
+	</tbody>
+</table>
+<form action="<c:url value="/games/new"/>" method="get">
 	<p>
 		<button type="submit">Novo Jogo</button>
 	</p>

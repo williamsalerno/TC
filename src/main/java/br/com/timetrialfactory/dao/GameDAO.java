@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.timetrialfactory.model.entity.Game;
@@ -36,6 +38,16 @@ public class GameDAO {
         Transaction tx = session.beginTransaction();
         this.session.update(game);
         tx.commit();
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Game> search(String title) {
+        return session.createCriteria(Game.class).add(Restrictions.ilike("title", title, MatchMode.ANYWHERE)).list();
+    }
+
+    public void recharge(Game game) {
+        session.refresh(game);
+
     }
 
 }

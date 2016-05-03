@@ -6,6 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript"
+	src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.3.min.js"></script>
+<script type="text/javascript"
+	src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 </head>
 <body>
 	<div id="errors">
@@ -15,17 +19,20 @@
 			</c:forEach>
 		</ul>
 	</div>
-	<form action="<c:url value="/games"/>" method="post">
+	<form id="gamesForm" action="<c:url value="/games"/>" method="post">
 		<fieldset>
-			<legend>Adicionar Produto</legend>
+			<legend>Adicionar Novo Jogo</legend>
 
-			<label for="title">Título:</label> <input id="title" type="text"
-				name="game.title" value="${game.title }" /> <label for="price">Preço:</label>
-			<input id="price" type="text" name="game.price"
-				value="${game.price }" />
+			<label for="title">Título:</label> <input id="title" class="required"
+				minlength="5" type="text" name="game.title" value="${game.title }" />
+			<label for="price">Preço:</label> <input id="price" min="1"
+				type="text" name="game.price" value="${game.price }" />
 
 			<button type="submit">Enviar</button>
 		</fieldset>
 	</form>
+	<script type="text/javascript">
+		$('#gamesForm').validate();
+	</script>
 </body>
 </html>
