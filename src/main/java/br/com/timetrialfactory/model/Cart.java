@@ -31,12 +31,18 @@ public class Cart {
     }
 
     public void add(Item item) {
-        items.add(item);
-        total = total.plus().add(item.getGame().getPrice());
+        this.items.add(item);
+        this.total = total.add(item.getGame().getPrice());
     }
 
     public Integer getTotalItems() {
         return items.size();
+    }
+
+    public void remove(int itemIndex) {
+        Item removed = items.remove(itemIndex);
+        this.total = total.subtract(removed.getGame().getPrice());
+
     }
 
 }

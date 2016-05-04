@@ -15,15 +15,25 @@
 			</c:forEach>
 		</ul>
 	</div>
-	<form action="<c:url value="/games/${game.id }"/>" method="post">
-		<fieldset>
-			<legend>Editar Produto</legend>
-			<label for="title">Título:</label> <input id="title" type="text"
-				name="game.title" value="${game.title }" /> <label for="price">Preço:</label>
-			<input id="price" type="text" name="game.price"
-				value="${game.price }" />
-			<button type="submit" name="_method" value="put">Enviar</button>
-		</fieldset>
-	</form>
+	<fieldset>
+		<legend>Editar Produto</legend>
+		<form action="<c:url value="/games/${game.id }"/>" method="post">
+			<img src="<c:url value="/games/${game.id}/image"/>" width="100"
+				height="100" /> <label for="title">Título:</label> <input
+				id="title" type="text" name="game.title" value="${game.title }" />
+			<label for="price">Preço:</label> <input id="price" type="text"
+				name="game.price" value="${game.price }" />
+			<button type="submit" name="_method" value="put">Alterar</button>
+			<button type="submit" name="_method" value="delete">Apagar</button>
+		</form>
+		<form action="<c:url value="/games/${game.id }/image"/>" method="post"
+			enctype="multipart/form-data">
+			<fieldset>
+				<legend>Upload de imagem</legend>
+				<input type="file" name="image" />
+				<button type="submit">Enviar</button>
+			</fieldset>
+		</form>
+	</fieldset>
 </body>
 </html>

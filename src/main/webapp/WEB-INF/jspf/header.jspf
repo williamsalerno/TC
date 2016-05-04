@@ -1,4 +1,15 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="header">
+	<div id="user">
+		<c:if test="${userWeb.logged}">
+      Olá, ${userWeb.name }! 
+      <a href="<c:url value="/logout"/>">Logout</a>
+		</c:if>
+		<c:if test="${empty userWeb or not userWeb.logged}">
+		Você não está logado. <a href="<c:url value="/login"/>">Login</a>
+			<a href="<c:url value="/users/new"/>"> Cadastre-se </a>
+		</c:if>
+	</div>
 	<div id="cart">
 		<h3>
 			<a href="<c:url value="/cart"/>">Meu carrinho:</a>
@@ -17,7 +28,6 @@
 </div>
 <div id="menu">
 	<ul>
-		<li><a href="<c:url value="/games/new"/>">Novo Jogo</a></li>
 		<li><a href="<c:url value="/games"/>">Lista Jogos</a></li>
 		<li><form action="<c:url value="/games/search"/>">
 				<input name="title" placeholder="Busca jogos por título" />

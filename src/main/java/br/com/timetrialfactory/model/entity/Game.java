@@ -1,12 +1,11 @@
 package br.com.timetrialfactory.model.entity;
 
-import static javax.persistence.GenerationType.SEQUENCE;
-
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Min;
@@ -19,7 +18,7 @@ public class Game {
 
     @Id
     @SequenceGenerator(name = "game_seq", sequenceName = "game_seq", allocationSize = 1)
-    @GeneratedValue(strategy = SEQUENCE, generator = "game_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "game_seq")
     private Long id;
 
     @NotNull

@@ -40,6 +40,12 @@ public class GameDAO {
         tx.commit();
     }
 
+    public void delete(Game game) {
+        Transaction tx = session.beginTransaction();
+        this.session.delete(game);
+        tx.commit();
+    }
+
     @SuppressWarnings("unchecked")
     public List<Game> search(String title) {
         return session.createCriteria(Game.class).add(Restrictions.ilike("title", title, MatchMode.ANYWHERE)).list();

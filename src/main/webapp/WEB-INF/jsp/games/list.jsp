@@ -15,11 +15,12 @@
 			<th>Preço</th>
 			<th>Comprar</th>
 			<th>Editar</th>
-
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach items="${gameList}" var="game">
+			<img src="<c:url value="/games/${game.id}/image"/>" width="100"
+				height="100" />
 			<tr>
 				<td>${game.title }</td>
 				<td>${game.price }</td>
@@ -30,14 +31,18 @@
 						<button type="submit">Adicionar</button>
 					</form>
 				</td>
-				<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
+				<c:if test="${userWeb.logged }">
+					<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
+				</c:if>
 			</tr>
 		</c:forEach>
 	</tbody>
 </table>
-<form action="<c:url value="/games/new"/>" method="get">
-	<p>
-		<button type="submit">Novo Jogo</button>
-	</p>
-</form>
+<c:if test="${userWeb.logged }">
+	<form action="<c:url value="/games/new"/>" method="get">
+		<p>
+			<button type="submit">Novo Jogo</button>
+		</p>
+	</form>
+</c:if>
 </html>

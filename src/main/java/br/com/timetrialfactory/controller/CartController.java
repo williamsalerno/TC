@@ -1,5 +1,6 @@
 package br.com.timetrialfactory.controller;
 
+import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
@@ -29,6 +30,12 @@ public class CartController {
     public void add(Item item) {
         dao.recharge(item.getGame());
         cart.add(item);
+        result.redirectTo(this).view();
+    }
+
+    @Delete("/cart/{itemIndex}")
+    public void remove(int itemIndex) {
+        cart.remove(itemIndex);
         result.redirectTo(this).view();
     }
 }

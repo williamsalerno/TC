@@ -2,6 +2,7 @@ package br.com.timetrialfactory.controller;
 
 import java.util.List;
 
+import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
@@ -9,6 +10,7 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.view.Results;
+import br.com.timetrialfactory.annotations.Restrict;
 import br.com.timetrialfactory.dao.GameDAO;
 import br.com.timetrialfactory.model.entity.Game;
 
@@ -30,6 +32,7 @@ public class GamesController {
         return dao.listAll();
     }
 
+    @Restrict
     @Post("/games")
     public void add(final Game game) {
         validator.validate(game);
@@ -38,16 +41,26 @@ public class GamesController {
         this.result.redirectTo(this).list();
     }
 
+    @Restrict
     @Get("/games/{id}")
     public Game edit(Long id) {
         return dao.load(id);
     }
 
+    @Restrict
     @Put("/games/{game.id}")
     public void change(Game game) {
         validator.validate(game);
-        validator.onErrorUsePageOf(GamesController.class).edit(game.getId());
+        validator.onErrorUsePageOf(this).edit(game.getId());
         dao.update(game);
+        this.result.redirectTo(this).list();
+    }
+
+    @Restrict
+    @Delete("/games/{id}")
+    public void remove(Long id) {
+        Game game = dao.load(id);
+        dao.delete(game);
         this.result.redirectTo(this).list();
     }
 
@@ -62,6 +75,7 @@ public class GamesController {
         result.use(Results.json()).withoutRoot().from(dao.search(q)).exclude("id").serialize();
     }
 
+    @Restrict
     @Get("/games/new")
     public void form() {
 
