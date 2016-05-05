@@ -19,9 +19,9 @@
 	</thead>
 	<tbody>
 		<c:forEach items="${gameList}" var="game">
-			<img src="<c:url value="/games/${game.id}/image"/>" width="100"
-				height="100" />
 			<tr>
+				<td><img src="<c:url value="/games/${game.id}/image"/>"
+					width="100" height="100" /></td>
 				<td>${game.title }</td>
 				<td>${game.price }</td>
 				<td>

@@ -12,6 +12,7 @@ import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.view.Results;
 import br.com.timetrialfactory.annotations.Restrict;
 import br.com.timetrialfactory.dao.GameDAO;
+import br.com.timetrialfactory.images.Images;
 import br.com.timetrialfactory.model.entity.Game;
 
 @Resource
@@ -20,11 +21,13 @@ public class GamesController {
     private final GameDAO dao;
     private final Result result;
     private final Validator validator;
+    private final Images images;
 
-    public GamesController(GameDAO dao, Result result, Validator validator) {
+    public GamesController(GameDAO dao, Result result, Validator validator, Images images) {
         this.dao = dao;
         this.result = result;
         this.validator = validator;
+        this.images = images;
     }
 
     @Get("/games")
@@ -61,6 +64,7 @@ public class GamesController {
     public void remove(Long id) {
         Game game = dao.load(id);
         dao.delete(game);
+        images.delete(game);
         this.result.redirectTo(this).list();
     }
 

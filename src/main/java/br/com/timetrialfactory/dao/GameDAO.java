@@ -31,7 +31,7 @@ public class GameDAO {
     }
 
     public Game load(Long id) {
-        return (Game) this.session.load(Game.class, id);
+        return (Game) this.session.get(Game.class, id);
     }
 
     public void update(Game game) {

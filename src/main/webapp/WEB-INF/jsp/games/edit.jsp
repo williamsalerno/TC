@@ -18,8 +18,8 @@
 	<fieldset>
 		<legend>Editar Produto</legend>
 		<form action="<c:url value="/games/${game.id }"/>" method="post">
-			<img src="<c:url value="/games/${game.id}/image"/>" width="100"
-				height="100" /> <label for="title">Título:</label> <input
+			<img src="<c:url value="/games/${game.id }/image"/>" width="100"
+				height="100"></img> <label for="title">Título:</label> <input
 				id="title" type="text" name="game.title" value="${game.title }" />
 			<label for="price">Preço:</label> <input id="price" type="text"
 				name="game.price" value="${game.price }" />
@@ -30,9 +30,12 @@
 			enctype="multipart/form-data">
 			<fieldset>
 				<legend>Upload de imagem</legend>
-				<input type="file" name="image" />
+				<input type="file" name="image">
 				<button type="submit">Enviar</button>
 			</fieldset>
+		</form>
+		<form action="<c:url value="/games"/>" method="get">
+			<button type="submit">Voltar</button>
 		</form>
 	</fieldset>
 </body>

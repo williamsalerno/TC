@@ -19,6 +19,10 @@ public class License {
     @Column(unique = true)
     private String key;
 
+    private boolean checkedKey;
+
+    // private Integer copies;
+
     public Game getGame() {
         return game;
     }
@@ -41,6 +45,14 @@ public class License {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public boolean isCheckedKey() {
+        return checkedKey;
+    }
+
+    public void setCheckedKey(boolean checkedKey) {
+        this.checkedKey = checkedKey;
     }
 
 }

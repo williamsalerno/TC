@@ -1,6 +1,7 @@
 package br.com.timetrialfactory.model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class Cart {
 
     private List<Item> items = new ArrayList<Item>();
     private BigDecimal total = new BigDecimal("0.0");
+    private BigInteger totalItems = new BigInteger("0");
 
     public List<Item> getItems() {
         return items;
@@ -32,16 +34,17 @@ public class Cart {
 
     public void add(Item item) {
         this.items.add(item);
-        this.total = total.add(item.getGame().getPrice());
+        this.total = (item.getGame().getPrice().multiply(new BigDecimal(item.getQuantity()))).add(total);
+        this.totalItems = totalItems.add(new BigInteger(item.getQuantity()));
     }
 
-    public Integer getTotalItems() {
-        return items.size();
+    public BigInteger getTotalItems() {
+        return totalItems;
     }
 
     public void remove(int itemIndex) {
         Item removed = items.remove(itemIndex);
-        this.total = total.subtract(removed.getGame().getPrice());
+        this.total = total.subtract(new BigDecimal(removed.getQuantity()).multiply(removed.getGame().getPrice()));
 
     }
 

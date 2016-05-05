@@ -5,7 +5,7 @@ import br.com.timetrialfactory.model.entity.Game;
 public class Item {
 
     private Game game;
-    private Integer quantity;
+    private String quantity;
 
     public Game getGame() {
         return game;
@@ -15,11 +15,11 @@ public class Item {
         this.game = game;
     }
 
-    public Integer getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
