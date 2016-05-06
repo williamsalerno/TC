@@ -45,7 +45,7 @@ public class Cart {
     public void remove(int itemIndex) {
         Item removed = items.remove(itemIndex);
         this.total = total.subtract(new BigDecimal(removed.getQuantity()).multiply(removed.getGame().getPrice()));
-
+        this.totalItems = totalItems.subtract(new BigInteger(removed.getQuantity()));
     }
 
 }

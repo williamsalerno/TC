@@ -1,18 +1,20 @@
 package br.com.timetrialfactory.model.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 
 import br.com.timetrialfactory.model.entity.enums.PhoneType;
 
-@Entity
+@Embeddable
 public class Phone {
 
+    @Column(name = "Phone_Type", nullable = false)
     private PhoneType phoneType;
 
-    private int ddd;
+    @Column(name = "Phone_Ddd", nullable = false)
+    private Integer ddd;
 
-    @Column(unique = true)
+    @Column(name = "Phone_Number", nullable = false, unique = true)
     private String number;
 
     public PhoneType getPhoneType() {
@@ -23,11 +25,11 @@ public class Phone {
         this.phoneType = phoneType;
     }
 
-    public int getDdd() {
+    public Integer getDdd() {
         return ddd;
     }
 
-    public void setDdd(int ddd) {
+    public void setDdd(Integer ddd) {
         this.ddd = ddd;
     }
 

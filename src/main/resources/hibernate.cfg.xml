@@ -17,6 +17,8 @@
 
 		<mapping class="br.com.timetrialfactory.model.entity.Game" />
 		<mapping class="br.com.timetrialfactory.model.entity.User" />
+		<mapping class="br.com.timetrialfactory.model.entity.Address" />
+		<mapping class="br.com.timetrialfactory.model.entity.Phone" />
 
 	</session-factory>
 

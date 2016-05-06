@@ -24,13 +24,13 @@
 					width="100" height="100" /></td>
 				<td>${game.title }</td>
 				<td>${game.price }</td>
-				<td>
-					<form action="<c:url value="/cart"/>" method="post">
-						<input type="hidden" name="item.game.id" value="${game.id }" /> <input
-							class="qtde" name="item.quantity" value="1" />
-						<button type="submit">Adicionar</button>
-					</form>
-				</td>
+				<td><c:if test="${userWeb.logged}">
+						<form action="<c:url value="/cart"/>" method="post">
+							<input type="hidden" name="item.game.id" value="${game.id }" />
+							<input class="qtde" name="item.quantity" value="1" />
+							<button type="submit">Adicionar</button>
+						</form>
+					</c:if></td>
 				<c:if test="${userWeb.logged }">
 					<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
 				</c:if>

@@ -1,18 +1,23 @@
 package br.com.timetrialfactory.model.entity;
 
-import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 import br.com.timetrialfactory.model.entity.enums.Country;
 
-@Entity
+@Embeddable
 public class Address {
 
+    @Column(name = "Address_Country", nullable = true)
     private Country country;
 
+    @Column(name = "Address_State", nullable = false)
     private String state;
 
+    @Column(name = "Address_City", nullable = true)
     private String city;
 
+    @Column(name = "Address_Cep", nullable = true)
     private String cep;
 
     public Country getCountry() {

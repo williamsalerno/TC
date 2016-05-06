@@ -28,10 +28,10 @@ public class UsersController {
 
     @Post("/users")
     public void add(final User user) {
-//        if (dao.userExists(user)) {
-//            validator.add(new ValidationMessage("Login já existe", "Erro: "));
-//        }
-//        validator.onErrorUsePageOf(this).newUser();
+        if (dao.userExists(user)) {
+            validator.add(new ValidationMessage("Login já existe", "Erro: "));
+        }
+        validator.onErrorUsePageOf(this).newUser();
         dao.insert(user);
         result.redirectTo(GamesController.class).list();
     }
