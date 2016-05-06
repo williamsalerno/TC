@@ -17,33 +17,39 @@ public class User {
     @Id
     @SequenceGenerator(name = "users_seq", sequenceName = "users_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "users_seq")
+    @Column(name = "User_Id")
     private Long id;
 
-    @Column(unique = true)
+    @Column(name = "User_Cpf", unique = true)
     private String cpf;
 
     @NotNull
+    @Column(name = "User_Name", nullable = false)
     private String name;
 
     @NotNull
+    @Column(name = "User_LastName", nullable = false)
     private String lastName;
 
     @NotNull
-    @Column(unique = true)
+    @Column(name = "User_Login", nullable = false, unique = true)
     private String login;
 
     @NotNull
+    @Column(name = "User_Password", nullable = false)
     private String password;
 
     @NotNull
     @Email(regexp = "[a-z]+@{1}\\w+\\.com{1}(\\.br)*", message = "O email informado é inválido.")
-    @Column(unique = true)
+    @Column(name = "User_Email", nullable = false, unique = true)
     private String email;
 
     @Embedded
+    @Column(name = "User_Address")
     private Address address;
 
     @Embedded
+    @Column(name = "User_Phone")
     private Phone phone;
 
     public Long getId() {
