@@ -53,7 +53,11 @@ public class GameDAO {
 
     public void recharge(Game game) {
         session.refresh(game);
+    }
 
+    public boolean gameExists(Game game) {
+        Game found = (Game) session.createCriteria(Game.class).add(Restrictions.eq("title", game.getTitle())).uniqueResult();
+        return found != null;
     }
 
 }

@@ -2,19 +2,22 @@ package br.com.timetrialfactory.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import br.com.timetrialfactory.model.entity.enums.PhoneType;
 
 @Embeddable
 public class Phone {
 
-    @Column(name = "Phone_Type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Phone_Type")
     private PhoneType phoneType;
 
-    @Column(name = "Phone_Ddd", nullable = false)
+    @Column(name = "Phone_Ddd")
     private Integer ddd;
 
-    @Column(name = "Phone_Number", nullable = false, unique = true)
+    @Column(name = "Phone_Number")
     private String number;
 
     public PhoneType getPhoneType() {

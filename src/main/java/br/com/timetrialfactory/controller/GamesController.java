@@ -9,6 +9,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
+import br.com.caelum.vraptor.validator.ValidationMessage;
 import br.com.caelum.vraptor.view.Results;
 import br.com.timetrialfactory.annotations.Restrict;
 import br.com.timetrialfactory.dao.GameDAO;
@@ -39,6 +40,9 @@ public class GamesController {
     @Post("/games")
     public void add(final Game game) {
         validator.validate(game);
+        if (dao.gameExists(game)) {
+            validator.add(new ValidationMessage(" Título duplicado na base de dados.", "Erro "));
+        }
         validator.onErrorUsePageOf(GamesController.class).form();
         dao.insert(game);
         this.result.redirectTo(this).list();
@@ -53,10 +57,13 @@ public class GamesController {
     @Restrict
     @Put("/games/{game.id}")
     public void change(Game game) {
-        validator.validate(game);
+        if (dao.gameExists(game)) {
+            validator.add(new ValidationMessage(" Título duplicado na base de dados.", "Erro "));
+        }
         validator.onErrorUsePageOf(this).edit(game.getId());
         dao.update(game);
         this.result.redirectTo(this).list();
+
     }
 
     @Restrict

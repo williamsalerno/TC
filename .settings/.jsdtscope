@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/main/webapp"/>
-	<classpathentry excluding="**/*.min.js|**/node_modules/*|**/bower_components/*" kind="src" path="target/m2e-wtp/web-resources"/>
+	<classpathentry excluding="js/|css/|fonts/" kind="src" path="src/main/webapp"/>
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
 		<attributes>
@@ -9,5 +8,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
+	<classpathentry kind="lib" path="src/main/webapp/css"/>
+	<classpathentry kind="lib" path="src/main/webapp/fonts"/>
+	<classpathentry kind="lib" path="src/main/webapp/js"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

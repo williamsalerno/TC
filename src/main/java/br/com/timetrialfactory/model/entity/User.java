@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.NotNull;
+import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -23,33 +23,28 @@ public class User {
     @Column(name = "User_Cpf", unique = true)
     private String cpf;
 
-    @NotNull
     @Column(name = "User_Name", nullable = false)
     private String name;
 
-    @NotNull
     @Column(name = "User_LastName", nullable = false)
     private String lastName;
 
-    @NotNull
     @Column(name = "User_Login", nullable = false, unique = true)
     private String login;
 
-    @NotNull
     @Column(name = "User_Password", nullable = false)
     private String password;
 
-    @NotNull
     @Email(regexp = "[a-z]+@{1}\\w+\\.com{1}(\\.br)*", message = "O email informado é inválido.")
     @Column(name = "User_Email", nullable = false, unique = true)
     private String email;
 
     @Embedded
-    @Column(name = "User_Address")
+    @Valid
     private Address address;
 
     @Embedded
-    @Column(name = "User_Phone")
+    @Valid
     private Phone phone;
 
     public Long getId() {
@@ -108,20 +103,20 @@ public class User {
         this.email = email;
     }
 
-    // public Address getAddress() {
-    // return address;
-    // }
-    //
-    // public void setAddress(Address address) {
-    // this.address = address;
-    // }
-    //
-    // public Phone getPhone() {
-    // return phone;
-    // }
-    //
-    // public void setPhone(Phone phone) {
-    // this.phone = phone;
-    // }
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
 
 }

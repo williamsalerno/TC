@@ -21,6 +21,7 @@
 	</div>
 	<div>
 		<h1>Criar novo usuário</h1>
+		<label>Todos os campos são obrigatórios</label>
 		<form id="usersForm" action="<c:url value="/users"/>" method="post">
 			<fieldset>
 				<legend>Dados pessoais</legend>

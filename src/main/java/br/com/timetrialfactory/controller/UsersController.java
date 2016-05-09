@@ -29,7 +29,7 @@ public class UsersController {
     @Post("/users")
     public void add(final User user) {
         if (dao.userExists(user)) {
-            validator.add(new ValidationMessage("Login já existe", "Erro: "));
+            validator.add(new ValidationMessage(" Login já existe", "Erro "));
         }
         validator.onErrorUsePageOf(this).newUser();
         dao.insert(user);
@@ -50,7 +50,7 @@ public class UsersController {
     public void login(User user) {
         User loaded = dao.load(user);
         if (loaded == null) {
-            validator.add(new ValidationMessage("Login e/ou senha inválidos", "Erro: "));
+            validator.add(new ValidationMessage(" Login e/ou senha inválidos", "Erro "));
         }
         validator.onErrorUsePageOf(this).loginForm();
         userWeb.login(loaded);

@@ -2,22 +2,25 @@ package br.com.timetrialfactory.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import br.com.timetrialfactory.model.entity.enums.Country;
 
 @Embeddable
 public class Address {
 
-    @Column(name = "Address_Country", nullable = true)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Address_Country")
     private Country country;
 
-    @Column(name = "Address_State", nullable = false)
+    @Column(name = "Address_State")
     private String state;
 
-    @Column(name = "Address_City", nullable = true)
+    @Column(name = "Address_City")
     private String city;
 
-    @Column(name = "Address_Cep", nullable = true)
+    @Column(name = "Address_Cep")
     private String cep;
 
     public Country getCountry() {
