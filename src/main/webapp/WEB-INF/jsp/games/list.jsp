@@ -17,11 +17,17 @@
 					<td>${game.title }</td>
 					<td>${game.price }</td>
 					<td><c:if test="${userWeb.logged}">
+							<c:if test="${item.inCart == true }">
+								<button type="submit" class="btn btn-default disabled"
+									name="item.inCart">Jogo já adicionado</button>
+							</c:if>
 							<form action="<c:url value="/cart"/>" method="post">
 								<input type="hidden" name="item.game.id" value="${game.id }" />
-								<input class="qtde" name="item.quantity" value="1" />
-								<button type="submit">Adicionar</button>
+								<input type="hidden" name="item.inCart" value="true" />
+								<button type="submit" class="btn btn-default">Adicionar
+									ao carrinho</button>
 							</form>
+
 						</c:if></td>
 					<c:if test="${userWeb.logged }">
 						<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
@@ -38,4 +44,4 @@
 		</form>
 	</c:if>
 </div>
-</html>
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>

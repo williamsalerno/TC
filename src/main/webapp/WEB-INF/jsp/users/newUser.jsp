@@ -122,5 +122,4 @@
 <script type="text/javascript">
 	$('#usersForm').validate();
 </script>
-</body>
-</html>
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>

@@ -4,23 +4,23 @@ import br.com.timetrialfactory.model.entity.Game;
 
 public class Item {
 
-    private Game game;
-    private String quantity;
+	private Game game;
+	private Boolean inCart = false;
 
-    public Game getGame() {
-        return game;
-    }
+	public Game getGame() {
+		return game;
+	}
 
-    public void setGame(Game game) {
-        this.game = game;
-    }
+	public void setGame(Game game) {
+		this.game = game;
+	}
 
-    public String getQuantity() {
-        return quantity;
-    }
+	protected Boolean getInCart() {
+		return inCart;
+	}
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
+	protected void setInCart(Boolean inCart) {
+		this.inCart = inCart;
+	}
 
 }

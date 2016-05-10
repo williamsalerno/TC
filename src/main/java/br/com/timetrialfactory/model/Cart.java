@@ -12,40 +12,33 @@ import br.com.caelum.vraptor.ioc.SessionScoped;
 @SessionScoped
 public class Cart {
 
-    private List<Item> items = new ArrayList<Item>();
-    private BigDecimal total = new BigDecimal("0.0");
-    private BigInteger totalItems = new BigInteger("0");
+	private List<Item> items = new ArrayList<Item>();
+	private BigDecimal total = new BigDecimal("0.0");
 
-    public List<Item> getItems() {
-        return items;
-    }
+	public List<Item> getItems() {
+		return items;
+	}
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
 
-    public BigDecimal getTotal() {
-        return total;
-    }
+	public BigDecimal getTotal() {
+		return total;
+	}
 
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
 
-    public void add(Item item) {
-        this.items.add(item);
-        this.total = (item.getGame().getPrice().multiply(new BigDecimal(item.getQuantity()))).add(total);
-        this.totalItems = totalItems.add(new BigInteger(item.getQuantity()));
-    }
+	public void add(Item item) {
+		this.items.add(item);
+		this.total = (item.getGame().getPrice()).add(total);
+	}
 
-    public BigInteger getTotalItems() {
-        return totalItems;
-    }
-
-    public void remove(int itemIndex) {
-        Item removed = items.remove(itemIndex);
-        this.total = total.subtract(new BigDecimal(removed.getQuantity()).multiply(removed.getGame().getPrice()));
-        this.totalItems = totalItems.subtract(new BigInteger(removed.getQuantity()));
-    }
+	public void remove(int itemIndex) {
+		Item removed = items.remove(itemIndex);
+		this.total = total.subtract(removed.getGame().getPrice());
+	}
 
 }
