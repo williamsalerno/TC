@@ -10,24 +10,29 @@ import br.com.timetrialfactory.model.entity.User;
 @Component
 public class UserDAO {
 
-    private final Session session;
+	private final Session session;
 
-    public UserDAO(Session session) {
-        this.session = session;
-    }
+	public UserDAO(Session session) {
+		this.session = session;
+	}
 
-    public boolean userExists(User user) {
-        User found = (User) session.createCriteria(User.class).add(Restrictions.eq("login", user.getLogin())).uniqueResult();
-        return found != null;
-    }
+	public boolean userExists(User user) {
+		User found = (User) session.createCriteria(User.class)
+				.add(Restrictions.eq("login", user.getLogin()))
+				.add(Restrictions.eq("cpf", user.getCpf())).uniqueResult();
+		return found != null;
+	}
 
-    public void insert(User user) {
-        Transaction tx = session.beginTransaction();
-        this.session.save(user);
-        tx.commit();
-    }
+	public void insert(User user) {
+		Transaction tx = session.beginTransaction();
+		this.session.save(user);
+		tx.commit();
+	}
 
-    public User load(User user) {
-        return (User) this.session.createCriteria(User.class).add(Restrictions.eq("login", user.getLogin())).add(Restrictions.eq("password", user.getPassword())).uniqueResult();
-    }
+	public User load(User user) {
+		return (User) this.session.createCriteria(User.class)
+				.add(Restrictions.eq("login", user.getLogin()))
+				.add(Restrictions.eq("password", user.getPassword()))
+				.uniqueResult();
+	}
 }

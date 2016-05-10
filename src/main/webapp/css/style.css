@@ -1,0 +1,37 @@
+.navbar-brand>img {
+	max-width: 100%;
+}
+
+.navbar-inverse {
+	background-color: #000 !important;
+	border-color: #000 !important;
+}
+
+.userWeb-logged {
+	color: white;
+	text-align: center;
+}
+
+.container {
+	margin-top: 51px;
+}
+
+@media (min-width: 1200px)
+.content {
+    width: 1170px;
+}
+@media (min-width: 992px)
+.content {
+    width: 970px;
+}
+@media (min-width: 768px)
+.content {
+    width: 750px;
+}
+.content {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1170px;
+}
