@@ -20,5 +20,5 @@
 </head>
 <body>
 	<header>
-		<%@ include file="/WEB-INF/jspf/menu.jspf"%>
+		<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
 	</header>
