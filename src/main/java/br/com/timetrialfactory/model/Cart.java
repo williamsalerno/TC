@@ -1,7 +1,6 @@
 package br.com.timetrialfactory.model;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +36,8 @@ public class Cart {
 	}
 
 	public void remove(int itemIndex) {
-		Item removed = items.remove(itemIndex);
+		Item removed = new Item();
+		removed = items.remove(itemIndex);
 		this.total = total.subtract(removed.getGame().getPrice());
 	}
 

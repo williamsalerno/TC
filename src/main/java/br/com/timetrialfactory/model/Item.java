@@ -1,11 +1,16 @@
 package br.com.timetrialfactory.model;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import br.com.caelum.vraptor.ioc.Component;
 import br.com.timetrialfactory.model.entity.Game;
 
+@Component
 public class Item {
 
 	private Game game;
-	private Boolean inCart = false;
+	private Integer quantity;
 
 	public Game getGame() {
 		return game;
@@ -15,12 +20,27 @@ public class Item {
 		this.game = game;
 	}
 
-	protected Boolean getInCart() {
-		return inCart;
+	public Integer getQuantity() {
+		return quantity;
 	}
 
-	protected void setInCart(Boolean inCart) {
-		this.inCart = inCart;
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder().append(this.game).toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Item other;
+		if (!(obj instanceof Item)) {
+			return false;
+		}
+		other = (Item) obj;
+		return new EqualsBuilder().append(this.game, other.game).isEquals();
 	}
 
 }

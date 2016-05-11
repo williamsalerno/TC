@@ -21,14 +21,16 @@
 					<c:if test="${userWeb.logged}">
 						<li style="padding-top: 14.5px"><span class="userWeb-logged">Olá,
 								${userWeb.name }!</span></li>
+						<li><a href="<c:url value="/cart"/>"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
 						<li><a href="<c:url value="/logout"/>"><span
-								class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					</c:if>
 					<c:if test="${empty userWeb or !userWeb.logged}">
 						<li><a href="<c:url value="/users/new"/>"><span
-								class="glyphicon glyphicon-user"></span>Cadastre-se</a></li>
+								class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
 						<li><a href="<c:url value="/login"/>"><span
-								class="glyphicon glyphicon-log-in"></span>Login</a></li>
+								class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</c:if>
 				</ul>
 			</div>

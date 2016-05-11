@@ -17,21 +17,25 @@
 					<td>${game.title }</td>
 					<td>${game.price }</td>
 					<td><c:if test="${userWeb.logged}">
-							<c:if test="${item.inCart == true }">
-								<button type="submit" class="btn btn-default disabled"
-									name="item.inCart">Jogo já adicionado</button>
-							</c:if>
-							<form action="<c:url value="/cart"/>" method="post">
-								<input type="hidden" name="item.game.id" value="${game.id }" />
-								<input type="hidden" name="item.inCart" value="true" />
-								<button type="submit" class="btn btn-default">Adicionar
-									ao carrinho</button>
-							</form>
+							<c:choose>
+								<c:when test="${item.quantity == 1}">
+									<input type="hidden" name="item.game.id" value="${game.id }" />
+									<button class="btn btn-default disabled">Jogo já
+										adicionado</button>
+								</c:when>
+								<c:otherwise>
+									<form action="<c:url value="/cart"/>" method="post">
+										<input type="hidden" name="item.game.id" value="${game.id }" />
+										<input class="qtde" name="item.quantity" value="1" />
+										<button type="submit" class="btn btn-default">Adicionar
+											ao carrinho</button>
+									</form>
+								</c:otherwise>
+							</c:choose>
 
+						</c:if> <c:if test="${userWeb.logged }">
+							<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
 						</c:if></td>
-					<c:if test="${userWeb.logged }">
-						<td><a href="<c:url value="/games/${game.id }"/>">Editar</a></td>
-					</c:if>
 				</tr>
 			</c:forEach>
 		</tbody>

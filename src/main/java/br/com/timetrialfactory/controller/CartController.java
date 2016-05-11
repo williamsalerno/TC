@@ -12,30 +12,30 @@ import br.com.timetrialfactory.model.Item;
 @Resource
 public class CartController {
 
-    private final Cart cart;
-    private final GameDAO dao;
-    private final Result result;
+	private final Cart cart;
+	private final GameDAO dao;
+	private final Result result;
 
-    public CartController(Cart cart, GameDAO dao, Result result) {
-        this.cart = cart;
-        this.dao = dao;
-        this.result = result;
-    }
+	public CartController(Cart cart, GameDAO dao, Result result) {
+		this.cart = cart;
+		this.dao = dao;
+		this.result = result;
+	}
 
-    @Get("/cart")
-    public void view() {
-    }
+	@Get("/cart")
+	public void view() {
+	}
 
-    @Post("/cart")
-    public void add(Item item) {
-        dao.recharge(item.getGame());
-        cart.add(item);
-        result.redirectTo(this).view();
-    }
+	@Post("/cart")
+	public void add(Item item) {
+		dao.recharge(item.getGame());
+		cart.add(item);
+		result.redirectTo(this).view();
+	}
 
-    @Delete("/cart/{itemIndex}")
-    public void remove(int itemIndex) {
-        cart.remove(itemIndex);
-        result.redirectTo(this).view();
-    }
+	@Delete("/cart/{itemIndex}")
+	public void remove(int itemIndex) {
+		cart.remove(itemIndex);
+		result.redirectTo(this).view();
+	}
 }

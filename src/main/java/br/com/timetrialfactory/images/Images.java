@@ -22,7 +22,7 @@ public class Images {
     private File imagesFolder;
 
     public Images(ServletContext context) {
-        imagesFolder = new File("C:/uploadImagens");
+		imagesFolder = new File("C:/uploadImagens");
         imagesFolder.mkdir();
     }
 
