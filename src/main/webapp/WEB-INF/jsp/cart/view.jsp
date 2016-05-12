@@ -6,8 +6,6 @@
 		<tr>
 			<th>Título</th>
 			<th>Preço</th>
-			<th>Qtde</th>
-			<th>Total</th>
 		</tr>
 	</thead>
 	<tbody>

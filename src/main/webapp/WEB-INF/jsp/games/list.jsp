@@ -10,7 +10,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${gameList}" var="game">
+			<c:forEach items="${gameList}" var="game" varStatus="test">
 				<tr>
 					<td><img src="<c:url value="/games/${game.id}/image"/>"
 						width="100" height="100" /></td>
@@ -18,7 +18,7 @@
 					<td>${game.price }</td>
 					<td><c:if test="${userWeb.logged}">
 							<c:choose>
-								<c:when test="${item.quantity == 1}">
+								<c:when test="${game.id eq cart.item.game.id}">
 									<input type="hidden" name="item.game.id" value="${game.id }" />
 									<button class="btn btn-default disabled">Jogo já
 										adicionado</button>
@@ -26,7 +26,6 @@
 								<c:otherwise>
 									<form action="<c:url value="/cart"/>" method="post">
 										<input type="hidden" name="item.game.id" value="${game.id }" />
-										<input class="qtde" name="item.quantity" value="1" />
 										<button type="submit" class="btn btn-default">Adicionar
 											ao carrinho</button>
 									</form>

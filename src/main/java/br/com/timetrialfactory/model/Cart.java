@@ -13,6 +13,8 @@ public class Cart {
 
 	private List<Item> items = new ArrayList<Item>();
 	private BigDecimal total = new BigDecimal("0.0");
+	private Long totalIds = 0L;
+	private Item item;
 
 	public List<Item> getItems() {
 		return items;
@@ -31,14 +33,32 @@ public class Cart {
 	}
 
 	public void add(Item item) {
-		this.items.add(item);
-		this.total = (item.getGame().getPrice()).add(total);
+		this.item = item;
+		this.items.add(this.item);
+		this.total = (this.item.getGame().getPrice()).add(total);
+		this.totalIds = this.totalIds + this.item.getGame().getId();
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
 	public void remove(int itemIndex) {
-		Item removed = new Item();
-		removed = items.remove(itemIndex);
-		this.total = total.subtract(removed.getGame().getPrice());
+		this.item = items.remove(itemIndex);
+		this.total = total.subtract(this.item.getGame().getPrice());
+		this.totalIds = this.totalIds - this.item.getGame().getId();
+	}
+
+	public Long getTotalIds() {
+		return totalIds;
+	}
+
+	public void setTotalIds(Long totalIds) {
+		this.totalIds = totalIds;
 	}
 
 }
