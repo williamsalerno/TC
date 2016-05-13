@@ -16,22 +16,82 @@
 	margin-top: 51px;
 }
 
-@media (min-width: 1200px)
-.content {
-    width: 1170px;
+@media ( min-width : 1200px) .content {
+	width
+	
+	
+	
+	
+	:
+	
+	
+	 
+	
+	
+	1170
+	px
+	
+	
+	
+	
+	;
 }
-@media (min-width: 992px)
-.content {
-    width: 970px;
+
+@media ( min-width : 992px) .content {
+	width
+	
+	
+	
+	
+	:
+	
+	
+	 
+	
+	
+	970
+	px
+	
+	
+	
+	
+	;
 }
-@media (min-width: 768px)
-.content {
-    width: 750px;
+
+@media ( min-width : 768px) .content {
+	width
+	
+	
+	
+	
+	:
+	
+	
+	 
+	
+	
+	750
+	px
+	
+	
+	
+	
+	;
 }
+
 .content {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1170px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1170px;
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+
+button, input {
+	color: gray;
 }

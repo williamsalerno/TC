@@ -30,14 +30,12 @@ public class CartController {
 	public void add(Item item) {
 		dao.recharge(item.getGame());
 		cart.add(item);
-		cart.getGameInCart();
 		result.redirectTo(this).view();
 	}
 
 	@Delete("/cart/{itemIndex}")
 	public void remove(int itemIndex) {
 		cart.remove(itemIndex);
-		cart.getGameInCart();
 		result.redirectTo(this).view();
 	}
 }

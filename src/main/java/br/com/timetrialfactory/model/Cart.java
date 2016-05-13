@@ -40,12 +40,4 @@ public class Cart {
 		removed = this.items.remove(itemIndex);
 		this.total = total.subtract(removed.getGame().getPrice());
 	}
-
-	public Long getGameInCart() {
-		Long id = 0L;
-		for (Item i : this.items) {
-			id = i.getGame().getId();
-		}
-		return id;
-	}
 }

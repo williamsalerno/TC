@@ -18,8 +18,6 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="/webapp/js/myjquery.js"></script>
 </head>
-
-</head>
 <body>
 	<header>
 		<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
