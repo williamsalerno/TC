@@ -16,67 +16,26 @@
 	margin-top: 51px;
 }
 
-@media ( min-width : 1200px) .content {
-	width
-	
-	
-	
-	
-	:
-	
-	
-	 
-	
-	
-	1170
-	px
-	
-	
-	
-	
-	;
+.containerLogin {
+	margin-top: 200px;
 }
 
-@media ( min-width : 992px) .content {
-	width
-	
-	
-	
-	
-	:
-	
-	
-	 
-	
-	
-	970
-	px
-	
-	
-	
-	
-	;
+@media ( min-width : 1200px) {
+	.content {
+		width: 1170 px;
+	}
 }
 
-@media ( min-width : 768px) .content {
-	width
-	
-	
-	
-	
-	:
-	
-	
-	 
-	
-	
-	750
-	px
-	
-	
-	
-	
-	;
+@media ( min-width : 992px) {
+	.content {
+		width: 970 px;
+	}
+}
+
+@media ( min-width : 768px) {
+	.content {
+		width: 750 px;
+	}
 }
 
 .content {
@@ -87,6 +46,44 @@
 	max-width: 1170px;
 }
 
+.login {
+	position: relative;
+	margin: 0 auto;
+	background: gray;
+	width: 350px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 10px #333;
+	padding: 15px;
+	border-top: 3px solid #ff8000;
+	border-bottom: 3px solid #ff8000;
+}
+
+.login .form {
+	padding-top: 20px;
+}
+
+.login .form input[type="text"], .login .form input[type="password"] {
+	width: 70%;
+	margin-left: 15%;
+	margin-bottom: 15px;
+	height: 35px;
+	border-radius: 5px;
+	outline: 0;
+	-moz-outline-style: none;
+	border: 1px solid #bbb;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+}
+
+.login .form input[type="checkbox"] {
+	
+}
+
+.login .form input[type="text"]:focus, .login .form input[type="password"]:focus
+	{
+	border: 1px solid #FF983C;
+}
+
 body {
 	background-color: black;
 	color: white;
@@ -94,4 +91,42 @@ body {
 
 button, input {
 	color: gray;
+}
+
+legend {
+	color: white;
+}
+
+.login h2 {
+	text-align: center;
+	font-weight: 200;
+	font-size: 2em;
+	margin-top: 10px;
+	color: #FF983C;
+}
+
+.login .form button {
+	background: #c0c0c0;
+	border: none;
+	color: white;
+	font-size: 18px;
+	font-weight: 200;
+	cursor: pointer;
+	transition: box-shadow .4s ease;
+	width: 40%;
+	margin-left: 30%;
+	margin-bottom: 15px;
+	margin-top: 20px;
+	height: 40px;
+	border-radius: 4px;
+	transition: background 0.3s ease-in-out;
+}
+
+.login .form button:hover {
+	box-shadow: 1px 1px 5px #555;
+	background: #ff8040;
+}
+
+.login .form button:active {
+	box-shadow: 1px 1px 7px #222;
 }

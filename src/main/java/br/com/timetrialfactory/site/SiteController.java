@@ -7,7 +7,7 @@ import br.com.caelum.vraptor.Result;
 @Resource
 public class SiteController {
 
-	@Get("/home")
+	@Get("/")
 	public void home() {
 
 	}
