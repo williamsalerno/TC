@@ -3,7 +3,7 @@
 	<div class="content">
 		<div class="login">
 			<h2>Login</h2>
-			<hr class="hr1">
+			<hr class="hr1" id="grad">
 			<div class="form">
 				<form action="<c:url value="/login"/>" method="POST">
 					<input id="login" type="text" name="user.login"

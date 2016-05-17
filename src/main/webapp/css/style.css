@@ -155,13 +155,17 @@ legend {
 .login .hr1 {
 	position: relative;
 	left: 0px;
-	top: -113px;
+	top: -105px;
 	transform: rotate(90deg);
 	margin-top: 30px;
 	margin-bottom: -30px;
 	border: 0;
-	width: 72px;
-	border-top: 3px solid #FF8000;
+	width: 89px;
+	height: 3px;
+	background-image: -webkit-linear-gradient(left, #FF8000, transparent);
+	background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+	background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+	background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
 }
 
 .login .hr2 {
@@ -192,4 +196,10 @@ legend {
 
 .affix {
 	width: 100%;
+}
+
+#grad {
+	/* Standard syntax */
+	background: linear-gradient(#FF8000, transparent);
+	/* Standard syntax */
 }
