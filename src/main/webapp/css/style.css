@@ -27,6 +27,7 @@
 
 .containerLogin {
 	margin-top: 150px;
+	padding-bottom: 150px;
 }
 
 .containerLogin img {
@@ -159,4 +160,8 @@ legend {
 
 .imageHome {
 	text-align: center;
+}
+
+.affix {
+	width: 100%;
 }
