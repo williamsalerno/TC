@@ -3,7 +3,7 @@
 	<c:if test="${userWeb.logged }">
 		<form action="<c:url value="/games/new"/>" method="get">
 			<p>
-				<button type="submit">Novo Jogo</button>
+				<button class="btn btn-default" type="submit">Novo Jogo</button>
 			</p>
 		</form>
 	</c:if>
@@ -17,10 +17,13 @@
 					<th>Título</th>
 					<th>Preço</th>
 					<th>Comprar</th>
+					<c:if test="${userWeb.logged }">
+						<th>Editar</th>
+					</c:if>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${gameList}" var="game">
+				<c:forEach items="${gameList}" var="game" varStatus="g">
 					<tr>
 						<td><img src="<c:url value="/games/${game.id}/image"/>"
 							width="100" height="100" /></td>
@@ -58,6 +61,15 @@
 								</c:choose>
 
 							</c:if></td>
+						<c:if test="${userWeb.logged }">
+							<td>
+								<form action="<c:url value="/games/${game.id}"/>">
+									<button type="submit" class="btn btn-default">Editar
+										jogo</button>
+								</form>
+							</td>
+						</c:if>
+
 					</tr>
 				</c:forEach>
 
