@@ -3,8 +3,17 @@
 }
 
 .navbar-inverse {
+	padding: 4px 0px;
 	background-color: #000 !important;
 	border-color: #000 !important;
+	overflow-x: hidden;
+}
+
+.navbar-collapse {
+	border-radius: 5px;
+	border-bottom: 3px solid #FF8F12 !important;
+	padding: 3px 0;
+	overflow-x: hidden !important;
 }
 
 .userWeb-logged {
@@ -17,7 +26,12 @@
 }
 
 .containerLogin {
-	margin-top: 200px;
+	margin-top: 150px;
+}
+
+.containerLogin img {
+	margin-bottom: -30px;
+	text-align: center;
 }
 
 @media ( min-width : 1200px) {
@@ -49,13 +63,15 @@
 .login {
 	position: relative;
 	margin: 0 auto;
-	background: gray;
+	background: #2F2F2F;
 	width: 350px;
 	border-radius: 3px;
 	box-shadow: 3px 3px 10px #333;
 	padding: 15px;
 	border-top: 3px solid #ff8000;
 	border-bottom: 3px solid #ff8000;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 .login .form {
@@ -129,4 +145,18 @@ legend {
 
 .login .form button:active {
 	box-shadow: 1px 1px 7px #222;
+}
+
+.container-fluid h1, .navbar-brand {
+	color: #F38A3E !important;
+	font-family: georgia, palatino, book antiqua, palatino linotype, serif;
+}
+
+.container-fluid p {
+	color: #B3B5B5;
+	font-size: 15px;
+}
+
+.imageHome {
+	text-align: center;
 }

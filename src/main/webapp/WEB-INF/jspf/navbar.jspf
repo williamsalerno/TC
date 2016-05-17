@@ -8,8 +8,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<c:url value="/"/>"
-					style="background-image: url(/timetrialfactory/ttf); background-repeat: no-repeat; background-position: center; width: 76px; /* padding: 5px; */ margin: 0; margin-right: 2px;"></a>
+				<a class="navbar-brand" href="<c:url value="/"/>">TimeTrial
+					Factory </a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">

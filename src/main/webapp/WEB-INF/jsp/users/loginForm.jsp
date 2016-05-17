@@ -2,7 +2,7 @@
 <div class="containerLogin">
 	<div class="content">
 		<div class="login">
-			<h2>Login Cliente</h2>
+			<h2>Login</h2>
 			<hr>
 			<div class="form">
 				<form action="<c:url value="/login"/>" method="POST">
