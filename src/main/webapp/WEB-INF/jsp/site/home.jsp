@@ -3,7 +3,7 @@
 <div class="games-section-title">
 	<div class="container">
 		<h1>
-			Timetrial Factory Games <br> <small>Conheça nossos games</small>
+			Timetrial Factory<br> <small>Build your own way</small>
 		</h1>
 	</div>
 </div>
@@ -17,7 +17,7 @@
 						data-holder-rendered="true"
 						style="height: 200px; width: 100%; display: block;">
 					<div class="caption">
-						<h3>Thumbnail label</h3>
+						<h3>Closer: Disruption</h3>
 						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
 							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
 							dolor id nibh ultricies vehicula ut id elit.</p>
@@ -83,7 +83,7 @@
 <div class="updates-section-title">
 	<div class="container">
 		<h1>
-			Atualizações<br> <small>Fique por dentro das novidades</small>
+			Novidades<br> <small>Closer: Disruption</small>
 		</h1>
 	</div>
 </div>
@@ -94,19 +94,17 @@
 				<div class="atualizacoes-links">
 					<div class="list-group" style="">
 						<a href="images/oferta.jpg" class="list-group-item active">
-							<h4 class="list-group-item-heading">Melhorias no sistemas
-								multiplayer</h4>
+							<h4 class="list-group-item-heading">Melhorias no enredo</h4>
 							<p class="list-group-item-text">Donec id elit non mi porta
 								gravida at eget metus. Maecenas sed diam eget risus varius
 								blandit.</p>
 						</a> <a href="images/disruption.png" class="list-group-item">
-							<h4 class="list-group-item-heading">Melhorias no sistema de
-								créditos</h4>
+							<h4 class="list-group-item-heading">Melhorias no layout</h4>
 							<p class="list-group-item-text">Donec id elit non mi porta
 								gravida at eget metus. Maecenas sed diam eget risus varius
 								blandit.</p>
 						</a> <a href="images/header.jpg" class="list-group-item">
-							<h4 class="list-group-item-heading">Melhorias na conexão</h4>
+							<h4 class="list-group-item-heading">Melhorias nos sistemas</h4>
 							<p class="list-group-item-text">Donec id elit non mi porta
 								gravida at eget metus. Maecenas sed diam eget risus varius
 								blandit.</p>
