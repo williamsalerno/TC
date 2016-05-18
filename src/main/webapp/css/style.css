@@ -10,6 +10,7 @@
 	position: absolute;
 	width: 100%;
 	top: -25px;
+	z-index: 1;
 }
 
 .navbar-header {
@@ -60,7 +61,6 @@
 		width: 1170 px;
 	}
 }
-
 
 @media ( min-width : 900px) {
 	.navbar-collapse.collapse {
@@ -350,6 +350,7 @@ footer {
 	border-color: #D8780C !important;
 	pointer-events: none;
 	cursor: default;
+	height: 118px;
 }
 
 .list-group-item {
@@ -434,4 +435,97 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 
 .aLogin a, .bLogin a {
 	color: #FDBA7F !important;
+}
+
+/*
+----------------------------------------
+ MUDANÇAS VICTOR - LAYOUT
+----------------------------------------
+*/
+#games-section {
+	width: 100%;
+	background-color: #000000;
+	text-align: center;
+	padding-bottom: 33px;
+	margin-top: 1px;
+	padding-top: 15px;
+}
+
+.games-section-title {
+	width: 100%;
+	background-color: #101010;
+	text-align: center;
+}
+
+.games-section-title .container>h1 {
+	color: #D0D0D0
+}
+
+#alert-jumbotron {
+	background-color: #2C3D50;
+	padding-top: 20px;
+	padding-bottom: 76px;
+	color: white;
+	background-image:
+		url(https://static.omelete.uol.com.br/media/extras/conteudos/uncharted-4-explosao.jpg);
+	background-repeat: no-repeat;
+	background-blend-mode: overlay;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.56), 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.updates-section-title {
+	width: 100%;
+	background-color: #101010;
+	text-align: center;
+	margin-top: -49px;
+}
+
+.updates-section-title .container>h1 {
+	color: #D0D0D0;
+}
+
+#updates {
+	background-color: #000000;
+	text-align: center;
+	color: white;
+	padding-bottom: 51px;
+}
+
+.atualizacoes {
+	height: auto;
+	padding-top: 31px;
+}
+
+.atualizacoes-row {
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.atualizacoes-links {
+	max-width: 45%;
+	float: left;
+}
+
+.atualizacoes-thumbnail {
+	max-width: 55%;
+	float: left;
+}
+
+.atualizacoes-thumbnail #updateImg {
+	max-width: 100%;
+}
+
+.row-item {
+	padding: 15px;
+}
+
+.row-item>img {
+	width: 235px;
+}
+
+.slider {
+	width: 100%;
+	height: 700px;
+	background-color: #CCC;
 }
