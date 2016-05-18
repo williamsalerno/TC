@@ -1,14 +1,12 @@
 <%@ include file="/WEB-INF/jspf/header.jspf"%>
-<div class="title"
-	style="width: 100%; background-color: #101010; text-align: center; margin-top: -50px;">
+<div class="games-section-title">
 	<div class="container">
-		<h1 style="color: #D0D0D0;">
+		<h1>
 			Timetrial Factory Games <br> <small>Conheça nossos games</small>
 		</h1>
 	</div>
 </div>
-<section id="games-section"
-	style="width: 100%; background-color: #000000; text-align: center; padding-bottom: 33px; margin-top: 1px; padding-top: 15px;">
+<section id="games-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
@@ -68,8 +66,7 @@
 		</div>
 	</div>
 </section>
-<section id="alert-jumbotron"
-	style="background-color: #2C3D50; padding-top: 20px; padding-bottom: 76px; color: white; background-image: url(https://static.omelete.uol.com.br/media/extras/conteudos/uncharted-4-explosao.jpg); background-repeat: no-repeat; background-blend-mode: overlay; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.56), 0 1px 2px rgba(0, 0, 0, 0.6);">
+<section id="alert-jumbotron">
 	<div class="container">
 		<h1>Hello, world!</h1>
 		<p>
@@ -82,21 +79,18 @@
 		</p>
 	</div>
 </section>
-<div class="title"
-	style="width: 100%; background-color: #101010; text-align: center; margin-top: -49px;">
+<div class="updates-section-title">
 	<div class="container">
-		<h1 style="color: #D0D0D0;">
+		<h1>
 			Atualizações<br> <small>Fique por dentro das novidades</small>
 		</h1>
 	</div>
 </div>
-<section id="updates"
-	style="background-color: #000000; text-align: center; color: white; padding-bottom: 51px;">
+<section id="updates">
 	<div class="container">
-		<div class="atualizacoes" style="height: auto; padding-top: 31px;">
-			<div class="atualizacoes-row"
-				style="left: 0; right: 0; margin: auto;">
-				<div class="atualizacoes-links" style="max-width: 45%; float: left;">
+		<div class="atualizacoes">
+			<div class="atualizacoes-row">
+				<div class="atualizacoes-links">
 					<div class="list-group" style="">
 						<a href="images/oferta.jpg" class="list-group-item active">
 							<h4 class="list-group-item-heading">Melhorias no sistemas
@@ -118,9 +112,8 @@
 						</a>
 					</div>
 				</div>
-				<div class="atualizacoes-thumbnail"
-					style="max-width: 55%; float: left;">
-					<img id="updateImg" src="images/oferta.jpg" style="max-width: 100%;">
+				<div class="atualizacoes-thumbnail">
+					<img id="updateImg" src="images/oferta.jpg">
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -131,14 +124,14 @@
 <section id="logotypes">
 	<div class="container">
 		<div class="logotypes-row">
-			<div style="padding: 15px;" class="row-item">
-			<img style="width: 235px;" src="images/disruption.png" alt="Disruption"/></div>
-			<div style="padding: 15px;" class="row-item">
-			<img style="width: 235px;" src="images/disruption.png" alt="Disruption"/></div>
-			<div style="padding: 15px;" class="row-item">
-			<img style="width: 235px;" src="images/disruption.png" alt="Disruption"/></div>
-			<div style="padding: 15px;" class="row-item">
-			<img style="width: 235px;" src="images/disruption.png" alt="Disruption"/></div>
+			<div class="row-item">
+			<img src="images/disruption.png" alt="Disruption"/></div>
+			<div class="row-item">
+			<img src="images/disruption.png" alt="Disruption"/></div>
+			<div class="row-item">
+			<img src="images/disruption.png" alt="Disruption"/></div>
+			<div class="row-item">
+			<img src="images/disruption.png" alt="Disruption"/></div>
 			<div class="clearfix"></div>
 		</div>
 	</div>

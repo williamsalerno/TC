@@ -5,7 +5,7 @@
 			<h2>Login</h2>
 			<hr class="hr1" id="grad">
 			<div class="form">
-				<form action="<c:url value="/login"/>" method="POST">
+				<form class="loginForm" action="<c:url value="/login"/>" method="POST">
 					<input id="login" type="text" name="user.login"
 						placeholder="Nome de usuário" /><input id="password"
 						type="password" name="user.password" placeholder="senha" />
