@@ -1,4 +1,5 @@
 <%@ include file="/WEB-INF/jspf/header.jspf"%>
+<%@ include file="/WEB-INF/jspf/slider.jspf"%>
 <div class="games-section-title">
 	<div class="container">
 		<h1>
@@ -125,13 +126,17 @@
 	<div class="container">
 		<div class="logotypes-row">
 			<div class="row-item">
-			<img src="images/disruption.png" alt="Disruption"/></div>
+				<img src="images/disruption.png" alt="Disruption" />
+			</div>
 			<div class="row-item">
-			<img src="images/disruption.png" alt="Disruption"/></div>
+				<img src="images/disruption.png" alt="Disruption" />
+			</div>
 			<div class="row-item">
-			<img src="images/disruption.png" alt="Disruption"/></div>
+				<img src="images/disruption.png" alt="Disruption" />
+			</div>
 			<div class="row-item">
-			<img src="images/disruption.png" alt="Disruption"/></div>
+				<img src="images/disruption.png" alt="Disruption" />
+			</div>
 			<div class="clearfix"></div>
 		</div>
 	</div>

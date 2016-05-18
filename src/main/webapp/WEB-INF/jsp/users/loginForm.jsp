@@ -3,9 +3,9 @@
 	<div class="content">
 		<div class="login">
 			<h2>Login</h2>
-			<hr class="hr1" id="grad">
+			<hr class="hr1">
 			<div class="form">
-				<form class="loginForm" action="<c:url value="/login"/>" method="POST">
+				<form action="<c:url value="/login"/>" method="POST">
 					<input id="login" type="text" name="user.login"
 						placeholder="Nome de usuário" /><input id="password"
 						type="password" name="user.password" placeholder="senha" />
@@ -21,7 +21,6 @@
 				<a href="<c:url value= "/users/new"/>">Esqueci minha senha </a>
 			</div>
 		</div>
-
 	</div>
 </div>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

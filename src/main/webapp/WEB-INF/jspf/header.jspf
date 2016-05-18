@@ -17,24 +17,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script
-	src="<c:url value="/js/jquery.puts.js"/>"></script>
-<script type="text/javascript">
-	$(function() {
-		var nav = $('#menuTop');
-		var slider = $('#slider').height() - 50;
-		$(window).scroll(function() {
-			if (slider < $(window).scrollTop()) {
-				nav.addClass('navbar-fixed-top');
-			} else {
-				nav.removeClass('navbar-fixed-top');
-			}
-		});
-	});
-</script>
+<script src="<c:url value="/js/jquery.puts.js"/>"></script>
 </head>
 <body>
 	<header>
 		<%@ include file="/WEB-INF/jspf/navbar.jspf"%>
-		<%@ include file="/WEB-INF/jspf/slider.jspf"%>
 	</header>

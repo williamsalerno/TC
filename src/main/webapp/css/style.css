@@ -3,7 +3,7 @@
 }
 
 .navbar-inverse {
-	padding: 12px 0px;
+	padding: 10px 0px;
 	background-color: transparent !important;
 	border-color: transparent !important;
 	overflow-x: hidden;
@@ -11,27 +11,6 @@
 	width: 100%;
 	top: -25px;
 	z-index: 1;
-}
-
-/**/
-.navbar-header {
-	padding-top: 25px;
-	padding-left: 21px;
-	top: -25px;
-	top: -25px;
-}
-
-.navbar-header {
-	padding-top: 25px;
-	padding-left: 21px;
-	top: -25px;
-}
-
-.container-fluid>.navbar-collapse, .container-fluid>.navbar-header,
-	.container>.navbar-collapse, .container>.navbar-header {
-	margin-right: 0;
-	margin-left: 0;
-	margin-top: -16px;
 }
 
 .navbar-header {
@@ -48,23 +27,14 @@
 }
 
 .navbar-collapse {
-	border-radius: 40px;
-	border-bottom: 3px solid #FF8F12 !important;
-	border-radius: 50px;
-	border-bottom: 3px solid #FFC277 !important;
-	border-top: 3px solid transparent !important;
-	border-radius: 50px;
-	border-bottom: 3px solid #FFC277 !important;
-	border-top: 3px solid transparent !important;
 	border-radius: 50px;
 	border-bottom: 3px solid #FFC277 !important;
 	border-top: 3px solid transparent !important;
 	padding: 25px 37px;
 	overflow-x: hidden !important;
 	background-color: #010101;
-	padding-top: 15px;
-	padding-top: 15px;
-	padding-top: 15px;
+	padding-top: 18px;
+	padding-bottom: 5px;
 }
 
 .userWeb-logged {
@@ -76,9 +46,10 @@
 	margin-top: 51px;
 }*/
 .containerLogin {
-	position: absolute;
+	margin: 100px 0;
+	padding-top: 70px;
 	width: 100%;
-	top: 25%;
+	padding-bottom: 0;
 }
 
 .containerLogin img {
@@ -91,7 +62,6 @@
 		width: 1170 px;
 	}
 }
-
 
 @media ( min-width : 900px) {
 	.navbar-collapse.collapse {
@@ -115,21 +85,6 @@
 .navbar-brand {
 	outline: 0 !important;
 	padding: 22px 15px;
-}
-
-.navbar-right {
-	float: right !important;
-	margin-right: 15px;
-}
-
-.navbar-header {
-	padding-left: 15px;
-	padding-top: 13px;
-}
-
-.navbar-brand {
-	outline: 0 !important;
-	padding: 18px 15px;
 }
 
 .content {
@@ -161,10 +116,6 @@
 	border-left: 1px solid rgba(255, 255, 255, 0.11);
 	border-right: 1px solid rgba(255, 255, 255, 0.11);
 	box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.75);
-}
-
-.loginForm {
-	padding: 18px 0;
 }
 
 .login .form {
