@@ -13,7 +13,15 @@
 				</form>
 			</div>
 			<hr class="hr2">
+			<div class=bLogin>
+				<a href="<c:url value= "/users/new"/>">Não tem uma conta? <br>Cadastre-se
+				</a>
+			</div>
+			<div class=aLogin>
+				<a href="<c:url value= "/users/new"/>">Esqueci minha senha </a>
+			</div>
 		</div>
+
 	</div>
 </div>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

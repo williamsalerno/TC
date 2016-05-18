@@ -3,17 +3,20 @@
 }
 
 .navbar-inverse {
-	padding: 4px 0px;
-	background-color: #000 !important;
-	border-color: #000 !important;
+	padding: 10px 0px;
+	background-color: transparent !important;
+	border-color: transparent !important;
 	overflow-x: hidden;
+	top: -25px;
 }
 
 .navbar-collapse {
-	border-radius: 5px;
-	border-bottom: 3px solid #FF8F12 !important;
+	border-radius: 50px;
+	border-bottom: 3px solid #FFC277 !important;
+	border-top: 3px solid transparent !important;
 	padding: 3px 0;
 	overflow-x: hidden !important;
+	padding-top: 15px;
 }
 
 .userWeb-logged {
@@ -53,6 +56,21 @@
 	}
 }
 
+.navbar-right {
+	float: right !important;
+	margin-right: 15px;
+}
+
+.navbar-header {
+	padding-left: 15px;
+	padding-top: 13px;
+}
+
+.navbar-brand {
+	outline: 0 !important;
+	padding: 18px 15px;
+}
+
 .content {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -68,10 +86,10 @@
 	width: 350px;
 	border-radius: 3px;
 	padding: 15px;
-	border-top: 3px solid #ff8000;
+	border-top: 3px solid #FFC277;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
-	border-bottom: 3px solid #ff8000;
+	border-bottom: 3px solid #FFC277;
 	border-bottom-left-radius: 40px;
 	border-bottom-right-radius: 40px;
 	-webkit-font-smoothing: antialiased;
@@ -130,7 +148,7 @@ legend {
 	background: #c0c0c0;
 	border: none;
 	color: white;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 200;
 	cursor: pointer;
 	transition: box-shadow .4s ease;
@@ -155,33 +173,37 @@ legend {
 .login .hr1 {
 	position: relative;
 	left: 0px;
-	top: -105px;
+	top: -99px;
 	transform: rotate(90deg);
 	margin-top: 30px;
 	margin-bottom: -30px;
 	border: 0;
-	width: 89px;
+	width: 99px;
 	height: 3px;
 	background-image: -webkit-linear-gradient(left, #FF8000, transparent);
-	background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
-	background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
-	background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+	background-image: -moz-linear-gradient(left, #FF8000, transparent);
+	background-image: -ms-linear-gradient(left, #FF8000, transparent);
+	background-image: -o-linear-gradient(left, #FF8000, transparent);
 }
 
 .login .hr2 {
 	position: relative;
 	left: 0px;
-	top: 9px;
+	top: 5px;
 	transform: rotate(90deg);
-	margin-top: 30px;
-	margin-bottom: 27px;
+	margin-top: 25px;
+	margin-bottom: -3px;
 	border: 0;
-	width: 72px;
-	border-top: 3px solid #FF8000;
+	width: 99px;
+	height: 3px;
+	background-image: -webkit-linear-gradient(left, transparent, #FF8000);
+	background-image: -moz-linear-gradient(left, transparent, #FF8000);
+	background-image: -ms-linear-gradient(left, transparent, #FF8000);
+	background-image: -o-linear-gradient(left, transparent, #FF8000);
 }
 
 .container-fluid h1, .navbar-brand {
-	color: #F38A3E !important;
+	color: #FFC277 !important;
 	font-family: georgia, palatino, book antiqua, palatino linotype, serif;
 }
 
@@ -198,8 +220,20 @@ legend {
 	width: 100%;
 }
 
-#grad {
-	/* Standard syntax */
-	background: linear-gradient(#FF8000, transparent);
-	/* Standard syntax */
+.aLogin {
+	font-size: 13px;
+	text-align: center;
+	margin-left: 52%;
+	padding-bottom: 9px;
+}
+
+.bLogin {
+	font-size: 13px;
+	text-align: center;
+	margin-left: -51%;
+	height: 11px;
+}
+
+.aLogin a, .bLogin a {
+	color: #FDBA7F !important;
 }
