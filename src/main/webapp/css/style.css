@@ -141,7 +141,7 @@ legend {
 	font-size: 2em;
 	margin-top: 70px;
 	margin-bottom: 30px;
-	color: #FF983C;
+	color: #FFC277;
 }
 
 .login .form button {
@@ -180,10 +180,10 @@ legend {
 	border: 0;
 	width: 99px;
 	height: 3px;
-	background-image: -webkit-linear-gradient(left, #FF8000, transparent);
-	background-image: -moz-linear-gradient(left, #FF8000, transparent);
-	background-image: -ms-linear-gradient(left, #FF8000, transparent);
-	background-image: -o-linear-gradient(left, #FF8000, transparent);
+	background-image: -webkit-linear-gradient(left, #FFC277, transparent);
+	background-image: -moz-linear-gradient(left, #FFC277, transparent);
+	background-image: -ms-linear-gradient(left, #FFC277, transparent);
+	background-image: -o-linear-gradient(left, #FFC277, transparent);
 }
 
 .login .hr2 {
@@ -196,10 +196,10 @@ legend {
 	border: 0;
 	width: 99px;
 	height: 3px;
-	background-image: -webkit-linear-gradient(left, transparent, #FF8000);
-	background-image: -moz-linear-gradient(left, transparent, #FF8000);
-	background-image: -ms-linear-gradient(left, transparent, #FF8000);
-	background-image: -o-linear-gradient(left, transparent, #FF8000);
+	background-image: -webkit-linear-gradient(left, transparent, #FFC277);
+	background-image: -moz-linear-gradient(left, transparent, #FFC277);
+	background-image: -ms-linear-gradient(left, transparent, #FFC277);
+	background-image: -o-linear-gradient(left, transparent, #FFC277);
 }
 
 .container-fluid h1, .navbar-brand {
