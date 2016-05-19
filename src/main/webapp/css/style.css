@@ -120,7 +120,8 @@ legend {
 	position: relative;
 	margin: 0 auto;
 	background: transparent;
-	width: 340px;
+	width: 40%;
+	min-width: 340px;
 	border-radius: 3px;
 	padding: 15px;
 	border-top: 3px solid #FFC277;
@@ -137,6 +138,7 @@ legend {
 	border-left: 1px solid rgba(255, 255, 255, 0.11);
 	border-right: 1px solid rgba(255, 255, 255, 0.11);
 	box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.75);
+	min-width: 340px;
 }
 
 .login .form {
@@ -180,7 +182,8 @@ legend {
 	margin: 0 auto;
 	height: 948px;
 	background: transparent;
-	width: 340px;
+	width: 40%;
+	min-width: 340px;
 	border-radius: 3px;
 	padding: 15px;
 	border-top: 3px solid #FFC277;
@@ -197,6 +200,7 @@ legend {
 	border-left: 1px solid rgba(255, 255, 255, 0.11);
 	border-right: 1px solid rgba(255, 255, 255, 0.11);
 	box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.75);
+	min-width: 340px
 }
 
 .form-horizontal h2 {
