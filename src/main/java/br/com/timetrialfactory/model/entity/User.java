@@ -20,8 +20,8 @@ public class User {
     @Column(name = "User_Id")
     private Long id;
 
-    @Column(name = "User_Cpf", unique = true)
-    private String cpf;
+	@Column(name = "User_Cpf", unique = true)
+	private String cpf;
 
     @Column(name = "User_Name", nullable = false)
     private String name;

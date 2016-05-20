@@ -2,25 +2,37 @@
 <div class="containerLogin">
 	<div class="content">
 		<div class="login">
-			<hr class="hr1">
-			<h2>Login</h2>
-			<div class="form">
-				<form action="<c:url value="/login"/>" method="POST">
-					<input id="login" type="text" name="user.login"
-						placeholder="Nome de usuário" /><input id="password"
-						type="password" name="user.password" placeholder="senha" />
-					<button class="btnConfirm" type="submit">Entrar</button>
-				</form>
-			</div>
-			<hr class="hr2">
-			<div class=bLogin>
-				<a href="<c:url value= "/users/new"/>">Não tem uma conta? <br>Cadastre-se
-				</a>
-			</div>
-			<div class=aLogin>
-				<a href="<c:url value= "/users/new"/>">Esqueci minha senha </a>
+			<div class="hideThis">
+				<hr class="hr1">
+				<h2>Login</h2>
+				<div class="form">
+					<form action="<c:url value="/login"/>" method="POST">
+						<input id="login" type="text" name="user.login"
+							placeholder="Nome de usuário" /><input id="password"
+							type="password" name="user.password" placeholder="senha" />
+						<button class="btnConfirm" type="submit">Entrar</button>
+					</form>
+				</div>
+				<hr class="hr2">
+				<div class=bLogin>
+					<a href="<c:url value= "/users/new"/>">Não tem uma conta? <br>Cadastre-se
+					</a>
+				</div>
+				<div class=aLogin>
+					<a href="<c:url value= "/users/new"/>">Esqueci minha senha </a>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	$(document).ready(function() {
+		$(".bLogin").click(function() {
+			$(".hideThis").hide(slow);
+			$(".login").animate({
+				top : '300px'
+			}, "slow");
+		});
+	});
+</script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
