@@ -126,6 +126,6 @@
 	</div>
 </div>
 <script type="text/javascript">
-	$('#usersForm').validate();
+	//$('#usersForm').validate();
 </script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

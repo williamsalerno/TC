@@ -10,7 +10,6 @@ $this.click(function(e) {
 		setTimeout(function() {
 			location.href = $this.attr('href')
 		}, 500);
-		//$('.navbar-nav li #newUser').trigger('click');
 	}
 })
 
@@ -26,7 +25,6 @@ $nc.click(function(e) {
 		setTimeout(function() {
 			location.href = $nc.attr('href')
 		}, 500);
-		//$('.navbar-nav li #newUser').trigger('click');
 	}
 })
 
@@ -42,7 +40,6 @@ $lg.click(function(e) {
 		setTimeout(function() {
 			location.href = $lg.attr('href')
 		}, 500);
-		//$('.navbar-nav li #newUser').trigger('click');
 	}
 })
 

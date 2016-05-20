@@ -256,7 +256,7 @@ input:focus, select:focus {
 	border: 1px solid #FFC277;
 	background: transparent;
 	box-shadow: 1px 1px 5px #FF983C !important;
-	color: #FFC277;
+	color: #FFC277 !important;
 	font-size: 14px;
 	font-weight: 200;
 	border-radius: 0px !important;
@@ -268,17 +268,31 @@ input:focus, select:focus {
 }
 
 .btn:hover {
-	border: none !important;
+	border: 1px solid #FFC277 !important;
 	color: #F7EFBC !important;
 	box-shadow: 1px 1px 5px #FFC277 !important;
 	background: #FFC277 !important;
-	min-height: 34px !important;
 }
 
 .btn:focus {
+	color: #F7EFBC !important;
 	box-shadow: none !important;
-	border: none !important;
+	background: #FFC277 !important;
+	border: 1px solid #FFC277 !important;
 	outline: none !important;
+}
+
+.disabled {
+	cursor: default !important;
+	box-shadow: none !important;
+}
+
+.disabled:focus, .disabled:hover {
+	background-color: transparent !important;
+	border: 1px solid #FFC277;
+	background: transparent;
+	box-shadow: none !important;
+	color: #FFC277 !important;
 }
 
 .btnForm {
