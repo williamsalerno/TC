@@ -11,8 +11,8 @@
 		<div class="login">
 			<form class="escondido form-horizontal" role="form" id="usersForm"
 				action="<c:url value="/users"/>" method="post">
-				<hr class="hr1">
-				<h2 style="text-align: center; color: #FFC277">
+				<br>
+				<h2 id="h2Form" style="text-align: center; color: #FFC277">
 					Cadastre-se<br> <small style="font-size: 15px">Todos
 						os campos são obrigatórios</small>
 				</h2>
@@ -117,12 +117,12 @@
 						required="required">
 
 				</div>
-				<div class="btnsForm" style="text-align: center">
-					<a class="btn btn-default btnCancel" href="<c:url value="/"/>">Cancelar
-					</a>
-					<button type="submit" class="btn btn-default btnConfirm">Confirmar</button>
+				<div class="btnForm">
+					<a class="btn btn-default" href="<c:url value="/"/>">Cancelar </a>
+					<button style="margin-left: 70px;" type="submit"
+						class="btn btn-default">Confirmar</button>
 				</div>
-				<hr class="hr2">
+				<br>
 			</form>
 		</div>
 	</div>
