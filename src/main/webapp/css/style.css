@@ -676,3 +676,7 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 	height: 700px;
 	background-color: #CCC;
 }
+
+.escondido {
+	display: none;
+}

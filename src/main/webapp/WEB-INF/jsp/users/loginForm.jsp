@@ -2,7 +2,7 @@
 <div class="containerLogin">
 	<div class="content">
 		<div class="login">
-			<div class="hideThis">
+			<div class="hideThis escondido">
 				<hr class="hr1">
 				<h2>Login</h2>
 				<div class="form">
@@ -15,7 +15,7 @@
 				</div>
 				<hr class="hr2">
 				<div class=bLogin>
-					<a href="<c:url value= "/users/new"/>">Não tem uma conta? <br>Cadastre-se
+					<a id="newAcc" href="<c:url value= "/users/new"/>">Não tem uma conta? <br>Cadastre-se
 					</a>
 				</div>
 				<div class=aLogin>

@@ -28,9 +28,9 @@
 								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					</c:if>
 					<c:if test="${empty userWeb or !userWeb.logged}">
-						<li><a href="<c:url value="/users/new"/>"><span
+						<li><a id="newUser" href="<c:url value="/users/new"/>"><span
 								class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-						<li><a href="<c:url value="/login"/>"><span
+						<li><a id="log-in" href="<c:url value="/login"/>"><span
 								class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</c:if>
 				</ul>

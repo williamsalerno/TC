@@ -8,120 +8,123 @@
 </div>
 <div class="containerLogin">
 	<div class="content">
-		<form class="form-horizontal" role="form" id="usersForm"
-			action="<c:url value="/users"/>" method="post">
-			<hr class="hr1">
-			<h2 style="text-align: center; color: #FFC277">
-				Cadastre-se<br> <small style="font-size: 15px">Todos os
-					campos são obrigatórios</small>
-			</h2>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
-					type="text" class="form-control" id="name" name="user.name"
-					value="${user.name }" placeholder="Primeiro nome"
-					aria-describedby="basic-addon1" required="required">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-user" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="lastName" name="user.LastName"
-					value="${user.lastName }" placeholder="Sobrenome"
-					aria-describedby="basic-addon1" required="required">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
-					type="text" class="form-control" id="cpf" name="user.cpf"
-					value="${user.cpf }" placeholder="CPF" required="required">
-			</div>
-			<br>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1">@</span><input
-					type="email" class="form-control" id="email" name="user.email"
-					value="${user.email }" placeholder="exemplo@exemplo.com"
-					required="required">
-			</div>
-			<br>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="ddd" name="user.phone.ddd"
-					value="${user.phone.ddd }" placeholder="DDD" required="required">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span> <select
-					class="form-control" id="phoneType" name="user.phone.phoneType"
-					value="${user.phone.phoneType }" required="required">
-					<option selected="selected">Tipo de telefone</option>
-					<option>HOME</option>
-					<option>MOBILE</option>
-				</select>
+		<div class="login">
+			<form class="escondido form-horizontal" role="form" id="usersForm"
+				action="<c:url value="/users"/>" method="post">
+				<hr class="hr1">
+				<h2 style="text-align: center; color: #FFC277">
+					Cadastre-se<br> <small style="font-size: 15px">Todos
+						os campos são obrigatórios</small>
+				</h2>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
+						type="text" class="form-control" id="name" name="user.name"
+						value="${user.name }" placeholder="Primeiro nome"
+						aria-describedby="basic-addon1" required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-user" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="lastName"
+						name="user.LastName" value="${user.lastName }"
+						placeholder="Sobrenome" aria-describedby="basic-addon1"
+						required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
+						type="text" class="form-control" id="cpf" name="user.cpf"
+						value="${user.cpf }" placeholder="CPF" required="required">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">@</span><input
+						type="email" class="form-control" id="email" name="user.email"
+						value="${user.email }" placeholder="exemplo@exemplo.com"
+						required="required">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="ddd" name="user.phone.ddd"
+						value="${user.phone.ddd }" placeholder="DDD" required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span> <select
+						class="form-control" id="phoneType" name="user.phone.phoneType"
+						value="${user.phone.phoneType }" required="required">
+						<option selected="selected">Tipo de telefone</option>
+						<option>HOME</option>
+						<option>MOBILE</option>
+					</select>
 
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="number"
-					name="user.phone.number" value="${user.phone.number }"
-					placeholder="Somente números" required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="number"
+						name="user.phone.number" value="${user.phone.number }"
+						placeholder="Somente números" required="required">
 
-			</div>
-			<br>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="cep" name="user.address.cep"
-					value="${user.address.cep }" placeholder="CEP" required="required">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="city" name="user.address.city"
-					value="${user.address.city }" placeholder="Cidade"
-					required="required">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="cep" name="user.address.cep"
+						value="${user.address.cep }" placeholder="CEP" required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="city"
+						name="user.address.city" value="${user.address.city }"
+						placeholder="Cidade" required="required">
 
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="state"
-					name="user.address.state" value="${user.address.state }"
-					placeholder="Estado" required="required">
-			</div>
-			<br>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="login" name="user.login"
-					value="${user.login }" placeholder="Nome de usuário"
-					required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="state"
+						name="user.address.state" value="${user.address.state }"
+						placeholder="Estado" required="required">
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="login" name="user.login"
+						value="${user.login }" placeholder="Nome de usuário"
+						required="required">
 
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span> <input
-					type="password" class="form-control" id="password"
-					name="user.password" value="${user.password }"
-					placeholder="Senha (entre 6 e 10 dígitos alfanuméricos)"
-					required="required">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span><input
-					type="password" class="form-control" id="confirm"
-					equalTo="#password" placeholder="Confirme a senha"
-					required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span> <input
+						type="password" class="form-control" id="password"
+						name="user.password" value="${user.password }"
+						placeholder="Senha (entre 6 e 10 dígitos alfanuméricos)"
+						required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span><input
+						type="password" class="form-control" id="confirm"
+						equalTo="#password" placeholder="Confirme a senha"
+						required="required">
 
-			</div>
-			<div class="btnsForm" style="text-align: center">
-				<a class="btn btn-default btnCancel" href="<c:url value="/"/>">Cancelar
-				</a>
-				<button type="submit" class="btn btn-default btnConfirm">Confirmar</button>
-			</div>
-			<hr class="hr2">
-		</form>
+				</div>
+				<div class="btnsForm" style="text-align: center">
+					<a class="btn btn-default btnCancel" href="<c:url value="/"/>">Cancelar
+					</a>
+					<button type="submit" class="btn btn-default btnConfirm">Confirmar</button>
+				</div>
+				<hr class="hr2">
+			</form>
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
