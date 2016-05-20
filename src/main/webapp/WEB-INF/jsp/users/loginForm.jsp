@@ -2,10 +2,10 @@
 <div class="containerLogin">
 	<div class="content">
 		<div class="login">
-			<div class="hideThis escondido">
-				<br>
+			<div class="escondido">
 				<h2>Login</h2>
-				<form action="<c:url value="/login"/>" method="POST">
+				<form class="form-horizontal" action="<c:url value="/login"/>"
+					method="POST">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"><span
 							class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
@@ -21,8 +21,10 @@
 							name="user.password" value="${user.password }"
 							placeholder="Senha" required="required">
 					</div>
+					<div class="btnForm" style="padding-bottom: 50px;">
+						<button type="submit" class="btn btn-default">Entrar</button>
+					</div>
 				</form>
-				<br>
 				<div class=bLogin>
 					<a id="newAcc" href="<c:url value= "/users/new"/>">Não tem uma
 						conta? <br>Cadastre-se

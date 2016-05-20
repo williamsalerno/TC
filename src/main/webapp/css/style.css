@@ -248,15 +248,8 @@ input:focus, select:focus {
 	text-align: center;
 	font-weight: 200;
 	margin-top: 90px;
+	margin-bottom: 32px;
 	color: #FFC277;
-}
-
-.login .form button {
-	width: 40%;
-	margin-left: 30%;
-	margin-bottom: 15px;
-	margin-top: 20px;
-	height: 40px;
 }
 
 .btn {
@@ -279,6 +272,7 @@ input:focus, select:focus {
 	color: #F7EFBC !important;
 	box-shadow: 1px 1px 5px #FFC277 !important;
 	background: #FFC277 !important;
+	min-height: 34px !important;
 }
 
 .btn:focus {

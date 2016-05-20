@@ -118,9 +118,7 @@
 
 				</div>
 				<div class="btnForm">
-					<a class="btn btn-default" href="<c:url value="/"/>">Cancelar </a>
-					<button style="margin-left: 70px;" type="submit"
-						class="btn btn-default">Confirmar</button>
+					<button type="submit" class="btn btn-default">Confirmar</button>
 				</div>
 				<br>
 			</form>
