@@ -20,9 +20,15 @@
 							name="user.password" value="${user.password }"
 							placeholder="Senha" required="required">
 					</div>
-					<div class="btnForm" style="padding-bottom: 50px;">
+					<div class="btnForm" style="padding-bottom: 30px;">
 						<button type="submit" class="btn btn-default">Entrar</button>
 					</div>
+					<hr style="margin-bottom: 40px;">
+					<c:forEach items="${errors}" var="error">
+						<div class="alert alert-danger" style="text-align: center;">
+							<strong>${error.category } </strong>${error.message }
+						</div>
+					</c:forEach>
 				</form>
 				<div class=bLogin>
 					<a id="newAcc" href="<c:url value= "/users/new"/>">Não tem uma

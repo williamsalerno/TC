@@ -269,9 +269,9 @@ input:focus, select:focus {
 
 .btn:hover {
 	border: 1px solid #FFC277 !important;
-	color: #F7EFBC !important;
+	color: #F3ECC5 !important;
 	box-shadow: 1px 1px 5px #FFC277 !important;
-	background: #FFC277 !important;
+	background: #FBBA6B !important;
 }
 
 .btn:focus {
@@ -296,7 +296,7 @@ input:focus, select:focus {
 }
 
 .btnForm {
-	margin-top: 50px;
+	margin-top: 40px;
 	text-align: center;
 }
 
@@ -319,20 +319,17 @@ input:focus, select:focus {
 	background-image: -o-linear-gradient(left, #FFC277, transparent);
 }
 
-.login .hr2 {
-	position: relative;
-	left: 0px;
-	top: 5px;
-	transform: rotate(90deg);
-	margin-top: 50px;
-	margin-bottom: -3px;
+hr {
 	border: 0;
-	width: 99px;
-	height: 3px;
-	background-image: -webkit-linear-gradient(left, transparent, #FFC277);
-	background-image: -moz-linear-gradient(left, transparent, #FFC277);
-	background-image: -ms-linear-gradient(left, transparent, #FFC277);
-	background-image: -o-linear-gradient(left, transparent, #FFC277);
+	height: 2px;
+	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+	background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
 }
 
 .container-fluid h1, .navbar-brand {
@@ -343,6 +340,12 @@ input:focus, select:focus {
 .container-fluid p {
 	color: #B3B5B5;
 	font-size: 15px;
+}
+
+.alert {
+	border-radius: 0px !important;
+	border: 2px solid #a94442 !important;
+	background-color: rgba(255, 187, 187, 0) !important;
 }
 
 .imageHome {

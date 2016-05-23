@@ -8,22 +8,21 @@ import br.com.timetrialfactory.model.entity.User;
 @SessionScoped
 public class UserWeb {
 
-    private User logged;
+	private User logged;
 
-    public void login(User user) {
-        this.logged = user;
-    }
+	public void login(User user) {
+		this.logged = user;
+	}
 
-    public String getName() {
-        return logged.getName();
-    }
+	public String getName() {
+		return logged.getName();
+	}
 
-    public boolean isLogged() {
-        return logged != null;
-    }
+	public boolean isLogged() {
+		return logged != null;
+	}
 
-    public void logout() {
-        this.logged = null;
-
-    }
+	public void logout() {
+		this.logged = null;
+	}
 }

@@ -47,32 +47,6 @@
 				<br>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span><input
-						type="text" class="form-control" id="ddd" name="user.phone.ddd"
-						value="${user.phone.ddd }" placeholder="DDD" required="required">
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span> <select
-						class="form-control" id="phoneType" name="user.phone.phoneType"
-						value="${user.phone.phoneType }" required="required">
-						<option selected="selected">Tipo de telefone</option>
-						<option>HOME</option>
-						<option>MOBILE</option>
-					</select>
-
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span><input
-						type="text" class="form-control" id="number"
-						name="user.phone.number" value="${user.phone.number }"
-						placeholder="Somente números" required="required">
-
-				</div>
-				<br>
-				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
 						type="text" class="form-control" id="cep" name="user.address.cep"
 						value="${user.address.cep }" placeholder="CEP" required="required">
@@ -83,7 +57,6 @@
 						type="text" class="form-control" id="city"
 						name="user.address.city" value="${user.address.city }"
 						placeholder="Cidade" required="required">
-
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
@@ -115,8 +88,8 @@
 						type="password" class="form-control" id="confirm"
 						equalTo="#password" placeholder="Confirme a senha"
 						required="required">
-
 				</div>
+				<hr style="margin: 40px;">
 				<div class="btnForm">
 					<button type="submit" class="btn btn-default">Confirmar</button>
 				</div>
@@ -125,7 +98,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	//$('#usersForm').validate();
+<script>
+	$('#usersForm').validate();
 </script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
