@@ -3,7 +3,7 @@
 <div class="games-section-title">
 	<div class="container">
 		<h1>
-			Timetrial Factory<br> <small>Build your own way</small>
+			TimeTrial Factory<br> <small>Build your own way</small>
 		</h1>
 	</div>
 </div>

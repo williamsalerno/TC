@@ -292,14 +292,29 @@ input:focus, select:focus {
 }
 
 .imageGame {
-	max-width: 240px;
+	max-width: 300px;
+	max-height: 300px;
+	border: 2px solid;
+	margin: 2px;
 }
 
 .moreInfoGame {
 	margin-bottom: 2px;
-	height: 258px;
+	padding-right: 4px;
 	border: 2px solid;
 	height: 258px;
+	height: 248px;
+}
+
+.titleGame {
+	
+}
+
+.detailsGame {
+	border: 2px solid;
+	margin-left: 305px;
+	position: relative;
+	top: -250px;
 }
 
 .btn:hover {
@@ -320,6 +335,10 @@ input:focus, select:focus {
 .disabled {
 	cursor: default !important;
 	box-shadow: none !important;
+}
+
+.btnAddCart {
+	text-align: right;
 }
 
 .disabled:focus, .disabled:hover {
