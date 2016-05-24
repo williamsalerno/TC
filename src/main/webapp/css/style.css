@@ -303,14 +303,17 @@ input:focus, select:focus {
 	padding-right: 4px;
 	border: 2px solid;
 	height: 258px;
-	height: 248px;
 }
 
 .titleGame {
-	
+	border: 2px solid;
+	margin-top: 2px;
+	margin-left: 2px;
+	margin-right: 286px;
 }
 
 .detailsGame {
+	height: 122px;
 	border: 2px solid;
 	margin-left: 305px;
 	position: relative;
@@ -339,6 +342,15 @@ input:focus, select:focus {
 
 .btnAddCart {
 	text-align: right;
+	margin-left: 539px;
+	border: 2px solid;
+	margin-top: -73px;
+	margin-right: 2px;
+	height: 114px;
+}
+
+.priceGame {
+	margin-bottom: 20px;
 }
 
 .disabled:focus, .disabled:hover {
