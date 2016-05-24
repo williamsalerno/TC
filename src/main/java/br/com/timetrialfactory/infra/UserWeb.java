@@ -15,11 +15,15 @@ public class UserWeb {
 	}
 
 	public String getName() {
-		return logged.getName();
+		return logged.getFullName();
 	}
 
 	public boolean isLogged() {
 		return logged != null;
+	}
+	
+	public boolean isAdmin(){
+		return logged.isAdmin();
 	}
 
 	public void logout() {

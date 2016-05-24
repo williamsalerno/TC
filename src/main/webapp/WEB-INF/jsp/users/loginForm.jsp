@@ -31,8 +31,8 @@
 					</c:forEach>
 				</form>
 				<div class=bLogin>
-					<a id="newAcc" href="<c:url value= "/users/new"/>">Não tem uma
-						conta? <br>Cadastre-se
+					<a id="newAcc" href="<c:url value= "/users/selectCountry"/>">Não
+						tem uma conta? <br>Cadastre-se
 					</a>
 				</div>
 				<div class=aLogin>

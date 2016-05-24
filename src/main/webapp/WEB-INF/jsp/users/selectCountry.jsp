@@ -10,14 +10,13 @@
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-globe" aria-hidden="true"></span></span> <select
-						class="form-control" id="country" name="user.address.country"
-						value="${user.address.country }" aria-describedby="basic-addon1"
-						required="required">
+						class="form-control" id="country" name="user.address.country.name"
+						value="${user.address.country.name }"
+						aria-describedby="basic-addon1" required="required">
 						<option selected>BRAZIL</option>
 						<option>OTHER</option>
 					</select>
 				</div>
-
 				<hr style="margin: 40px;">
 				<div class="btnForm">
 					<button type="submit" class="btn btn-default" id="countryButton">Continuar</button>

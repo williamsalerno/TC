@@ -1,20 +1,5 @@
 <footer>
 	<div class="container">
-		<div class="footer-row">
-			<div class="subscribe">
-				<h2>Sign up for newsletter</h2>
-				<form>
-					<input type="email" id="inscrever" name="subscribe"
-						class="subscribe-inpt" />
-					<button class="subscribe-btn hvr-sweep-to-left" type="submit"
-						id="btnInscrever">Subscribe</button>
-					<script type="text/javascript">
-						$("#inscrever").puts(
-								"Se inscreva para receber ofertas...");
-					</script>
-				</form>
-			</div>
-		</div>
 		<div class="footer-row row-items">
 			<div class="footer-row-item">
 				<div class="about-us">

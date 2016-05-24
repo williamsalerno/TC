@@ -27,13 +27,12 @@ public class UsersController {
 		this.validator = validator;
 	}
 
-	@Restrict
 	@Post("/users")
 	public void add(final User user) {
 		if (dao.userExists(user)) {
 			validator.add(new ValidationMessage(" Usuário já existe", "Erro "));
 		}
-		validator.onErrorUsePageOf(this).newUser();
+		validator.onErrorUsePageOf(this).newUser(user);
 		dao.insert(user);
 		result.redirectTo(GamesController.class).list();
 	}
@@ -43,14 +42,14 @@ public class UsersController {
 	}
 
 	@Get("/users/new")
-	public void newUser() {
+	public User newUser(User user) {
+		return user;
 	}
 
 	@Get("/login")
 	public void loginForm() {
 	}
 
-	@Restrict
 	@Post("/login")
 	public void login(User user) {
 		User loaded = dao.load(user);

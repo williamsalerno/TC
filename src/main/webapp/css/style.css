@@ -267,6 +267,41 @@ input:focus, select:focus {
 	cursor: pointer;
 }
 
+.form-control[readonly] {
+	border-radius: 0px !important;
+	background-color: transparent !important;
+	cursor: default !important;
+}
+
+.games {
+	margin-top: 120px;
+}
+
+.listGames {
+	padding: 2px;
+	border: 2px solid;
+	height: 158px;
+}
+
+.thumbnailGame {
+	height: 150px;
+	float: left;
+	padding: 2px;
+	border: 2px solid;
+	margin-left: 2px;
+}
+
+.imageGame {
+	max-width: 240px;
+}
+
+.moreInfoGame {
+	margin-bottom: 2px;
+	height: 258px;
+	border: 2px solid;
+	height: 258px;
+}
+
 .btn:hover {
 	border: 1px solid #FFC277 !important;
 	color: #F3ECC5 !important;

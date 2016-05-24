@@ -10,49 +10,49 @@ import br.com.timetrialfactory.model.entity.enums.Country;
 @Embeddable
 public class Address {
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "Address_Country")
-    private Country country;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "Address_Country", nullable = false)
+	private Country country;
 
-    @Column(name = "Address_State")
-    private String state;
+	@Column(name = "Address_State")
+	private String state;
 
-    @Column(name = "Address_City")
-    private String city;
+	@Column(name = "Address_City")
+	private String city;
 
-    @Column(name = "Address_Cep")
-    private String cep;
+	@Column(name = "Address_Cep")
+	private String cep;
 
-    public Country getCountry() {
-        return country;
-    }
+	public Country getCountry() {
+		return country;
+	}
 
-    public void setCountry(Country country) {
-        this.country = country;
-    }
+	public void setCountry(Country country) {
+		this.country = country;
+	}
 
-    public String getState() {
-        return state;
-    }
+	public String getState() {
+		return state;
+	}
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public void setState(String state) {
+		this.state = state;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public String getCity() {
+		return city;
+	}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-    public String getCep() {
-        return cep;
-    }
+	public String getCep() {
+		return cep;
+	}
 
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 
 }

@@ -19,60 +19,56 @@
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
-						type="text" class="form-control" id="name" name="user.name"
-						value="${user.name }" placeholder="Primeiro nome"
+						type="text" class="form-control" id="name" name="user.fullName"
+						value="${user.fullName }" placeholder="Nome completo"
 						aria-describedby="basic-addon1" required="required">
 				</div>
 				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-user" aria-hidden="true"></span></span><input
-						type="text" class="form-control" id="lastName"
-						name="user.LastName" value="${user.lastName }"
-						placeholder="Sobrenome" aria-describedby="basic-addon1"
-						required="required">
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
-						type="text" class="form-control" id="cpf" name="user.cpf"
-						value="${user.cpf }" placeholder="CPF" required="required">
-				</div>
-				<br>
-				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1">@</span><input
 						type="email" class="form-control" id="email" name="user.email"
-						value="${user.email }" placeholder="exemplo@exemplo.com"
+						value="${user.email }" placeholder="email válido"
 						required="required">
 				</div>
 				<br>
+
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
-						type="text" class="form-control" id="cep" name="user.address.cep"
-						value="${user.address.cep }" placeholder="CEP" required="required">
+						class="glyphicon glyphicon-globe" aria-hidden="true"></span></span><input
+						type="text" class="form-control" id="country"
+						name="user.address.country.name"
+						value="${user.address.country.name}" readonly />
 				</div>
-				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
-						type="text" class="form-control" id="city"
-						name="user.address.city" value="${user.address.city }"
-						placeholder="Cidade" required="required">
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon" id="basic-addon1"><span
-						class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
-						type="text" class="form-control" id="state"
-						name="user.address.state" value="${user.address.state }"
-						placeholder="Estado" required="required">
-				</div>
-				<br>
+				<c:set var="c" value="BRAZIL" />
+				<c:if test="${user.address.country.name eq c}">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><span
+							class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
+							type="text" class="form-control" id="cep" name="user.address.cep"
+							value="${user.address.cep }" placeholder="CEP"
+							required="required">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><span
+							class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
+							type="text" class="form-control" id="city"
+							name="user.address.city" value="${user.address.city }"
+							placeholder="Cidade" required="required">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><span
+							class="glyphicon glyphicon-home" aria-hidden="true"></span></span><input
+							type="text" class="form-control" id="state"
+							name="user.address.state" value="${user.address.state }"
+							placeholder="Estado" required="required">
+					</div>
+					<br>
+				</c:if>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
 						type="text" class="form-control" id="login" name="user.login"
 						value="${user.login }" placeholder="Nome de usuário"
 						required="required">
-
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
@@ -99,6 +95,6 @@
 	</div>
 </div>
 <script>
-	$('#usersForm').validate();
+	/*$('#usersForm').validate();*/
 </script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

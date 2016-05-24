@@ -17,9 +17,8 @@ public class UserDAO {
 	}
 
 	public boolean userExists(User user) {
-		User found = (User) session.createCriteria(User.class)
-				.add(Restrictions.eq("login", user.getLogin()))
-				.add(Restrictions.eq("cpf", user.getCpf())).uniqueResult();
+		User found = (User) session.createCriteria(User.class).add(Restrictions.eq("login", user.getLogin()))
+				.add(Restrictions.eq("email", user.getEmail())).uniqueResult();
 		return found != null;
 	}
 
@@ -30,9 +29,7 @@ public class UserDAO {
 	}
 
 	public User load(User user) {
-		return (User) this.session.createCriteria(User.class)
-				.add(Restrictions.eq("login", user.getLogin()))
-				.add(Restrictions.eq("password", user.getPassword()))
-				.uniqueResult();
+		return (User) this.session.createCriteria(User.class).add(Restrictions.eq("login", user.getLogin()))
+				.add(Restrictions.eq("password", user.getPassword())).uniqueResult();
 	}
 }

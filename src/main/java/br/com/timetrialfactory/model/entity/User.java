@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -20,14 +21,9 @@ public class User {
 	@Column(name = "User_Id")
 	private Long id;
 
-	@Column(name = "User_Cpf", unique = true)
-	private String cpf;
-
-	@Column(name = "User_Name", nullable = false)
-	private String name;
-
-	@Column(name = "User_LastName", nullable = false)
-	private String lastName;
+	@Column(name = "User_FullName", nullable = false)
+	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
+	private String fullName;
 
 	@Column(name = "User_Login", nullable = false, unique = true)
 	private String login;
@@ -42,6 +38,9 @@ public class User {
 	@Embedded
 	@Valid
 	private Address address;
+	
+	@Column(name = "User_Admin", nullable = false)
+	private boolean admin;
 
 	public Long getId() {
 		return id;
@@ -51,28 +50,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getLogin() {
@@ -106,5 +89,15 @@ public class User {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	
+	
 
 }
