@@ -299,10 +299,12 @@ input:focus, select:focus {
 }
 
 .moreInfoGame {
+	display: none;
 	margin-bottom: 2px;
 	padding-right: 4px;
 	border: 2px solid;
 	height: 258px;
+	margin-bottom: 2px;
 }
 
 .titleGame {
@@ -318,6 +320,7 @@ input:focus, select:focus {
 	margin-left: 305px;
 	position: relative;
 	top: -250px;
+	color: white;
 }
 
 .btn:hover {
