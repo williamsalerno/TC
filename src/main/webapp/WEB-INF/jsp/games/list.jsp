@@ -57,7 +57,8 @@
 </div>
 <div class="listGames">
 	<c:forEach items="${gameList}" var="game" varStatus="g">
-		<div class="thumbnailGame">
+		<c:set var="id" value="${game.id }" />
+		<div class="thumbnailGame" id="id">
 			<img src="<c:url value="/games/${game.id}/image"/>" width="100"
 				height="100" />
 		</div>
