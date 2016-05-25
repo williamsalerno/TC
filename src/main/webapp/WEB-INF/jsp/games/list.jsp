@@ -4,7 +4,7 @@
 	<div class="games">
 		<c:forEach items="${gameList}" var="game" varStatus="g">
 			<c:set var="teste" value="${game.id }" />
-			<div class="moreInfoGame" id=teste>
+			<div class="moreInfoGame" id="${teste}">
 				<input value=${teste } readonly />
 				<div class="imageGame">
 					<img data-src="holder.js/100%x200" alt="100%x200"
@@ -58,7 +58,7 @@
 	<div class="listGames">
 		<c:forEach items="${gameList}" var="game" varStatus="g">
 			<c:set var="teste2" value="${game.id }" />
-			<div class="thumbnailGame" id=${teste2}>
+			<div class="thumbnailGame">
 				<img src="<c:url value="/games/${game.id}/image"/>" width="100"
 					height="100" /> <input value=${teste2 } readonly />
 			</div>
@@ -81,7 +81,7 @@
 		var t1 = '#' + "${teste}";
 		var t2 = '#' + "${teste2}";
 
-		$(".thumbnail").click(function() {
+		$(".thumbnailGame").click(function() {
 			$(t1).fadeToggle().fadeIn();
 		});
 	});
