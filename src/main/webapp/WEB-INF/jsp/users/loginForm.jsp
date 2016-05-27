@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/jspf/header.jspf"%>
 <div class="containerLogin">
 	<div class="content">
-		<div class="login">
+		<section class="login">
 			<div class="escondido">
 				<h2>Login</h2>
 				<form class="form-horizontal" action="<c:url value="/login"/>"
@@ -39,7 +39,7 @@
 					<a href="<c:url value= "/users/new"/>">Esqueci minha senha </a>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
 </div>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
