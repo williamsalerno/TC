@@ -279,7 +279,6 @@ input:focus, select:focus {
 
 .listGames {
 	padding: 2px;
-	border: 2px solid;
 	height: 138px;
 }
 
@@ -288,15 +287,13 @@ input:focus, select:focus {
 	width: 100px;
 	float: left;
 	padding: 2px;
-	border: 2px solid;
 	margin-left: 2px;
 }
 
 .imageGame {
 	max-width: 300px;
 	max-height: 300px;
-	border: 2px solid;
-	margin: 2px;
+	margin-left: 3px;
 }
 
 .priceGame {
@@ -307,11 +304,13 @@ input:focus, select:focus {
 
 .moreInfoGame {
 	display: none;
-	margin-bottom: 2px;
 	padding-right: 4px;
-	border: 2px solid;
-	height: 300px;
+	height: 298px;
 	margin-bottom: 2px;
+	background-color: black;
+	padding-top: 3px;
+	border: 2px solid #FFC277;
+	box-shadow: 0px 0px 14px #FFC277;
 }
 
 .titleGame {
@@ -327,10 +326,10 @@ input:focus, select:focus {
 }
 
 .detailsGame {
-	height: 288px;
+	height: 300px;
 	margin-left: 305px;
 	position: relative;
-	top: -292px;
+	top: -300px;
 	color: white;
 }
 
