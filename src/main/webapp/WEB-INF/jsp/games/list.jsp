@@ -69,7 +69,7 @@
 				</div>
 			</section>
 		</c:forEach>
-		<section>
+		<section class="sectionListGames">
 			<div class="listGames">
 				<div class="divThumbs">
 					<c:forEach items="${gameList}" var="game" varStatus="g">
@@ -94,20 +94,19 @@
 </div>
 <script>
 	$(document).ready(function() {
-		var firstDetail;
-		var lastDetail;
-		var firstThumbnail;
-		var lastThumbnail;
+		var first;
+		var last;
 		$(".thumbnailGame").click(function() {
-			firstDetail = $(this).attr('id');
+			first = $(this).attr('id');
 
-			$('#' + lastDetail).hide();
-			$('#' + firstDetail).fadeIn();
+			$('#' + last).hide();
+			$('#' + first).fadeIn();
 
 			$(".thumbnailGame").removeClass('clickedThumb');
 			$(this).addClass('clickedThumb');
 
-			lastDetail = $('#' + firstDetail).attr('id');
+			last = $('#' + first).attr('id');
+
 		});
 	});
 </script>

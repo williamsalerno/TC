@@ -295,6 +295,7 @@ h1 {
 	float: left;
 	padding: 2px;
 	margin-left: 2px;
+	cursor: pointer;
 }
 
 .imageGame {
@@ -342,6 +343,8 @@ h1 {
 
 .clickedThumb {
 	border: 2px solid #FFC277;
+	cursor: default;
+	pointer-events: none;
 }
 
 .textGame {
