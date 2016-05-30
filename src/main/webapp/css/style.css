@@ -4,7 +4,7 @@ body {
 }
 
 input {
-	color: gray;
+	color: #FFC277 !important;
 }
 
 legend {
@@ -59,9 +59,6 @@ legend {
 	text-align: center;
 }
 
-/*.container {
-	margin-top: 51px;
-}*/
 .containerLogin {
 	margin: 100px 0;
 	padding-top: 70px;
@@ -244,6 +241,10 @@ input:focus, select:focus {
 	margin-top: 48px;
 }
 
+h1 {
+	color: #FFC277;
+}
+
 .login h2 {
 	text-align: center;
 	font-weight: 200;
@@ -279,7 +280,13 @@ input:focus, select:focus {
 
 .listGames {
 	padding: 2px;
-	height: 138px;
+	margin-top: 16px;
+	text-align: center;
+	width: 100%;
+}
+
+.divThumbs {
+	display: inline-block;
 }
 
 .thumbnailGame {
@@ -322,7 +329,7 @@ input:focus, select:focus {
 .btnsGame {
 	position: absolute;
 	right: 0px;
-	top: 70px;
+	top: 75px;
 }
 
 .detailsGame {
@@ -331,6 +338,16 @@ input:focus, select:focus {
 	position: relative;
 	top: -300px;
 	color: white;
+}
+
+.clickedThumb {
+	border: 2px solid #FFC277;
+}
+
+.textGame {
+	position: absolute;
+	top: 130px;
+	left: 2px;
 }
 
 .btn:hover {

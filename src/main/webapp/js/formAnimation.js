@@ -28,27 +28,16 @@ $nc.click(function(e) {
 	}
 })
 
-// $uf = $('#countryForm .btnForm #countryButton');
+// $uf = $('#countryButton');
 // $uf.click(function(e) {
 // e.preventDefault();
 // $('.escondido').slideUp(400);
 // if (e.isDefaultPrevented()) {
 // continueClicked();
 // }
-//
 // function continueClicked() {
 // setTimeout(function() {
-// $('#countryForm').submit(function(event) {
-// $.ajax({
-// data : $(this).serialize(),
-// type : $(this).attr('method'),
-// url : $(this).attr('action'),
-// success : function(response) {
-// document.location.href = response;
-// }
-// });
-// return false;
-// });
+// $('.login').load('#usersDiv')
 // }, 500);
 // }
 // })

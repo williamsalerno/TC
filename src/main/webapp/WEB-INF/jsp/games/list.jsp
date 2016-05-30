@@ -4,7 +4,7 @@
 	<div class="games">
 		<c:forEach items="${gameList}" var="game" varStatus="g">
 			<c:set var="teste" value="id${game.id }" />
-			<div class="moreInfoGame" id=${teste }>
+			<section class="moreInfoGame" id=${teste }>
 				<div class="imageGame">
 					<img data-src="holder.js/100%x200" alt="100%x200"
 						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0YmVmN2YwZTEgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTRiZWY3ZjBlMSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
@@ -55,41 +55,59 @@
 									jogo</button>
 							</form>
 						</c:if>
+						<c:if test="${!userWeb.logged}">
+							<a href="<c:url value="/login"/>" class="btn btn-default">Faça
+								login</a>
+							<a href="<c:url value= "/users/selectCountry"/>"
+								class="btn btn-default"
+								style="position: absolute; top: 0px; right: 110%;">Cadastre-se</a>
+						</c:if>
+					</div>
+					<div class="textGame">
+						<p>${game.description }</p>
 					</div>
 				</div>
-			</div>
+			</section>
 		</c:forEach>
-	</div>
-	<div class="listGames">
-		<c:forEach items="${gameList}" var="game" varStatus="g">
-			<c:set var="teste2" value="id${game.id }" />
-			<div class="thumbnailGame" id=${teste2 }>
-				<img src="<c:url value="/games/${game.id}/image"/>" width="100"
-					height="100" style="height: 100%; width: 100%;" />
+		<section>
+			<div class="listGames">
+				<div class="divThumbs">
+					<c:forEach items="${gameList}" var="game" varStatus="g">
+						<c:set var="teste2" value="id${game.id }" />
+						<div class="thumbnailGame" id=${teste2 }>
+							<img src="<c:url value="/games/${game.id}/image"/>" width="100"
+								height="100" style="height: 100%; width: 100%;" />
+						</div>
+					</c:forEach>
+					<div class="clearfix"></div>
+				</div>
 			</div>
-		</c:forEach>
-	</div>
-</div>
-<div class="container">
-	<div>
-		<c:if test="${userWeb.logged and userWeb.admin}">
-			<form action="<c:url value="/games/new"/>" method="get">
-				<p>
-					<button class="btn btn-default" type="submit">Novo Jogo</button>
+			<c:if test="${userWeb.logged and userWeb.admin}">
+				<hr>
+				<p style="text-align: center;">
+					<a href="<c:url value="/games/new"/>" class="btn btn-default"
+						type="submit">Novo Jogo</a>
 				</p>
-			</form>
-		</c:if>
+			</c:if>
+		</section>
 	</div>
 </div>
 <script>
 	$(document).ready(function() {
-		var first;
-		var last;
+		var firstDetail;
+		var lastDetail;
+		var firstThumbnail;
+		var lastThumbnail;
 		$(".thumbnailGame").click(function() {
-			first = $(this).attr('id');
-			$('#' + last).hide();
-			$('#' + first).fadeIn();
-			last = $('#' + first).attr('id');
+			firstDetail = $(this).attr('id');
+
+			$('#' + lastDetail).hide();
+			$('#' + firstDetail).fadeIn();
+
+			$(".thumbnailGame").removeClass('clickedThumb');
+			$(this).addClass('clickedThumb');
+
+			lastDetail = $('#' + firstDetail).attr('id');
 		});
 	});
 </script>

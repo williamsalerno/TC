@@ -19,16 +19,21 @@ public class Game {
 	@Id
 	@SequenceGenerator(name = "game_seq", sequenceName = "game_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "game_seq")
+	@Column(name = "Game_Id")
 	private Long id;
 
 	@NotNull
-	@Column(unique = true)
 	@Length(min = 5, message = "Título do jogo é obrigatório e deve ter, no mínimo, 5 caracteres.")
+	@Column(name = "Game_Title", unique = true)
 	private String title;
 
 	@NotNull
 	@Min(value = 1, message = "O preço do jogo deve ser maior que ou igual a 1.")
+	@Column(name = "Game_Price")
 	private BigDecimal price;
+
+	@Column(name = "Game_Description")
+	private String description;
 
 	public Long getId() {
 		return id;
@@ -52,6 +57,14 @@ public class Game {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }
