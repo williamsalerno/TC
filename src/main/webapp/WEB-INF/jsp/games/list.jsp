@@ -64,7 +64,9 @@
 						</c:if>
 					</div>
 					<div class="textGame">
-						<p>${game.description }</p>
+						<p>${game.description }Loremipsum dolor sit amet, cu nam
+							expetenda ocurreret. Vis graeci delicatissimi no, putant noluisse
+							mea ut. Fuisset scribentur sea ne. Vix ad quod iisque fuisset.</p>
 					</div>
 				</div>
 			</section>

@@ -32,4 +32,6 @@ public class UserDAO {
 		return (User) this.session.createCriteria(User.class).add(Restrictions.eq("login", user.getLogin()))
 				.add(Restrictions.eq("password", user.getPassword())).uniqueResult();
 	}
+
+
 }

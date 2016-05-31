@@ -11,6 +11,27 @@ legend {
 	color: white;
 }
 
+h2 {
+	color: #ffc277;
+}
+
+h3 {
+	color: white;
+	text-align: center;
+}
+
+.totalCart {
+	margin-top: 91px;
+	color: wheat;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	padding: 5px 0px 5px 0px;
+}
+
+.gameInCart {
+	position: absolute;
+}
+
 .navbar-brand>img {
 	max-width: 100%;
 }
@@ -20,10 +41,10 @@ legend {
 	background-color: transparent !important;
 	border-color: transparent !important;
 	overflow-x: hidden;
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	top: -25px;
-	z-index: 1;
+	z-index: 99;
 }
 
 .navbar-header {
@@ -177,6 +198,10 @@ legend {
 	border: 1px solid transparent;
 }
 
+.cartView {
+	margin-top: 100px;
+}
+
 input:focus, select:focus {
 	box-shadow: 0px 0px 3px 1px #FFC277 !important;
 }
@@ -221,6 +246,24 @@ input:focus, select:focus {
 	background-image: -ms-linear-gradient(left, transparent, #FFC277);
 	background-image: -o-linear-gradient(left, transparent, #FFC277);*/
 	margin-top: 110px;
+}
+
+.panel-heading {
+	background-color: transparent !important;
+	border-bottom: none !important;
+}
+
+.panel {
+	background-color: transparent !important;
+	border-top: 2px solid #ffc277 !important;
+	border-bottom: 2px solid #ffc277 !important;
+	border: 0px;
+}
+
+.btnCart {
+	text-align: center;
+	padding-top: 35px;
+	padding-bottom: 35px;
 }
 
 .input-group {
