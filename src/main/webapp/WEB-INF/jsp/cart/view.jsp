@@ -14,14 +14,14 @@
 				<c:otherwise>
 					<c:forEach items="${cart.items}" var="item" varStatus="s">
 						<div class="gameInCart">
-							<h4>${item.game.title }</h4>
-							<h4>
+							<h4 id="cartTitle">${item.game.title }</h4>
+							<h4 id="cartPrice">
 								<fmt:formatNumber type="currency" value="${item.game.price }" />
 							</h4>
-							<form style="float: right;"
-								action="<c:url value="/cart/${s.index}"/>" method="post">
-								<button class="link btn btn-default" name="_method"
-									value="delete">Remover</button>
+							<form id="removeCart" action="<c:url value="/cart/${s.index}"/>"
+								method="post">
+								<button class="link btn btn-default btnRemoveCart"
+									name="_method" value="delete">Remover</button>
 							</form>
 
 						</div>

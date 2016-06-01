@@ -34,7 +34,8 @@ public class UsersController {
 		}
 		validator.onErrorUsePageOf(this).newUser(user);
 		dao.insert(user);
-		result.redirectTo(GamesController.class).list();
+		validator.add(new ValidationMessage("Usuário cadastrado com sucesso!", "1"));
+		validator.onErrorRedirectTo(this).loginForm();
 	}
 
 	@Get("/users/selectCountry")
@@ -65,6 +66,7 @@ public class UsersController {
 	@Path("/logout")
 	public void logout() {
 		userWeb.logout();
-		result.redirectTo(GamesController.class).list();
+		result.redirectTo(this).loginForm();
 	}
+
 }

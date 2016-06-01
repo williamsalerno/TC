@@ -13,7 +13,7 @@
 				action="<c:url value="/users"/>" method="post">
 				<br>
 				<h2 id="h2Form" style="text-align: center; color: #FFC277">
-					Cadastre-se<br> <small style="font-size: 15px">Todos
+					Preencha seu cadastro<br> <small style="font-size: 15px">Todos
 						os campos são obrigatórios</small>
 				</h2>
 				<div class="input-group">
@@ -30,7 +30,6 @@
 						required="required">
 				</div>
 				<br>
-
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-globe" aria-hidden="true"></span></span><input
@@ -94,7 +93,4 @@
 		</div>
 	</div>
 </div>
-<script>
-	/*$('#usersForm').validate();*/
-</script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

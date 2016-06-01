@@ -9,6 +9,7 @@ import br.com.timetrialfactory.model.entity.User;
 public class UserWeb {
 
 	private User logged;
+	private static boolean registerOk;
 
 	public void login(User user) {
 		this.logged = user;
@@ -21,12 +22,20 @@ public class UserWeb {
 	public boolean isLogged() {
 		return logged != null;
 	}
-	
-	public boolean isAdmin(){
+
+	public boolean isAdmin() {
 		return logged.isAdmin();
 	}
 
 	public void logout() {
 		this.logged = null;
+	}
+
+	public boolean isRegisterOk() {
+		return registerOk;
+	}
+
+	public void setRegisterOk(boolean ok) {
+		UserWeb.registerOk = ok;
 	}
 }

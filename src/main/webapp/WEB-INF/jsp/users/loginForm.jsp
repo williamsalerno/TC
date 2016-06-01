@@ -25,11 +25,24 @@
 					</div>
 					<hr style="margin-bottom: 40px;">
 					<c:forEach items="${errors}" var="error">
-						<div class="alert alert-danger" style="text-align: center;">
-							<strong>${error.category } </strong>${error.message }
-						</div>
+						<c:set var="messageId" value="1" />
+						<c:if test="${error.category eq messageId }">
+							<div class="alert alert-success" style="text-align: center;">
+								${error.message }</div>
+						</c:if>
+						<c:if test="${error.category ne messageId }">
+							<div class="alert alert-danger" style="text-align: center;">
+								<strong>${error.category } </strong>${error.message }
+							</div>
+						</c:if>
 					</c:forEach>
 				</form>
+				<c:set var="userOk" value="${userOk + 0 }" />
+				<c:if test="${userWeb.registerOk and userOk == 0 }">
+					<div class="alert alert-success" style="text-align: center;">
+						Usuário cadastrado com sucesso!</div>
+					<c:set var="userOk" value="${userOk + 1 }" />
+				</c:if>
 				<div class=bLogin>
 					<a id="newAcc" href="<c:url value= "/users/selectCountry"/>">Não
 						tem uma conta? <br>Cadastre-se
@@ -42,4 +55,8 @@
 		</section>
 	</div>
 </div>
+<script>
+	var teste = "${userOk }"
+	console.log(teste);
+</script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
