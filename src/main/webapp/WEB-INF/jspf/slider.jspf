@@ -13,28 +13,16 @@
 				<!-- Set the first background image using inline CSS below. -->
 				<div class="fill"
 					style="background-image: url('images/header.jpg');"></div>
-				<div class="carousel-caption">
-					<h2>
-						Valá lerunslivrus<br> <small>Teste teste teste teste</small>
-					</h2>
-
-				</div>
 			</div>
 			<div class="item">
 				<!-- Set the second background image using inline CSS below. -->
 				<div class="fill"
-					style="background-image: url('images/oferta.jpg');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 2</h2>
-				</div>
+					style="background-image: url('images/header.jpg');"></div>
 			</div>
 			<div class="item">
 				<!-- Set the third background image using inline CSS below. -->
 				<div class="fill"
 					style="background-image: url('images/header.jpg');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 3</h2>
-				</div>
 			</div>
 		</div>
 

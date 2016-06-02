@@ -52,7 +52,7 @@ h4 {
 	margin-top: 20%;
 	border: 1px solid rgba(0, 0, 0, 0);
 	width: 350px;
-	margin: 170px auto;
+	margin: 95px auto;
 	border-radius: 8px;
 }
 
@@ -83,35 +83,29 @@ hr {
 
 <div class="painel">
 	<h1>Painel de controle</h1>
-	<h4>Olá, Aldeglicia!</h4>
+	<h4>Olá, Jacqueline!</h4>
 	<br>
 	<div class="itensPainel">
-		<p style="background: #6de06d; border: 1px solid #32af32;">Adicionar
-			colaborador</p>
+		<p>Adicionar colaborador</p>
 		<p>Verificar colaborador</p>
 		<p>Verificar caixa</p>
-		<p>Controle de projetos</p>
+		<p style="background: #6de06d; border: 1px solid #32af32;">Controle
+			de projetos</p>
 		<p>Estoque de brinquedos</p>
 	</div>
 
 </div>
 <div class="tela1">
 	<section class="telaLogin">
-		<h2>Cadastre um novo colaborador</h2>
+		<h2>Cadastrar novo projeto</h2>
 		<hr>
 		<div class="formLogin">
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1"><span
 					class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
 					type="text" class="form-control" id="login" name="user.login"
-					value="${user.login }" placeholder="Primeiro nome"
+					value="${user.login }" placeholder="Nome do projeto"
 					required="required">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon" id="basic-addon1"><span
-					class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
-					type="text" class="form-control" id="login" name="user.login"
-					value="${user.login }" placeholder="Sobrenome" required="required">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1"><span
@@ -124,15 +118,23 @@ hr {
 				<span class="input-group-addon" id="basic-addon1"><span
 					class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
 					type="text" class="form-control" id="login" name="user.login"
-					value="${user.login }" placeholder="Tipo de cargo"
+					value="${user.login }" placeholder="Custo inicial estimado"
 					required="required">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1"><span
+					class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
+					type="text" class="form-control" id="login" name="user.login"
+					style="margin-bottom: 20px;" value="${user.login }"
+					placeholder="Responsável geral" required="required">
+			</div>
+			<div class="input-group">
+				<a style="margin-top: 35px; margin-right: 155px;">Descreva o
+					projeto:</a> <span class="input-group-addon" id="basic-addon1"><span
 					class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span> <input
 					type="password" class="form-control" id="password"
-					name="user.password" value="${user.password }" placeholder="Senha"
-					required="required">
+					style="width: 285px; height: 160px;" name="user.password"
+					value="${user.password }" required="required">
 			</div>
 			<div class="btnForm" style="padding-bottom: 30px;">
 				<button type="submit" class="btn btn-default">Cadastrar</button>

@@ -1,12 +1,5 @@
 <%@ include file="/WEB-INF/jspf/header.jspf"%>
 <%@ include file="/WEB-INF/jspf/slider.jspf"%>
-<div class="games-section-title">
-	<div class="container">
-		<h1>
-			TimeTrial Factory<br> <small>Build your own way</small>
-		</h1>
-	</div>
-</div>
 <section id="games-section">
 	<div class="container">
 		<div class="row">

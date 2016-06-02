@@ -20,4 +20,14 @@ public class SiteController {
 	public void telaLogin() {
 
 	}
+
+	@Get("/caixa")
+	public void caixa() {
+
+	}
+
+	@Get("/projeto")
+	public void controleProjeto() {
+
+	}
 }
