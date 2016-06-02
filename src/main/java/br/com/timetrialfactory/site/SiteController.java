@@ -10,4 +10,14 @@ public class SiteController {
 	public void home() {
 
 	}
+
+	@Get("/painelControle")
+	public void painelControle() {
+
+	}
+
+	@Get("/loginDe")
+	public void telaLogin() {
+
+	}
 }
