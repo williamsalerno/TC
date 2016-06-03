@@ -1,16 +1,12 @@
 <script src="<c:url value="/js/formAnimation.js"/>"></script>
 <script src="https://apis.google.com/js/platform.js"></script>
 <footer>
-	<div class="container">
+	<div class="containerFooter">
 		<div class="footer-row row-items">
 			<div class="footer-row-item">
 				<div class="about-us">
 					<a id="youTubeBtn" href="#" class="btn btn-primary btn-danger"><span
-						class="glyphicon glyphicon-play"></span> </a> <a
-						href="https://twitter.com/TimeTrialFactory"
-						class="twitter-follow-button" data-show-count="false"
-						data-size="large" data-show-screen-name="false">Follow
-						@TimeTrialFactory</a>
+						class="glyphicon glyphicon-play"></span> </a>
 
 				</div>
 			</div>

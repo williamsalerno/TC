@@ -33,14 +33,14 @@
 								<c:when test="${!contains}">
 									<form action="<c:url value="/cart"/>" method="post">
 										<input type="hidden" name="item.game.id" value="${game.id }" />
-										<button type="submit" class="btn btn-default">Adicionar
+										<button id="exibe" type="submit" class="btn btn-default">Adicionar
 											ao carrinho</button>
 									</form>
 								</c:when>
 								<c:otherwise>
 									<c:forEach items="${cart.items }" var="item">
 										<c:set var="contains" value="false" />
-										<c:if test="${item.game.id eq game.id and !contains}">
+										<c:if test="${item.game.id eq game.id}">
 											<button class="btn btn-default disabled">Jogo já
 												adicionado</button>
 										</c:if>
@@ -64,9 +64,9 @@
 						</c:if>
 					</div>
 					<div class="textGame">
-						<p>${game.description }Loremipsum dolor sit amet, cu nam
-							expetenda ocurreret. Vis graeci delicatissimi no, putant noluisse
-							mea ut. Fuisset scribentur sea ne. Vix ad quod iisque fuisset.</p>
+						<p>${game.description }Loremipsumdolorsitamet,cunamexpetenda
+							ocurreret. Vis graeci delicatissimi no, putant noluisse mea ut.
+							Fuisset scribentur sea ne. Vix ad quod iisque fuisset.</p>
 					</div>
 				</div>
 			</section>
@@ -99,6 +99,7 @@
 		var first;
 		var last;
 		$(".thumbnailGame").click(function() {
+
 			first = $(this).attr('id');
 
 			$('#' + last).hide();
