@@ -19,9 +19,18 @@
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
-						type="text" class="form-control" id="name" name="user.fullName"
-						value="${user.fullName }" placeholder="Nome completo"
-						aria-describedby="basic-addon1" required="required">
+						type="text" class="form-control" id="firstName"
+						name="user.firstName" value="${user.firstName }"
+						placeholder="Primeiro nome" aria-describedby="basic-addon1"
+						required="required">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span
+						class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <input
+						type="text" class="form-control" id="lastName"
+						name="user.lastName" value="${user.lastName }"
+						placeholder="Último nome" aria-describedby="basic-addon1"
+						required="required">
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1">@</span><input

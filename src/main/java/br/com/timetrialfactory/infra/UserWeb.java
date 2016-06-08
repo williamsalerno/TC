@@ -16,7 +16,7 @@ public class UserWeb {
 	}
 
 	public String getName() {
-		return logged.getFullName();
+		return logged.getFirstName();
 	}
 
 	public boolean isLogged() {

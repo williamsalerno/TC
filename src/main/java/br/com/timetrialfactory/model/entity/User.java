@@ -21,9 +21,13 @@ public class User {
 	@Column(name = "User_Id")
 	private Long id;
 
-	@Column(name = "User_FullName", nullable = false)
+	@Column(name = "User_FirstName", nullable = false)
 	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
-	private String fullName;
+	private String firstName;
+
+	@Column(name = "User_LasttName", nullable = false)
+	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
+	private String lastName;
 
 	@Column(name = "User_Login", nullable = false, unique = true)
 	private String login;
@@ -38,7 +42,7 @@ public class User {
 	@Embedded
 	@Valid
 	private Address address;
-	
+
 	@Column(name = "User_Admin", nullable = false)
 	private boolean admin;
 
@@ -50,12 +54,20 @@ public class User {
 		this.id = id;
 	}
 
-	public String getFullName() {
-		return fullName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setFirstName(String fullName) {
+		this.firstName = fullName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getLogin() {
@@ -97,7 +109,5 @@ public class User {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
-	
-	
 
 }
