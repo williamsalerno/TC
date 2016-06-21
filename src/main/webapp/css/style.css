@@ -26,6 +26,11 @@ h3 {
 	text-align: center;
 }
 
+#wrapper {
+	position: relative;
+	min-height: 100%;
+}
+
 .content {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -343,7 +348,7 @@ h1 {
 	color: #FFC277;
 }
 
-.btn:not(#youTubeBtn){
+.btn {
 	border: 1px solid #FFC277;
 	background: transparent;
 	box-shadow: 1px 1px 5px #FF983C !important;
@@ -442,19 +447,11 @@ h1 {
 	left: 2px;
 }
 
-.btn:hover:not(#youTubeBtn){
+.btn:hover {
 	border: 1px solid #FFC277 !important;
 	color: #F3ECC5 !important;
 	box-shadow: 1px 1px 5px #FFC277 !important;
 	background: #FBBA6B !important;
-}
-
-.btn:focus:not(#youTubeBtn) {
-	color: #F7EFBC !important;
-	box-shadow: none !important;
-	background: #FFC277 !important;
-	border: 1px solid #FFC277 !important;
-	outline: none !important;
 }
 
 .disabled {
@@ -553,8 +550,10 @@ hr {
 
 footer {
 	background-color: black;
-	position: relative;
-	top: 75px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	min-heigth: 250px;
 }
 
 .footer-row {
