@@ -23,7 +23,6 @@
 								<button class="link btn btn-default btnRemoveCart"
 									name="_method" value="delete">Remover</button>
 							</form>
-
 						</div>
 					</c:forEach>
 					<div class="totalCart">

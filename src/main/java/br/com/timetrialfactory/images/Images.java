@@ -22,12 +22,13 @@ public class Images {
 	private File imagesFolder;
 
 	public Images(ServletContext context) {
-		imagesFolder = new File("C:/uploadImagens");
+		String imagePath = context.getRealPath("/images");
+		imagesFolder = new File(imagePath);
 		imagesFolder.mkdir();
 	}
 
 	public void save(Game game, UploadedFile image) throws IOException {
-		File destiny = new File("C:/uploadImagens", game.getId() + ".jpg");
+		File destiny = new File(imagesFolder, game.getId() + ".jpg");
 		FileOutputStream fileOutputStream = new FileOutputStream(destiny);
 		try {
 			IOUtils.copy(image.getFile(), fileOutputStream);
@@ -54,7 +55,7 @@ public class Images {
 	}
 
 	public void delete(Game game) {
-		Path fileToDeletePath = Paths.get("C:/uploadImagens/" + game.getId() + ".jpg");
+		Path fileToDeletePath = Paths.get("/images" + game.getId() + ".jpg");
 		try {
 			Files.delete(fileToDeletePath);
 		} catch (IOException e) {

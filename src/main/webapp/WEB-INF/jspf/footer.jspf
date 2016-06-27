@@ -4,11 +4,7 @@
 	<div class="containerFooter">
 		<div class="footer-row row-items">
 			<div class="footer-row-item">
-				<div class="about-us">
-					<a id="youTubeBtn" href="#" class="btn btn-primary btn-danger"><span
-						class="glyphicon glyphicon-play"></span> </a>
-
-				</div>
+				<div class="about-us"></div>
 			</div>
 			<div class="clearfix"></div>
 		</div>

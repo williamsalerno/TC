@@ -3,6 +3,10 @@
 	src: url("../fonts/Roboto-Light.ttf");
 }
 
+html {
+	max-height: 100%;
+}
+
 body {
 	background-color: #0E0E0E;
 	color: black;
@@ -37,6 +41,7 @@ h3 {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 1170px;
+	padding-bottom: 250px;
 }
 
 .navbar {
@@ -134,7 +139,6 @@ h3 {
 }
 
 .containerLogin {
-	margin: 100px 0;
 	padding-top: 70px;
 	width: 100%;
 	padding-bottom: 0;
@@ -189,6 +193,7 @@ h3 {
 }
 
 .login {
+	margin-top: 60px !important;
 	margin: 0 auto;
 	background: transparent;
 	width: 40%;
@@ -553,7 +558,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	min-heigth: 250px;
+	min-height: 200px;
 }
 
 .footer-row {
@@ -760,7 +765,7 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 	text-align: center;
 	padding-bottom: 33px;
 	margin-top: 1px;
-	padding-top: 15px;
+	padding-top: 90px;
 }
 
 .games-section-title {
@@ -789,7 +794,6 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 	width: 100%;
 	background-color: #101010;
 	text-align: center;
-	margin-top: -49px;
 }
 
 .updates-section-title .container>h1 {
@@ -800,7 +804,7 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 	background-color: #000000;
 	text-align: center;
 	color: white;
-	padding-bottom: 51px;
+	padding-bottom: 185px;
 }
 
 .atualizacoes {

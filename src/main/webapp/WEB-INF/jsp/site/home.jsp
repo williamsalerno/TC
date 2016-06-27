@@ -100,25 +100,6 @@
 				<div class="clear"></div>
 			</div>
 		</section>
-		<section id="logotypes">
-			<div class="container">
-				<div class="logotypes-row">
-					<div class="row-item">
-						<img src="images/disruption.png" alt="Disruption" />
-					</div>
-					<div class="row-item">
-						<img src="images/disruption.png" alt="Disruption" />
-					</div>
-					<div class="row-item">
-						<img src="images/disruption.png" alt="Disruption" />
-					</div>
-					<div class="row-item">
-						<img src="images/disruption.png" alt="Disruption" />
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</section>
 	</section>
 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 </div>
