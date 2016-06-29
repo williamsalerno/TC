@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
@@ -21,20 +22,25 @@ public class User {
 	@Column(name = "user_Id")
 	private Long id;
 
+	@NotNull
 	@Column(name = "user_FirstName", nullable = false)
 	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
 	private String firstName;
 
+	@NotNull
 	@Column(name = "user_LasttName", nullable = false)
 	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
 	private String lastName;
 
+	@NotNull
 	@Column(name = "user_Login", nullable = false, unique = true)
 	private String login;
 
+	@NotNull
 	@Column(name = "user_Password", nullable = false)
 	private String password;
 
+	@NotNull
 	@Email(regexp = "[a-z]+@{1}\\w+\\.com{1}(\\.br)*", message = "O email informado é inválido.")
 	@Column(name = "User_Email", nullable = false, unique = true)
 	private String email;
@@ -43,8 +49,9 @@ public class User {
 	@Valid
 	private Address address;
 
+	@NotNull
 	@Column(name = "user_Admin", nullable = false)
-	private boolean admin;
+	private Boolean admin;
 
 	public Long getId() {
 		return id;
@@ -106,7 +113,7 @@ public class User {
 		return admin;
 	}
 
-	public void setAdmin(boolean admin) {
+	public void setAdmin(Boolean admin) {
 		this.admin = admin;
 	}
 

@@ -3,24 +3,29 @@ package br.com.timetrialfactory.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity(name = "licenses")
 public class License {
 
 	@Id
 	@Column(name = "license_Code", nullable = false, unique = true)
+	@NotNull
 	private String code;
 
+	@NotNull
 	@Column(name = "license_Game", nullable = false)
-	private Game game;
+	private Long game;
 
+	@NotNull
 	@Column(name = "license_User", nullable = false)
-	private User user;
+	private String user;
 
+	@NotNull
 	@Column(name = "license_PurchaseCode", nullable = false, unique = true)
-	private String purchaseCode;
+	private Long purchaseCode;
 
-	private boolean checkedCode;
+	private Boolean checkedCode;
 
 	// private Integer copies;
 
@@ -32,27 +37,27 @@ public class License {
 		this.code = code;
 	}
 
-	public Game getGame() {
+	public Long getGame() {
 		return game;
 	}
 
-	public void setGame(Game game) {
+	public void setGame(Long game) {
 		this.game = game;
 	}
 
-	public User getUser() {
+	public String getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 
-	public String getPurchaseCode() {
+	public Long getPurchaseCode() {
 		return purchaseCode;
 	}
 
-	public void setPurchaseCode(String purchaseCode) {
+	public void setPurchaseCode(Long purchaseCode) {
 		this.purchaseCode = purchaseCode;
 	}
 
@@ -60,7 +65,7 @@ public class License {
 		return checkedCode;
 	}
 
-	public void setCheckedCode(boolean checkedCode) {
+	public void setCheckedCode(Boolean checkedCode) {
 		this.checkedCode = checkedCode;
 	}
 

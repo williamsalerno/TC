@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
 
@@ -20,15 +21,19 @@ public class Purchase {
 	@Column(name = "purchase_Id")
 	private Long id;
 	
-	@Column(name = "purchase_User", nullable = false)
-	private User user;
-	
+	@NotNull
 	@Column(name = "purchase_Game", nullable = false)
-	private Game game;
+	private Long game;
 	
+	@NotNull
+	@Column(name = "purchase_User", nullable = false)
+	private String user;
+	
+	@NotNull
 	@Column(name = "purchase_Price", nullable = false)
 	private BigDecimal price;
 	
+	@NotNull
 	@Column(name = "purchase_Date", nullable = false)
 	private DateTime purchaseDate;
 
