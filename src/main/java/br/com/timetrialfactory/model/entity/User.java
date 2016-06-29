@@ -18,21 +18,21 @@ public class User {
 	@Id
 	@SequenceGenerator(name = "users_seq", sequenceName = "users_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "users_seq")
-	@Column(name = "User_Id")
+	@Column(name = "user_Id")
 	private Long id;
 
-	@Column(name = "User_FirstName", nullable = false)
+	@Column(name = "user_FirstName", nullable = false)
 	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
 	private String firstName;
 
-	@Column(name = "User_LasttName", nullable = false)
+	@Column(name = "user_LasttName", nullable = false)
 	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
 	private String lastName;
 
-	@Column(name = "User_Login", nullable = false, unique = true)
+	@Column(name = "user_Login", nullable = false, unique = true)
 	private String login;
 
-	@Column(name = "User_Password", nullable = false)
+	@Column(name = "user_Password", nullable = false)
 	private String password;
 
 	@Email(regexp = "[a-z]+@{1}\\w+\\.com{1}(\\.br)*", message = "O email informado é inválido.")
@@ -43,7 +43,7 @@ public class User {
 	@Valid
 	private Address address;
 
-	@Column(name = "User_Admin", nullable = false)
+	@Column(name = "user_Admin", nullable = false)
 	private boolean admin;
 
 	public Long getId() {

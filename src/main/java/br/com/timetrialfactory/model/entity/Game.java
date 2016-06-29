@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-@Entity
+@Entity(name = "games")
 public class Game {
 
 	@Id
@@ -24,15 +24,15 @@ public class Game {
 
 	@NotNull
 	@Length(min = 5, message = "Título do jogo é obrigatório e deve ter, no mínimo, 5 caracteres.")
-	@Column(name = "Game_Title", unique = true)
+	@Column(name = "game_Title", unique = true)
 	private String title;
 
 	@NotNull
 	@Min(value = 1, message = "O preço do jogo deve ser maior que ou igual a 1.")
-	@Column(name = "Game_Price")
+	@Column(name = "game_Price")
 	private BigDecimal price;
 
-	@Column(name = "Game_Description")
+	@Column(name = "game_Description")
 	private String description;
 
 	public Long getId() {

@@ -36,6 +36,11 @@
 					<button class="link btn btn-default">Voltar</button>
 				</form>
 			</div>
+			<div class="btnCart">
+				<form action="<c:url value="/games"/>" method="post">
+					<button class="link btn btn-default">Continuar pagamento</button>
+				</form>
+			</div>
 		</div>
 	</section>
 </div>

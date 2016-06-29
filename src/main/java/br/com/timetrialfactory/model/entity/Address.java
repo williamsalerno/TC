@@ -11,16 +11,16 @@ import br.com.timetrialfactory.model.entity.enums.Country;
 public class Address {
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "Address_Country", nullable = false)
+	@Column(name = "address_Country", nullable = false)
 	private Country country;
 
-	@Column(name = "Address_State")
+	@Column(name = "address_State")
 	private String state;
 
-	@Column(name = "Address_City")
+	@Column(name = "address_City")
 	private String city;
 
-	@Column(name = "Address_Cep")
+	@Column(name = "address_Cep")
 	private String cep;
 
 	public Country getCountry() {

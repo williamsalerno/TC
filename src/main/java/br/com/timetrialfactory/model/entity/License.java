@@ -3,56 +3,65 @@ package br.com.timetrialfactory.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name = "licenses")
 public class License {
 
-    @NotNull
-    private Game game;
+	@Id
+	@Column(name = "license_Code", nullable = false, unique = true)
+	private String code;
 
-    @NotNull
-    private User user;
+	@Column(name = "license_Game", nullable = false)
+	private Game game;
 
-    @Id
-    @NotNull
-    @Column(unique = true)
-    private String key;
+	@Column(name = "license_User", nullable = false)
+	private User user;
 
-    private boolean checkedKey;
+	@Column(name = "license_PurchaseCode", nullable = false, unique = true)
+	private String purchaseCode;
 
-    // private Integer copies;
+	private boolean checkedCode;
 
-    public Game getGame() {
-        return game;
-    }
+	// private Integer copies;
 
-    public void setGame(Game game) {
-        this.game = game;
-    }
+	public String getCode() {
+		return code;
+	}
 
-    public User getUser() {
-        return user;
-    }
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+	public Game getGame() {
+		return game;
+	}
 
-    public String getKey() {
-        return key;
-    }
+	public void setGame(Game game) {
+		this.game = game;
+	}
 
-    public void setKey(String key) {
-        this.key = key;
-    }
+	public User getUser() {
+		return user;
+	}
 
-    public boolean isCheckedKey() {
-        return checkedKey;
-    }
+	public void setUser(User user) {
+		this.user = user;
+	}
 
-    public void setCheckedKey(boolean checkedKey) {
-        this.checkedKey = checkedKey;
-    }
+	public String getPurchaseCode() {
+		return purchaseCode;
+	}
+
+	public void setPurchaseCode(String purchaseCode) {
+		this.purchaseCode = purchaseCode;
+	}
+
+	public boolean isCheckedCode() {
+		return checkedCode;
+	}
+
+	public void setCheckedCode(boolean checkedCode) {
+		this.checkedCode = checkedCode;
+	}
 
 }

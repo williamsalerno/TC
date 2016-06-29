@@ -11,13 +11,13 @@ import br.com.timetrialfactory.model.entity.enums.PhoneType;
 public class Phone {
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Phone_Type")
+    @Column(name = "phone_Type")
     private PhoneType phoneType;
 
-    @Column(name = "Phone_Ddd")
+    @Column(name = "phone_Ddd")
     private Integer ddd;
 
-    @Column(name = "Phone_Number")
+    @Column(name = "phone_Number")
     private String number;
 
     public PhoneType getPhoneType() {

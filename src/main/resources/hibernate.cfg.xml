@@ -5,20 +5,22 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/timetrialfactory</property>
+		<property name="connection.url">jdbc:postgresql://timetrialdb.c7qtwiedagdo.sa-east-1.rds.amazonaws.com:5432/timetrial</property>
 		<property name="connection.driver_class">org.postgresql.Driver</property>
 		<property name="connection.username">postgres</property>
-		<property name="connection.password">admin</property>
+		<property name="connection.password">adminttf</property>
 		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 
-		<mapping class="br.com.timetrialfactory.model.entity.Game" />
-		<mapping class="br.com.timetrialfactory.model.entity.User" />
 		<mapping class="br.com.timetrialfactory.model.entity.Address" />
+		<mapping class="br.com.timetrialfactory.model.entity.Game" />
+		<mapping class="br.com.timetrialfactory.model.entity.License" />
+		<mapping class="br.com.timetrialfactory.model.entity.Purchase" />
 		<mapping class="br.com.timetrialfactory.model.entity.Phone" />
+		<mapping class="br.com.timetrialfactory.model.entity.User" />
 
 	</session-factory>
 
