@@ -30,11 +30,11 @@ public class UsersController {
 	@Post("/users")
 	public void add(final User user) {
 		if (dao.userExists(user)) {
-			validator.add(new ValidationMessage(" Usuário já existe", "Erro "));
+			validator.add(new ValidationMessage(" message.userExists", "message.error"));
 		}
 		validator.onErrorUsePageOf(this).newUser(user);
 		dao.insert(user);
-		validator.add(new ValidationMessage("Usuário cadastrado com sucesso!", "1"));
+		validator.add(new ValidationMessage("message.success", "1"));
 		validator.onErrorRedirectTo(this).loginForm();
 	}
 
@@ -55,7 +55,7 @@ public class UsersController {
 	public void login(User user) {
 		User loaded = dao.load(user);
 		if (loaded == null) {
-			validator.add(new ValidationMessage("Login e/ou senha inválido.", "Erro!"));
+			validator.add(new ValidationMessage(" message.invalidCredential", "message.error"));
 		}
 		validator.onErrorUsePageOf(this).loginForm();
 		userWeb.login(loaded);

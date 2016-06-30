@@ -14,8 +14,7 @@
 					action="<c:url value="/users"/>" method="post">
 					<br>
 					<h2 id="h2Form" style="text-align: center; color: #FFC277">
-						Preencha seu cadastro<br> <small style="font-size: 15px">Todos
-							os campos são obrigatórios</small>
+						<fmt:message key="h2.completeRegister"/><br> <small style="font-size: 15px"></small>
 					</h2>
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"><span

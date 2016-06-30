@@ -1,5 +1,6 @@
+<%@ include file="/WEB-INF/jspf/header.jspf"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <div id="wrapper">
-	<%@ include file="/WEB-INF/jspf/header.jspf"%>
 	<div class="containerLogin">
 		<div class="content">
 			<section class="login">
@@ -11,18 +12,20 @@
 							<span class="input-group-addon" id="basic-addon1"><span
 								class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
 								type="text" class="form-control" id="login" name="user.login"
-								value="${user.login }" placeholder="Nome de usuário"
-								required="required">
+								value="${user.login }"
+								placeholder=<fmt:message key="placeholder.username"/> required="required">
 						</div>
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><span
 								class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span>
 							<input type="password" class="form-control" id="password"
 								name="user.password" value="${user.password }"
-								placeholder="Senha" required="required">
+								placeholder=<fmt:message key="placeholder.password"/> required="required">
 						</div>
 						<div class="btnForm" style="padding-bottom: 30px;">
-							<button type="submit" class="btn btn-default">Entrar</button>
+							<button type="submit" class="btn btn-default">
+								<fmt:message key="btn.enter" />
+							</button>
 						</div>
 						<hr style="margin-bottom: 40px;">
 						<c:forEach items="${errors}" var="error">
@@ -38,19 +41,14 @@
 							</c:if>
 						</c:forEach>
 					</form>
-					<c:set var="userOk" value="${userOk + 0 }" />
-					<c:if test="${userWeb.registerOk and userOk == 0 }">
-						<div class="alert alert-success" style="text-align: center;">
-							Usuário cadastrado com sucesso!</div>
-						<c:set var="userOk" value="${userOk + 1 }" />
-					</c:if>
 					<div class=bLogin>
-						<a id="newAcc" href="<c:url value= "/users/selectCountry"/>">Não
-							tem uma conta? <br>Cadastre-se
+						<a id="newAcc" href="<c:url value= "/users/selectCountry"/>"><fmt:message
+								key="a.register1" /> <br> <fmt:message key="a.register2" />
 						</a>
 					</div>
 					<div class=aLogin>
-						<a href="<c:url value= "/users/new"/>">Esqueci minha senha </a>
+						<a href="<c:url value= "/users/new"/>"><fmt:message
+								key="a.forgetPassword" /></a>
 					</div>
 				</div>
 			</section>

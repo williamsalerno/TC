@@ -10,6 +10,7 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -24,15 +25,16 @@ public class User {
 
 	@NotNull
 	@Column(name = "user_FirstName", nullable = false)
-	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
+	@Pattern(regexp = "[a-zA-Z]+", message = "O nome deve conter apenas letras.")
 	private String firstName;
 
 	@NotNull
 	@Column(name = "user_LasttName", nullable = false)
-	@Pattern(regexp = "[a-zA-Z ]+", message = "O nome deve conter apenas letras.")
+	@Pattern(regexp = "[a-zA-Z]+", message = "O nome deve conter apenas letras.")
 	private String lastName;
 
 	@NotNull
+	@Size(min = 3, max = 12, message="")
 	@Column(name = "user_Login", nullable = false, unique = true)
 	private String login;
 

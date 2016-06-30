@@ -6,7 +6,7 @@
 				action="<c:url value="/users/new"/>" method="get">
 				<br>
 				<h2 id="h2Form" style="text-align: center; color: #FFC277">
-					Selecione seu país</h2>
+					<fmt:message key="h2.selectCountry" /></h2>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><span
 						class="glyphicon glyphicon-globe" aria-hidden="true"></span></span> <select
@@ -19,7 +19,7 @@
 				</div>
 				<hr style="margin: 40px;">
 				<div class="btnForm">
-					<button type="submit" class="btn btn-default" id="countryButton">Continuar</button>
+					<button type="submit" class="btn btn-default" id="countryButton"><fmt:message key="btn.continue" /></button>
 				</div>
 				<br>
 			</form>
