@@ -51,9 +51,8 @@ public class User {
 	@Valid
 	private Address address;
 
-	@NotNull
 	@Column(name = "user_Admin", nullable = false)
-	private Boolean admin;
+	private Boolean admin = false;
 
 	public Long getId() {
 		return id;
