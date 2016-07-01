@@ -18,6 +18,10 @@ public class UserWeb {
 	public String getName() {
 		return logged.getFirstName();
 	}
+	
+	public Long getId() {
+		return logged.getId();
+	}
 
 	public boolean isLogged() {
 		return logged != null;

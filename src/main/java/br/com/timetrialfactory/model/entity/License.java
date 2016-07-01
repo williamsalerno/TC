@@ -1,12 +1,19 @@
 package br.com.timetrialfactory.model.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity(name = "licenses")
-public class License {
+public class License implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "license_Code", nullable = false, unique = true)
@@ -14,15 +21,15 @@ public class License {
 	private String code;
 
 	@NotNull
-	@Column(name = "license_Game", nullable = false)
+	@Column(name = "game_Id", nullable = false)
 	private Long game;
 
 	@NotNull
 	@Column(name = "license_User", nullable = false)
-	private String user;
+	private Long user;
 
 	@NotNull
-	@Column(name = "license_PurchaseCode", nullable = false, unique = true)
+	@Column(name = "license_PurchaseCode", nullable = false)
 	private Long purchaseCode;
 
 	private Boolean checkedCode;
@@ -45,12 +52,12 @@ public class License {
 		this.game = game;
 	}
 
-	public String getUser() {
+	public Long getUser() {
 		return user;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setUser(Long long1) {
+		this.user = long1;
 	}
 
 	public Long getPurchaseCode() {

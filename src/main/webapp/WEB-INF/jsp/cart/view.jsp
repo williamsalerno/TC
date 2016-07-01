@@ -35,12 +35,11 @@
 				<form action="<c:url value="/games"/>" method="get">
 					<button class="link btn btn-default">Voltar</button>
 				</form>
-			</div>
-			<div class="btnCart">
-				<form action="<c:url value="/games"/>" method="post">
-					<button class="link btn btn-default">Continuar pagamento</button>
+				<form action="<c:url value="/testeJogoComprado"/>" method="post">
+					<button class="link btn btn-default">Gerar chave de teste</button>
 				</form>
 			</div>
+			<div class="btnCart"></div>
 		</div>
 	</section>
 </div>

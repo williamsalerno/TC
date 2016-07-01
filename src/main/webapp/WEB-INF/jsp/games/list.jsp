@@ -48,7 +48,7 @@
 								</c:otherwise>
 							</c:choose>
 						</c:if>
-						<c:if test="${userWeb.logged }">
+						<c:if test="${userWeb.logged and userWeb.admin}">
 							<form action="<c:url value="/games/${game.id}"/>">
 								<button type="submit" class="btn btn-default"
 									style="position: absolute; top: 0px; right: 110%;">Editar

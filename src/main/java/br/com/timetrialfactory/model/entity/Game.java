@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 @Entity(name = "games")
-public class Game {
+public class Game{
 
 	@Id
 	@SequenceGenerator(name = "game_seq", sequenceName = "game_seq", allocationSize = 1)
