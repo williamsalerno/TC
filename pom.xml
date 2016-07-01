@@ -56,6 +56,21 @@
 			<version>5.1.1.Final</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time-hibernate -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time-hibernate</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jadira.usertype/usertype.jodatime -->
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.jodatime</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -115,6 +130,13 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml/classmate -->
+		<dependency>
+			<groupId>com.fasterxml</groupId>
+			<artifactId>classmate</artifactId>
+			<version>1.3.1</version>
 		</dependency>
 
 	</dependencies>

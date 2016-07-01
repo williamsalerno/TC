@@ -5,9 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-@Entity(name = "licenses")
+@Entity(name = "LICENSES")
 public class License implements Serializable {
 
 	/**
@@ -16,25 +18,23 @@ public class License implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "license_Code", nullable = false, unique = true)
+	@Column(name = "id", nullable = false, unique = true)
 	@NotNull
 	private String code;
 
-	@NotNull
-	@Column(name = "game_Id", nullable = false)
-	private Long game;
+	@ManyToOne
+	@JoinColumn(name = "game_id")
+	private Game game;
 
-	@NotNull
-	@Column(name = "license_User", nullable = false)
-	private Long user;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
-	@NotNull
-	@Column(name = "license_PurchaseCode", nullable = false)
-	private Long purchaseCode;
+	@ManyToOne
+	@JoinColumn(name = "purchase_id")
+	private Purchase purchaseCode;
 
 	private Boolean checkedCode;
-
-	// private Integer copies;
 
 	public String getCode() {
 		return code;
@@ -44,31 +44,31 @@ public class License implements Serializable {
 		this.code = code;
 	}
 
-	public Long getGame() {
+	public Game getGame() {
 		return game;
 	}
 
-	public void setGame(Long game) {
+	public void setGame(Game game) {
 		this.game = game;
 	}
 
-	public Long getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(Long long1) {
-		this.user = long1;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Long getPurchaseCode() {
+	public Purchase getPurchaseCode() {
 		return purchaseCode;
 	}
 
-	public void setPurchaseCode(Long purchaseCode) {
+	public void setPurchaseCode(Purchase purchaseCode) {
 		this.purchaseCode = purchaseCode;
 	}
 
-	public boolean isCheckedCode() {
+	public Boolean getCheckedCode() {
 		return checkedCode;
 	}
 
@@ -76,4 +76,7 @@ public class License implements Serializable {
 		this.checkedCode = checkedCode;
 	}
 
+	// private Integer copies;
+
+	
 }

@@ -30,11 +30,11 @@ public class UsersController {
 	@Post("/users")
 	public void add(final User user) {
 		if (dao.userExists(user)) {
-			validator.add(new ValidationMessage(" {message.userExists}", "{message.error}"));
+			validator.add(new ValidationMessage(" message.userExists", "message.error"));
 		}
 		validator.onErrorUsePageOf(this).newUser(user);
 		dao.insert(user);
-		validator.add(new ValidationMessage("{message.success}", "1"));
+		validator.add(new ValidationMessage("message.success", "1"));
 		validator.onErrorRedirectTo(this).loginForm();
 	}
 

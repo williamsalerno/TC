@@ -13,26 +13,26 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-@Entity(name = "games")
+@Entity(name = "GAMES")
 public class Game{
 
 	@Id
 	@SequenceGenerator(name = "game_seq", sequenceName = "game_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "game_seq")
-	@Column(name = "game_Id")
+	@Column(name = "id")
 	private Long id;
 
 	@NotNull
 	@Length(min = 5, message = "Título do jogo é obrigatório e deve ter, no mínimo, 5 caracteres.")
-	@Column(name = "game_Title", nullable = false, unique = true)
+	@Column(name = "title", nullable = false, unique = true)
 	private String title;
 
 	@NotNull
 	@Min(value = 1, message = "O preço do jogo deve ser maior que ou igual a 1.")
-	@Column(name = "game_Price", nullable = false)
+	@Column(name = "price", nullable = false)
 	private BigDecimal price;
 
-	@Column(name = "game_Description")
+	@Column(name = "description")
 	private String description;
 
 	public Long getId() {

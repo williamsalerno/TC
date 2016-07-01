@@ -3,8 +3,10 @@ package br.com.timetrialfactory.model;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import br.com.caelum.vraptor.ioc.SessionScoped;
 import br.com.timetrialfactory.model.entity.Game;
 
+@SessionScoped
 public class Item {
 
 	private Game game;

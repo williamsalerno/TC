@@ -14,6 +14,10 @@ public class UserWeb {
 	public void login(User user) {
 		this.logged = user;
 	}
+	
+	public User getLoggedUser(){
+		return logged;
+	}
 
 	public String getName() {
 		return logged.getFirstName();

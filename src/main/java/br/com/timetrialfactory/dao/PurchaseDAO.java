@@ -17,7 +17,7 @@ public class PurchaseDAO {
 	        this.session = session;
 	    }
 	    
-	    public void registerPurchase(Purchase purchase){
+	    public void insertPurchase(Purchase purchase){
 	        Transaction tx = session.beginTransaction();
 	        this.session.save(purchase);
 	        tx.commit();

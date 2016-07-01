@@ -2,7 +2,6 @@ package br.com.timetrialfactory.model.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,15 +10,18 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import br.com.timetrialfactory.model.entity.enums.PurchaseSituationType;
 
-@Entity(name = "purchases")
-public class Purchase implements Serializable{
+@Entity(name = "PURCHASES")
+public class Purchase implements Serializable {
 
 	/**
 	 * 
@@ -29,28 +31,29 @@ public class Purchase implements Serializable{
 	@Id
 	@SequenceGenerator(name = "purchases_seq", sequenceName = "purchases_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "purchases_seq")
-	@Column(name = "purchase_Id")
+	@Column(name = "id")
 	private Long id;
 
-	@NotNull
-	@Column(name = "purchase_Game", nullable = false)
-	private Long game;
+	@ManyToOne
+	@JoinColumn(name = "game_id")
+	private Game game;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	@NotNull
-	@Column(name = "purchase_User", nullable = false)
-	private Long user;
-
-	@NotNull
-	@Column(name = "purchase_Price", nullable = false)
+	@Column(name = "game_price", nullable = false)
 	private BigDecimal price;
 
 	@NotNull
-	@Column(name = "purchase_Date", nullable = false)
-	private Date purchaseDate;
+	@Column(name = "purchase_date", nullable = false)
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+	private DateTime purchaseDate;
 
 	@Enumerated(EnumType.STRING)
 	@NotNull
-	@Column(name = "purchase_Situation", nullable = false)
+	@Column(name = "purchase_situation", nullable = false)
 	private PurchaseSituationType purchaseSituation;
 
 	public Long getId() {
@@ -61,19 +64,19 @@ public class Purchase implements Serializable{
 		this.id = id;
 	}
 
-	public Long getGame() {
+	public Game getGame() {
 		return game;
 	}
 
-	public void setGame(Long game) {
+	public void setGame(Game game) {
 		this.game = game;
 	}
 
-	public Long getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(Long user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
@@ -85,12 +88,12 @@ public class Purchase implements Serializable{
 		this.price = price;
 	}
 
-	public Date getPurchaseDate() {
+	public DateTime getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(Date purchaseDate) {
-		this.purchaseDate = purchaseDate;
+	public void setPurchaseDate(DateTime dateTime) {
+		this.purchaseDate = dateTime;
 	}
 
 	public PurchaseSituationType getPurchaseSituation() {
