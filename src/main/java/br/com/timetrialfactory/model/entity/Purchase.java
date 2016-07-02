@@ -7,16 +7,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
-import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
 
 import br.com.timetrialfactory.model.entity.enums.PurchaseSituationType;
 
@@ -28,18 +25,14 @@ public class Purchase implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@SequenceGenerator(name = "purchases_seq", sequenceName = "purchases_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "purchases_seq")
-	@Column(name = "id")
-	private Long id;
-
 	@ManyToOne
 	@JoinColumn(name = "game_id")
+	@Id
 	private Game game;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
+	@Id
 	private User user;
 
 	@NotNull
@@ -48,21 +41,13 @@ public class Purchase implements Serializable {
 
 	@NotNull
 	@Column(name = "purchase_date", nullable = false)
-	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-	private DateTime purchaseDate;
+	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
+	private LocalDateTime purchaseDate;
 
 	@Enumerated(EnumType.STRING)
 	@NotNull
 	@Column(name = "purchase_situation", nullable = false)
 	private PurchaseSituationType purchaseSituation;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Game getGame() {
 		return game;
@@ -88,12 +73,12 @@ public class Purchase implements Serializable {
 		this.price = price;
 	}
 
-	public DateTime getPurchaseDate() {
+	public LocalDateTime getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(DateTime dateTime) {
-		this.purchaseDate = dateTime;
+	public void setPurchaseDate(LocalDateTime localDateTime) {
+		this.purchaseDate = localDateTime;
 	}
 
 	public PurchaseSituationType getPurchaseSituation() {

@@ -14,13 +14,15 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
+import br.com.timetrialfactory.model.entity.embeddable.Address;
+
 @Entity(name = "USERS")
 public class User {
 
 	@Id
 	@SequenceGenerator(name = "users_seq", sequenceName = "users_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "users_seq")
-	@Column(name = "id")
+	@Column(name = "id", updatable = false)
 	private Long id;
 
 	@NotNull
@@ -34,7 +36,7 @@ public class User {
 	private String lastName;
 
 	@NotNull
-	@Size(min = 3, max = 12, message="")
+	@Size(min = 3, max = 12, message = "")
 	@Column(name = "username", nullable = false, unique = true)
 	private String login;
 

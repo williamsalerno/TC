@@ -1,4 +1,4 @@
-package br.com.timetrialfactory.model.entity;
+package br.com.timetrialfactory.model.entity.embeddable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

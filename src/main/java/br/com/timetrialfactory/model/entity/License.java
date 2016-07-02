@@ -18,7 +18,7 @@ public class License implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "id", nullable = false, unique = true)
+	@Column(name = "id", nullable = false, unique = true, updatable = false)
 	@NotNull
 	private String code;
 
@@ -29,10 +29,6 @@ public class License implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-
-	@ManyToOne
-	@JoinColumn(name = "purchase_id")
-	private Purchase purchaseCode;
 
 	private Boolean checkedCode;
 
@@ -60,14 +56,6 @@ public class License implements Serializable {
 		this.user = user;
 	}
 
-	public Purchase getPurchaseCode() {
-		return purchaseCode;
-	}
-
-	public void setPurchaseCode(Purchase purchaseCode) {
-		this.purchaseCode = purchaseCode;
-	}
-
 	public Boolean getCheckedCode() {
 		return checkedCode;
 	}
@@ -78,5 +66,4 @@ public class License implements Serializable {
 
 	// private Integer copies;
 
-	
 }

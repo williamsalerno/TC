@@ -1,8 +1,9 @@
 package br.com.timetrialfactory.service;
 
 import static br.com.timetrialfactory.model.entity.enums.PurchaseSituationType.PROCESSANDO;
-import static br.com.timetrialfactory.service.LicenseService.purchaseIdToLicenseTable;
-import static org.joda.time.DateTime.now;
+
+import org.joda.time.DateTimeZone;
+import org.joda.time.LocalDateTime;
 
 import br.com.timetrialfactory.dao.PurchaseDAO;
 import br.com.timetrialfactory.infra.UserWeb;
@@ -19,11 +20,10 @@ public class PurchaseService {
 		for (int i = 0; i < cart.getItems().size(); i++) {
 			purchase.setGame(cart.getItems().get(i).getGame());
 			purchase.setPrice(cart.getItems().get(i).getGame().getPrice());
-			purchase.setPurchaseDate(now());
+			purchase.setPurchaseDate(LocalDateTime.now(DateTimeZone.forID("America/Sao_Paulo")));
 			purchase.setUser(userWeb.getLoggedUser());
 			purchase.setPurchaseSituation(PROCESSANDO);
 			dao.insertPurchase(purchase);
-			purchaseIdToLicenseTable(purchase);
 		}
 	}
 
