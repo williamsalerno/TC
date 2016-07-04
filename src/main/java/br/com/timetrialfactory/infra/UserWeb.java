@@ -9,20 +9,20 @@ import br.com.timetrialfactory.model.entity.User;
 public class UserWeb {
 
 	private User logged;
-	private static boolean registerOk;
+
 
 	public void login(User user) {
 		this.logged = user;
 	}
-	
-	public User getLoggedUser(){
+
+	public User getLoggedUser() {
 		return logged;
 	}
 
 	public String getName() {
 		return logged.getFirstName();
 	}
-	
+
 	public Long getId() {
 		return logged.getId();
 	}
@@ -37,13 +37,5 @@ public class UserWeb {
 
 	public void logout() {
 		this.logged = null;
-	}
-
-	public boolean isRegisterOk() {
-		return registerOk;
-	}
-
-	public void setRegisterOk(boolean ok) {
-		UserWeb.registerOk = ok;
 	}
 }

@@ -1,5 +1,7 @@
 package br.com.timetrialfactory.controller;
 
+import javax.servlet.http.HttpSession;
+
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -19,12 +21,14 @@ public class UsersController {
 	private final UserDAO dao;
 	private final Result result;
 	private final Validator validator;
+	private HttpSession session;
 
-	public UsersController(UserWeb userWeb, UserDAO dao, Result result, Validator validator) {
+	public UsersController(UserWeb userWeb, UserDAO dao, Result result, Validator validator, HttpSession session) {
 		this.userWeb = userWeb;
 		this.dao = dao;
 		this.result = result;
 		this.validator = validator;
+		this.session = session;
 	}
 
 	@Post("/users")
@@ -66,6 +70,7 @@ public class UsersController {
 	@Path("/logout")
 	public void logout() {
 		userWeb.logout();
+		session.invalidate();
 		result.redirectTo(this).loginForm();
 	}
 

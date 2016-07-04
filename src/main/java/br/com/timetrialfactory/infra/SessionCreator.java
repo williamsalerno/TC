@@ -12,25 +12,25 @@ import br.com.caelum.vraptor.ioc.ComponentFactory;
 @Component
 public class SessionCreator implements ComponentFactory<Session> {
 
-    private SessionFactory factory;
-    private Session session;
+	private SessionFactory factory;
+	private Session session;
 
-    public SessionCreator(SessionFactory factory) {
-        this.factory = factory;
-    }
+	public SessionCreator(SessionFactory factory) {
+		this.factory = factory;
+	}
 
-    @PostConstruct
-    public void openSession() {
-        this.session = factory.openSession();
-    }
+	@PostConstruct
+	public void openSession() {
+		this.session = factory.openSession();
+	}
 
-    public Session getInstance() {
-        return session;
-    }
+	public Session getInstance() {
+		return session;
+	}
 
-    @PreDestroy
-    public void closeSession() {
-        this.session.close();
-    }
+	@PreDestroy
+	public void closeSession() {
+		this.session.close();
+	}
 
 }
