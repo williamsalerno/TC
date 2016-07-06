@@ -14,6 +14,13 @@ public class PayPalApiCall {
 	private APIContext context;
 	private Payment payment;
 	
+	public PayPalApiCall(String clientId, String clientSecret, APIContext context, Payment payment){
+		this.clientId = clientId;
+		this.clientSecret = clientSecret;
+		this.context = new APIContext(clientId, clientSecret, "sandbox");
+		this.payment = payment;
+	}
+	
 	public String getClientId() {
 		return clientId;
 	}
@@ -30,16 +37,11 @@ public class PayPalApiCall {
 		this.clientSecret = clientSecret;
 	}
 
-	public PayPalApiCall(String clientId, String clientSecret, APIContext context, Payment payment){
-		this.clientId = clientId;
-		this.clientSecret = clientSecret;
-		this.context = new APIContext(clientId, clientSecret, "sandbox");
-		this.payment = payment;
-	}
-	
+
 	public void fetchPaymentById(){
 		try {
-			this.payment = Payment.get(context, "PAY-4T698276NC427425EK5QIV7Y");
+			this.context.addConfiguration("http.ConnectionTimeOut", "2000");
+			this.payment = Payment.get(this.context, "PAY-4T698276NC427425EK5QIV7Y");
 		} catch (PayPalRESTException e) {
 			e.printStackTrace();
 		}
