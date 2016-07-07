@@ -12,7 +12,7 @@ public class LicenseService {
 	private LicenseService() {
 	}
 
-	public static void registerService(Cart cart, UserWeb userWeb, LicenseDAO dao) {
+	public static void registerLicense(Cart cart, UserWeb userWeb, LicenseDAO dao) {
 		for (int i = 0; i < cart.getItems().size(); i++) {
 			License license = new License();
 			license.setCode(generateCode());

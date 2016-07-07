@@ -1,14 +1,15 @@
 package br.com.timetrialfactory.controller;
 
-import static br.com.timetrialfactory.service.LicenseService.registerService;
+import static br.com.timetrialfactory.service.LicenseService.registerLicense;
 import static br.com.timetrialfactory.service.PurchaseService.registerPurchase;
 
+import com.google.gson.JsonArray;
 import com.paypal.base.rest.PayPalRESTException;
 
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.com.timetrialfactory.api.paypal.PayPalToken;
+import br.com.timetrialfactory.api.paypal.PayPalApiCall;
 import br.com.timetrialfactory.dao.LicenseDAO;
 import br.com.timetrialfactory.dao.PurchaseDAO;
 import br.com.timetrialfactory.infra.UserWeb;
@@ -21,11 +22,11 @@ public class PurchaseController {
 	private final UserWeb userWeb;
 	private final PurchaseDAO purchaseDao;
 	private final LicenseDAO licenseDao;
-	private final PayPalToken payPal;
+	private final PayPalApiCall payPal;
 	private final Result result;
 
 	public PurchaseController(Cart cart, UserWeb userWeb, PurchaseDAO purchaseDao, LicenseDAO licenseDao,
-			PayPalToken payPal, Result result) {
+			PayPalApiCall payPal, Result result) {
 		this.cart = cart;
 		this.userWeb = userWeb;
 		this.purchaseDao = purchaseDao;
@@ -34,17 +35,18 @@ public class PurchaseController {
 		this.result = result;
 	}
 
-	@Post("/buy")
-	public void addPurchaseAndLicense() throws PayPalRESTException {
+	@Post("/payment")
+	public void generatePayment(String currency) throws PayPalRESTException {
+		String urlPayPal = this.payPal.apiRequest(currency, cart);
 		registerPurchase(cart, userWeb, purchaseDao);
-		registerService(cart, userWeb, licenseDao);
-		this.payPal.testApi();
+		JsonArray json = new JsonArray();
 		result.redirectTo(GamesController.class).list();
 	}
-	
-	@Post("/comprovaBuy")
-		public void comprovaBuy() throws PayPalRESTException{
-		this.payPal.testPayment();
+
+	@Post("/confirmedPayment")
+	public void confirmPayment(String paymentId) throws PayPalRESTException {
+		this.payPal.apiReturn(paymentId);
+		registerLicense(cart, userWeb, licenseDao);
 		result.redirectTo(GamesController.class).list();
 	}
 }

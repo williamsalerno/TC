@@ -35,11 +35,14 @@
 				<form action="<c:url value="/games"/>" method="get">
 					<button class="link btn btn-default">Voltar</button>
 				</form>
-				<form action="<c:url value="/buy"/>" method="post">
-					<button class="link btn btn-default">Gerar chave de teste</button>
+				<form action="<c:url value="/payment"/>" method="post">
+					<c:set var="currency" value="BRL" />
+					<input type="hidden" name="currency" value="${currency }" />
+					<button class="link btn btn-default">Gerar pagamento teste</button>
 				</form>
-				<form action="<c:url value="/comprovaBuy"/>" method="post">
-					<button class="link btn btn-default">Comprovar pagamento teste</button>
+				<form action="<c:url value="/confirmPayment"/>" method="post">
+					<button class="link btn btn-default">Comprovar pagamento
+						teste</button>
 				</form>
 			</div>
 			<div class="btnCart"></div>
