@@ -38,6 +38,9 @@
 				<form action="<c:url value="/buy"/>" method="post">
 					<button class="link btn btn-default">Gerar chave de teste</button>
 				</form>
+				<form action="<c:url value="/comprovaBuy"/>" method="post">
+					<button class="link btn btn-default">Comprovar pagamento teste</button>
+				</form>
 			</div>
 			<div class="btnCart"></div>
 		</div>

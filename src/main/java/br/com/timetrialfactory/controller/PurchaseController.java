@@ -3,10 +3,12 @@ package br.com.timetrialfactory.controller;
 import static br.com.timetrialfactory.service.LicenseService.registerService;
 import static br.com.timetrialfactory.service.PurchaseService.registerPurchase;
 
+import com.paypal.base.rest.PayPalRESTException;
+
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.com.timetrialfactory.api.paypal.PayPalApiCall;
+import br.com.timetrialfactory.api.paypal.PayPalToken;
 import br.com.timetrialfactory.dao.LicenseDAO;
 import br.com.timetrialfactory.dao.PurchaseDAO;
 import br.com.timetrialfactory.infra.UserWeb;
@@ -19,11 +21,11 @@ public class PurchaseController {
 	private final UserWeb userWeb;
 	private final PurchaseDAO purchaseDao;
 	private final LicenseDAO licenseDao;
-	private final PayPalApiCall payPal;
+	private final PayPalToken payPal;
 	private final Result result;
 
-	public PurchaseController(Cart cart, UserWeb userWeb, PurchaseDAO purchaseDao, LicenseDAO licenseDao, PayPalApiCall payPal,
-			Result result) {
+	public PurchaseController(Cart cart, UserWeb userWeb, PurchaseDAO purchaseDao, LicenseDAO licenseDao,
+			PayPalToken payPal, Result result) {
 		this.cart = cart;
 		this.userWeb = userWeb;
 		this.purchaseDao = purchaseDao;
@@ -33,10 +35,16 @@ public class PurchaseController {
 	}
 
 	@Post("/buy")
-	public void addPurchaseAndLicense() {
+	public void addPurchaseAndLicense() throws PayPalRESTException {
 		registerPurchase(cart, userWeb, purchaseDao);
 		registerService(cart, userWeb, licenseDao);
-		payPal.fetchPaymentById();
+		this.payPal.testApi();
+		result.redirectTo(GamesController.class).list();
+	}
+	
+	@Post("/comprovaBuy")
+		public void comprovaBuy() throws PayPalRESTException{
+		this.payPal.testPayment();
 		result.redirectTo(GamesController.class).list();
 	}
 }

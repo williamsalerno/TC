@@ -9,8 +9,8 @@ import br.com.caelum.vraptor.Resource;
 @Resource
 public class PayPalApiCall {
 	
-	private String clientId = "AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS";
-	private String clientSecret = "EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL";
+	private String clientId = "Ab_nlXTzR9qxmh-auNEbmrboX_IRtra8Y_oDbQFR9wcP4BEgKwJbmsNsfff0UFFvG1DBDk0qZS2me7DU";
+	private String clientSecret = "ENFb67rL3BZC0Qj4c-j9WJZY9xUB2MpgVAgkVxioN5nzy24LOWv9GmQX3M389lyOZTXBKUJZDpPEEMbB";
 	private APIContext context;
 	private Payment payment;
 	
