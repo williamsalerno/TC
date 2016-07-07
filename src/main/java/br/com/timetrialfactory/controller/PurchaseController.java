@@ -3,6 +3,8 @@ package br.com.timetrialfactory.controller;
 import static br.com.timetrialfactory.service.LicenseService.registerLicense;
 import static br.com.timetrialfactory.service.PurchaseService.registerPurchase;
 
+import org.json.JSONArray;
+
 import com.google.gson.JsonArray;
 import com.paypal.base.rest.PayPalRESTException;
 
@@ -39,7 +41,7 @@ public class PurchaseController {
 	public void generatePayment(String currency) throws PayPalRESTException {
 		String urlPayPal = this.payPal.apiRequest(currency, cart);
 		registerPurchase(cart, userWeb, purchaseDao);
-		JsonArray json = new JsonArray();
+		JSONArray json = new JSONArray(urlPayPal);
 		result.redirectTo(GamesController.class).list();
 	}
 
