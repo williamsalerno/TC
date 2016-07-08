@@ -35,7 +35,7 @@ public class GamesController {
     public List<Game> list() {
         return dao.listAll();
     }
-
+    
     @Restrict
     @Post("/games")
     public void add(final Game game) {

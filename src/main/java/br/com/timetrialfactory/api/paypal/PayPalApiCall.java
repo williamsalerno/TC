@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.JsonElement;
 import com.paypal.api.payments.Amount;
 import com.paypal.api.payments.Item;
 import com.paypal.api.payments.ItemList;
@@ -31,6 +30,31 @@ public class PayPalApiCall {
 	public PayPalApiCall() {
 		this.payer = new Payer();
 		this.payer.setPaymentMethod("paypal");
+	}
+
+	public Payment apiRequest(String currency, Cart cart) throws PayPalRESTException {
+		Payment payment = new Payment();
+		payment.setIntent("sale");
+		payment.setPayer(this.payer);
+		payment.setTransactions(this.listTransactions(currency, cart));
+		RedirectUrls redirectUrls = new RedirectUrls();
+		redirectUrls.setCancelUrl("https://devtools-paypal.com/guide/pay_paypal?cancel=true");
+		redirectUrls.setReturnUrl("https://timetrialfac.wix.com/ttfac");
+		payment.setRedirectUrls(redirectUrls);
+
+		Payment createdPayment = payment.create(setAPIContext());
+		System.out.println(createdPayment);
+
+		return createdPayment;
+	}
+	
+	public void apiReturn(String paymentId) throws PayPalRESTException {
+		Payment payment = new Payment(paymentId, this.payer);
+		PaymentExecution paymentExecute = new PaymentExecution();
+		paymentExecute.setPayerId("743WADY6RL6BS");
+		payment.execute(setAPIContext(), paymentExecute);
+
+		System.out.println(paymentExecute.getPayerId());
 	}
 
 	private static APIContext setAPIContext() {
@@ -77,31 +101,6 @@ public class PayPalApiCall {
 		transactions.add(transaction);
 
 		return transactions;
-	}
-
-	public String apiRequest(String currency, Cart cart) throws PayPalRESTException {
-		Payment payment = new Payment();
-		payment.setIntent("sale");
-		payment.setPayer(this.payer);
-		payment.setTransactions(this.listTransactions(currency, cart));
-		RedirectUrls redirectUrls = new RedirectUrls();
-		redirectUrls.setCancelUrl("https://devtools-paypal.com/guide/pay_paypal?cancel=true");
-		redirectUrls.setReturnUrl("https://http://timetrialfac.wix.com/ttfac");
-		payment.setRedirectUrls(redirectUrls);
-
-		Payment createdPayment = payment.create(setAPIContext());
-		System.out.println(createdPayment);
-
-		return createdPayment.toJSON();
-	}
-
-	public void apiReturn(String paymentId) throws PayPalRESTException {
-		Payment payment = new Payment(paymentId, this.payer);
-		PaymentExecution paymentExecute = new PaymentExecution();
-		paymentExecute.setPayerId("743WADY6RL6BS");
-		payment.execute(setAPIContext(), paymentExecute);
-
-		System.out.println(paymentExecute.getPayerId());
 	}
 
 }

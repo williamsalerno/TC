@@ -3,14 +3,13 @@ package br.com.timetrialfactory.controller;
 import static br.com.timetrialfactory.service.LicenseService.registerLicense;
 import static br.com.timetrialfactory.service.PurchaseService.registerPurchase;
 
-import org.json.JSONArray;
-
-import com.google.gson.JsonArray;
+import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
 
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.com.timetrialfactory.annotations.Restrict;
 import br.com.timetrialfactory.api.paypal.PayPalApiCall;
 import br.com.timetrialfactory.dao.LicenseDAO;
 import br.com.timetrialfactory.dao.PurchaseDAO;
@@ -37,14 +36,15 @@ public class PurchaseController {
 		this.result = result;
 	}
 
+	@Restrict
 	@Post("/payment")
-	public void generatePayment(String currency) throws PayPalRESTException {
-		String urlPayPal = this.payPal.apiRequest(currency, cart);
+	public void getGeneratePayment(String currency) throws PayPalRESTException {
+		Payment urlPayPal = this.payPal.apiRequest(currency, cart);
 		registerPurchase(cart, userWeb, purchaseDao);
-		JSONArray json = new JSONArray(urlPayPal);
-		result.redirectTo(GamesController.class).list();
+		result.redirectTo(urlPayPal.getLinks().get(1).getHref());
 	}
 
+	@Restrict
 	@Post("/confirmedPayment")
 	public void confirmPayment(String paymentId) throws PayPalRESTException {
 		this.payPal.apiReturn(paymentId);
