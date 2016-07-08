@@ -51,4 +51,5 @@ public class PurchaseController {
 		registerLicense(cart, userWeb, licenseDao);
 		result.redirectTo(GamesController.class).list();
 	}
+
 }

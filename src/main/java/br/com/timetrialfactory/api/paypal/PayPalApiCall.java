@@ -39,7 +39,7 @@ public class PayPalApiCall {
 		payment.setTransactions(this.listTransactions(currency, cart));
 		RedirectUrls redirectUrls = new RedirectUrls();
 		redirectUrls.setCancelUrl("https://devtools-paypal.com/guide/pay_paypal?cancel=true");
-		redirectUrls.setReturnUrl("https://timetrialfac.wix.com/ttfac");
+		redirectUrls.setReturnUrl("http://timetrialfac.wix.com/ttfac#!paypal/wviae");
 		payment.setRedirectUrls(redirectUrls);
 
 		Payment createdPayment = payment.create(setAPIContext());
