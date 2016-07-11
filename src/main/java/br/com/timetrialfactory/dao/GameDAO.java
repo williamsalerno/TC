@@ -13,52 +13,52 @@ import br.com.timetrialfactory.model.entity.Game;
 @Component
 public class GameDAO {
 
-    private final Session session;
+	private final Session session;
 
-    public GameDAO(Session session) {
-        this.session = session;
-    }
+	public GameDAO(Session session) {
+		this.session = session;
+	}
 
-    @SuppressWarnings({ "unchecked", "deprecation" })
-    public List<Game> listAll() {
-        return this.session.createCriteria(Game.class).list();
-    }
+	@SuppressWarnings("unchecked")
+	public List<Game> listAll() {
+		return this.session.createCriteria(Game.class).list();
+	}
 
-    public void insert(Game game) {
-        Transaction tx = session.beginTransaction();
-        this.session.save(game);
-        tx.commit();
-    }
+	public void insert(Game game) {
+		Transaction tx = session.beginTransaction();
+		this.session.save(game);
+		tx.commit();
+	}
 
-    public Game load(Long id) {
-        return (Game) this.session.get(Game.class, id);
-    }
+	public Game load(Long id) {
+		return (Game) this.session.get(Game.class, id);
+	}
 
-    public void update(Game game) {
-        Transaction tx = session.beginTransaction();
-        this.session.update(game);
-        tx.commit();
-    }
+	public void update(Game game) {
+		Transaction tx = session.beginTransaction();
+		this.session.update(game);
+		tx.commit();
+	}
 
-    public void delete(Game game) {
-        Transaction tx = session.beginTransaction();
-        this.session.delete(game);
-        tx.commit();
-    }
+	public void delete(Game game) {
+		Transaction tx = session.beginTransaction();
+		this.session.delete(game);
+		tx.commit();
+	}
 
-    @SuppressWarnings({ "unchecked", "deprecation" })
-    public List<Game> search(String title) {
-        return session.createCriteria(Game.class).add(Restrictions.ilike("title", title, MatchMode.ANYWHERE)).list();
-    }
+	@SuppressWarnings({ "unchecked" })
+	public List<Game> search(String title) {
+		return session.createCriteria(Game.class).add(Restrictions.ilike("title", title, MatchMode.ANYWHERE)).list();
+	}
 
-    public void recharge(Game game) {
-        session.refresh(game);
-    }
+	public void recharge(Game game) {
+		session.refresh(game);
+	}
 
-    @SuppressWarnings("deprecation")
 	public boolean gameExists(Game game) {
-        Game found = (Game) session.createCriteria(Game.class).add(Restrictions.eq("title", game.getTitle())).uniqueResult();
-        return found != null;
-    }
+		Game found = (Game) session.createCriteria(Game.class).add(Restrictions.eq("title", game.getTitle()))
+				.uniqueResult();
+		return found != null;
+	}
 
 }
