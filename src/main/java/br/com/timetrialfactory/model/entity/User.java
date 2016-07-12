@@ -41,6 +41,7 @@ public class User {
 	private String login;
 
 	@NotNull
+	@Size(min = 6, max = 12, message = "")
 	@Column(name = "password", nullable = false)
 	private String password;
 

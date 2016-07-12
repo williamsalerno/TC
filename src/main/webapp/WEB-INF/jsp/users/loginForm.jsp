@@ -1,6 +1,6 @@
-<%@ include file="/WEB-INF/jspf/header.jspf"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <div id="wrapper">
+	<%@ include file="/WEB-INF/jspf/header.jspf"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 	<div class="containerLogin">
 		<div class="content">
 			<section class="login">
@@ -13,14 +13,16 @@
 								class="glyphicon glyphicon-log-in" aria-hidden="true"></span></span><input
 								type="text" class="form-control" id="login" name="user.login"
 								value="${user.login }"
-								placeholder=<fmt:message key="placeholder.username"/> required="required">
+								placeholder=<fmt:message key="placeholder.username"/>
+								required="required">
 						</div>
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><span
 								class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span>
 							<input type="password" class="form-control" id="password"
 								name="user.password" value="${user.password }"
-								placeholder=<fmt:message key="placeholder.password"/> required="required">
+								placeholder=<fmt:message key="placeholder.password"/>
+								required="required">
 						</div>
 						<div class="btnForm" style="padding-bottom: 30px;">
 							<button type="submit" class="btn btn-default">
@@ -54,9 +56,9 @@
 			</section>
 		</div>
 	</div>
-	<script>
-		var teste = "${userOk }"
-		console.log(teste);
-	</script>
 	<%@ include file="/WEB-INF/jspf/footer.jspf"%>
 </div>
+<script>
+	var teste = "${userOk }"
+	console.log(teste);
+</script>

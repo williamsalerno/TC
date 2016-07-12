@@ -19,7 +19,7 @@ public class GameDAO {
         this.session = session;
     }
 
-    @SuppressWarnings({ "unchecked", "deprecation" })
+    @SuppressWarnings({ "unchecked" })
     public List<Game> listAll() {
         return this.session.createCriteria(Game.class).list();
     }
@@ -46,7 +46,7 @@ public class GameDAO {
         tx.commit();
     }
 
-    @SuppressWarnings({ "unchecked", "deprecation" })
+    @SuppressWarnings({ "unchecked" })
     public List<Game> search(String title) {
         return session.createCriteria(Game.class).add(Restrictions.ilike("title", title, MatchMode.ANYWHERE)).list();
     }
@@ -55,7 +55,6 @@ public class GameDAO {
         session.refresh(game);
     }
 
-    @SuppressWarnings("deprecation")
 	public boolean gameExists(Game game) {
         Game found = (Game) session.createCriteria(Game.class).add(Restrictions.eq("title", game.getTitle())).uniqueResult();
         return found != null;

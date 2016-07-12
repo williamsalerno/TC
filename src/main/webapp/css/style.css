@@ -1,3 +1,8 @@
+/*
+----------------------------------------
+ MODIFICAÇÕES DE TAG HTML
+----------------------------------------
+*/
 @font-face {
 	font-family: Roboto-Light;
 	src: url("../fonts/Roboto-Light.ttf");
@@ -21,6 +26,10 @@ legend {
 	color: white;
 }
 
+h1 {
+	color: #FFC277;
+}
+
 h2 {
 	color: #ffc277;
 }
@@ -30,6 +39,73 @@ h3 {
 	text-align: center;
 }
 
+hr {
+	border: 0;
+	height: 2px;
+	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+	background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
+}
+
+/*
+----------------------------------------
+ RESPONSIVIDADE PARA MOBILE
+----------------------------------------
+*/
+@media ( min-width : 1200px) {
+	.content {
+		width: 1170 px;
+	}
+}
+
+@media ( max-width : 320px) {
+	.content {
+		padding-left: 10px !important;
+	}
+	.login {
+		width: 100% !important;
+		margin-top: 160px !important;
+	}
+}
+
+@media ( min-width : 900px) {
+	.navbar-collapse.collapse {
+		display: block !important;
+		height: auto !important;
+		padding-bottom: 0;
+		overflow: visible !important;
+	}
+}
+
+@media ( min-width : 321px) {
+	.login {
+		max-width: 400px !important;
+	}
+}
+
+@media ( min-width : 768px) {
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header,
+		.container>.navbar-collapse, .container>.navbar-header {
+		margin-top: -16px;
+	}
+}
+
+@media ( max-width : 767px) {
+	.containerLogin {
+		padding-top: 160px !important;
+	}
+}
+
+/*
+----------------------------------------
+ MODIFICAÇÕES NORMAIS
+----------------------------------------
+*/
 #wrapper {
 	position: relative;
 	min-height: 100%;
@@ -41,7 +117,7 @@ h3 {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 1170px;
-	padding-bottom: 250px;
+	padding-bottom: 300px;
 }
 
 .navbar {
@@ -126,7 +202,6 @@ h3 {
 	.container>.navbar-collapse, .container>.navbar-header {
 	margin-right: 0;
 	margin-left: 0;
-	margin-top: -16px;
 }
 
 .form-horizontal {
@@ -139,7 +214,7 @@ h3 {
 }
 
 .containerLogin {
-	padding-top: 70px;
+	padding-top: 100px;
 	width: 100%;
 	padding-bottom: 0;
 }
@@ -149,32 +224,7 @@ h3 {
 	text-align: center;
 }
 
-@media ( min-width : 1200px) {
-	.content {
-		width: 1170 px;
-	}
-}
-
-@media ( max-width : 320px) {
-	.content {
-		padding-left: 7px !important;
-	}
-	.login {
-		width: 100% !important;
-	}
-}
-
-@media ( min-width : 900px) {
-	.navbar-collapse.collapse {
-		display: block !important;
-		height: auto !important;
-		padding-bottom: 0;
-		overflow: visible !important;
-	}
-}
-
 .navbar-right {
-	float: right !important;
 	margin-right: -15px;
 }
 
@@ -196,7 +246,6 @@ h3 {
 	margin-top: 60px !important;
 	margin: 0 auto;
 	background: transparent;
-	width: 40%;
 	min-width: 300px;
 	border-radius: 3px;
 	padding: 15px;
@@ -341,10 +390,6 @@ input:focus, select:focus {
 	margin-top: 48px;
 }
 
-h1 {
-	color: #FFC277;
-}
-
 .login h2 {
 	text-align: center;
 	font-weight: 200;
@@ -459,6 +504,15 @@ h1 {
 	background: #FBBA6B !important;
 }
 
+.btn:focus {
+	border: 1px solid #9a611a !important;
+	color: #dabd68 !important;
+	box-shadow: none !important;
+	background: #af7021 !important;
+	outline: none !important;
+	transition: none !important;
+}
+
 .disabled {
 	cursor: default !important;
 	box-shadow: none !important;
@@ -507,19 +561,6 @@ h1 {
 	background-image: -moz-linear-gradient(left, #FFC277, transparent);
 	background-image: -ms-linear-gradient(left, #FFC277, transparent);
 	background-image: -o-linear-gradient(left, #FFC277, transparent);
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0),
-		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
-	background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0),
-		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
-	background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0),
-		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
-	background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0),
-		rgba(255, 194, 119, 1), rgba(0, 0, 0, 0));
 }
 
 .container-fluid h1, .navbar-brand {
@@ -621,6 +662,10 @@ footer {
 	margin: 0 15px;
 }
 
+.buttonLang {
+	text-align: center;
+}
+
 .footer-row:after, .footer-row-item:after {
 	clear: both;
 }
@@ -643,6 +688,7 @@ footer {
 }
 
 .copyright {
+	margin-top: 90px;
 	color: #F38A23;
 	text-align: center;
 }
