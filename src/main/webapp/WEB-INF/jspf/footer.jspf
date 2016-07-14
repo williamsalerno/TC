@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script src="<c:url value="/js/formAnimation.js"/>"></script>
 <script src="https://apis.google.com/js/platform.js"></script>
 <footer>
@@ -8,15 +10,17 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="btn-group">
-			<button type="button"
-				class="btn btn-primary dropdown-toggle buttonLang"
-				data-toggle="dropdown">
-				English <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="#">Portuguese</a></li>
-			</ul>
+		<div class="langPage">
+			<p>Choose a language:</p>
+			<fmt:setLocale value="${switchLang }" scope="session" />
+			<form action="<c:url value="/langPt"/>" method="GET">
+				<a onClick="window.location.reload();return false;">Portuguese</a>
+				<c:set var="switchLang" value="${lang }" />
+			</form>
+			<form action="<c:url value="/langEn"/>" method="GET">
+				<a onClick="window.location.reload();return false;">English</a>
+				<c:set var="switchLang" value="${lang }" />
+			</form>
 		</div>
 		<div class="footer-row copyright">
 			<p>Copyright &copy;2016 TimeTrial Factory. All rights reserved.</p>
@@ -31,6 +35,5 @@
 		$('#updateImg').attr('src', $(this).attr('href'));
 	});
 </script>
-
 </body>
 </html>
